@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse Code
+Bundle-SymbolicName: com.architexa.external.eclipse
+Bundle-Version: 2.0.2.qualifier
+Bundle-Activator: com.architexa.external.eclipse.Activator
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.core.runtime,
+ com.architexa.external.eclipse.draw2d,
+ com.architexa.external.eclipse.gef,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ com.architexa.collab,
+ com.architexa.intro
+Eclipse-LazyStart: true
+Export-Package: com.architexa.external.eclipse,
+ com.architexa.org.eclipse.draw2d,
+ com.architexa.org.eclipse.draw2d.examples,
+ com.architexa.org.eclipse.gef.tools,
+ com.architexa.org.eclipse.gef.ui.parts
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy

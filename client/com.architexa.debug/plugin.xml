@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.architexa.debug.reinitializeAction"
+            label="Debug Actions"
+            visible="true">
+         <menu
+               icon="icons/architexa-logo.png"
+               id="ArchitexaMenu"
+               label="Architexa"
+               path="file/">
+            <separator
+                  name="Architexa">
+            </separator>
+         </menu>
+          <menu
+               id="DebugMenu"
+               label="Debug_Architexa"
+               path="file/ArchitexaMenu/Architexa">
+            <separator
+                  name="Debug">
+            </separator>
+         </menu>
+         <action
+               class="com.architexa.debug.DbgProxySettings"
+               id="com.architexa.debug.action2"
+               label="Proxy Settings"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Check Proxy">
+         </action>
+         <action
+               class="com.architexa.debug.RebuildLuceneIndex"
+               id="com.architexa.debug.rebuildLucene"
+               label="Rebuild Shared Diagram Local Cache"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Rebuild Shared Diagram Local Cache">
+         </action>		
+         <action
+               class="com.architexa.debug.ReinitializeArchitexa"
+               id="com.architexa.debug.action1"
+               label="Reinitialize Architexa"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Reinitialize Architexa">
+         </action>
+         
+         
+         <action
+               class="com.architexa.debug.ShowValidityDate"
+               id="com.architexa.debug.action3"
+               label="Validity Date"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Show Validity">
+         </action>
+         
+         <action
+               class="com.architexa.debug.ToggleValidityDate"
+               id="com.architexa.debug.action4"
+               label="Toggle Validity"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Toggle Validity">
+         </action>
+         
+         <action
+               class="com.architexa.debug.GenerateUniqueSystemId"
+               id="com.architexa.debug.action5"
+               label="Get Unique Id"
+               menubarPath="file/ArchitexaMenu/DebugMenu/Debug"
+               style="push"
+               tooltip="Get Unique Id">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.architexa.rse.integration.subclipse"
+      label="Architexa RSE - Subclipse Integration"
+      version="2.0.2.qualifier"
+      provider-name="Architexa, Inc.">
+
+   <description url="http://www.architexa.com">
+      Architexa RSE - Subclipse Integration
+Support for Architexa integration into Subclipse UI components
+   </description>
+
+   <copyright url="http://www.architexa.com">
+      Architexa, Inc (www.architexa.com)
+   </copyright>
+
+   <license url="http://www.architexa.com">
+      %license
+   </license>
+
+   <url>
+      <update label="Architexa Extensions Update Site" url="http://update.architexa.com/client-extended"/>
+   </url>
+
+   <requires>
+      <import feature="com.architexa.rse" version="2.0.2.qualifier"/>
+   </requires>
+
+   <plugin
+         id="com.architexa.diagrams.generate.subclipse"
+         download-size="11"
+         install-size="11"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+</feature>

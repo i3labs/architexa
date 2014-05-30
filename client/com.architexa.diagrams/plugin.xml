@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.architexa.diagrams"
+            name="Architexa">
+      </category>
+      <view
+            category="com.architexa.diagrams"
+            class="com.architexa.diagrams.ui.RSEThumbnailView"
+            icon="icons/rse-icon.png"
+            id="com.architexa.diagrams.RSEThumbnailView"
+            name="Thumbnail View">
+      </view>
+      <view
+            category="com.architexa.diagrams"
+            class="com.architexa.diagrams.ui.RelatedDiagramsView"
+            icon="icons/rse-icon.png"
+            id="com.architexa.diagrams.RelatedDiagramsView"
+            name="Related Diagrams">
+      </view>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus">
+      <!--<objectContribution
+            adaptable="true"
+            id="com.architexa.diagrams.DiagramObjectContrib"
+            objectClass="java.lang.Object">
+         <action
+               label="Open in Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.ui.OpenInDiagramMenuAction"
+               enablesFor="+"
+               menubarPath="group.open"
+               id="com.architexa.diagrams.OpenInDiagramMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>-->
+      <viewerContribution
+            id="com.architexa.diagrams.mainContributions"
+            targetID="org.eclipse.jdt.ui.PackageExplorer">
+         <action
+               class="com.architexa.diagrams.ui.ArchitexaMenuAction"
+               icon="icons/architexa-logo-icon-inv-16x16.png"
+               id="com.architexa.diagrams.ArchitexaMenu"
+               label="Architexa"
+               menubarPath="additions">
+         </action>
+      </viewerContribution>
+      <viewerContribution
+            id="com.architexa.diagrams.projectExplorerContributions"
+            targetID="org.eclipse.ui.navigator.ProjectExplorer#PopupMenu">
+         <action
+               class="com.architexa.diagrams.ui.ArchitexaMenuAction"
+               icon="icons/architexa-logo-icon-inv-16x16.png"
+               id="com.architexa.diagrams.ArchitexaMenu"
+               label="Architexa"
+               menubarPath="additions">
+         </action>
+      </viewerContribution>
+      <viewerContribution
+            id="com.architexa.diagrams.navigatorContributions"
+            targetID="org.eclipse.ui.views.ResourceNavigator">
+         <action
+               class="com.architexa.diagrams.ui.ArchitexaMenuAction"
+               icon="icons/architexa-logo-icon-inv-16x16.png"
+               id="com.architexa.diagrams.ArchitexaMenu"
+               label="Architexa"
+               menubarPath="additions">
+         </action>
+      </viewerContribution>
+   </extension>
+   
+   <extension point = "org.eclipse.ui.actionSets">
+   	    <!--<actionSet id="com.architexa.rse.actionSet"
+            label="Architexa RSE Actions"
+            visible="true">
+	            <action
+               class="com.architexa.diagrams.ui.menus.OpenNewEditor"
+               icon="icons/new_editor.png"
+               id="openNewEditor"
+               label="Open New"
+               style="pulldown"
+               toolbarPath="diagramming"
+               tooltip="Open a new diagram editor"/>
+        </actionSet>-->
+        <actionSet id="com.architexa.rseEditorsOnly.actionSet"
+            label="RSE Diagram Editors Associated Actions"
+        	visible="false">
+        	<action id="seq.SwitchDiagramType"
+                label="Switch diagram type"
+                icon="icons/switchtype.png"
+                toolbarPath="diagramming"
+                tooltip="Open diagram contents in a different type of diagram"
+                style="pulldown"
+                class="com.architexa.diagrams.ui.SwitchDiagramType">
+            </action>
+        	<action
+        	   class="com.architexa.external.eclipse.Exporter"
+        	   icon="icons/export.png"
+        	   id="com.architexa.diagrams.export"
+        	   label="Export as Image"
+        	   style="push"
+        	   toolbarPath="org.eclipse.ui.workbench.file/print.ext"
+        	   menubarPath="file/saveAll"
+        	   tooltip="Export diagram as image">
+            </action>
+        </actionSet>
+        
+       <!--       
+       <actionSet id="com.architexa.rseEditorsOnly.actionSet.menu"
+            label="RSE Diagram Editors Associated Actions"
+        	visible="true">
+        	<action
+        	   class="com.architexa.external.eclipse.Exporter"
+        	   icon="icons/export.png"
+        	   id="com.architexa.diagrams.export.menu"
+        	   label="Export as Image"
+        	   style="push"
+        	   menubarPath="atxaMenu/group.collab"
+        	   tooltip="Export diagram as image">
+            </action>
+        </actionSet>
+        -->
+   </extension>  
+
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.ui.ArchitexaMenuAction$Init">
+      </startup>
+   </extension>
+   <extension name="Architexa" point="org.eclipse.ui.menus">
+         <menuContribution locationURI="menu:org.eclipse.ui.main.menu?before=window">
+           <menu
+               label="Architexa"
+               id="atxaMenu">
+        	</menu>
+		</menuContribution>
+		<menuContribution locationURI="menu:atxaMenu">
+			 <separator name="group.build"
+                visible="true" />
+   		</menuContribution>
+   	
+   		<menuContribution locationURI="menu:atxaMenu?after=atxaMenu.collab">
+			<menu id="com.architexa.diagrams.recent"
+			    label="Recently Created Diagrams">
+			  <dynamic class="com.architexa.diagrams.ui.menus.OpenRecentlyCreatedDiagrams"
+			      id="com.architexa.diagrams.recent.dynamic"/>
+			</menu>
+   		</menuContribution> 
+   		
+   		<menuContribution locationURI="menu:atxaMenu?after=group.build">
+   		    <separator name="group.tasks"
+                visible="true" />
+			<menu id="com.architexa.diagrams.understand"
+			    label="Understand Code">
+			  <dynamic class="com.architexa.diagrams.ui.menus.OpenUnderstandingTasks"
+			      id="com.architexa.diagrams.understand.dynamic"/>
+			</menu>
+			<menu id="com.architexa.diagrams.documenting"
+			    label="Document Code">
+			  <dynamic class="com.architexa.diagrams.ui.menus.OpenDocumentingTasks"
+			      id="com.architexa.diagrams.documenting.dynamic"/>
+			</menu>
+			<menu id="com.architexa.diagrams.sharing"
+			    label="Share Diagrams">
+			  <dynamic class="com.architexa.diagrams.ui.menus.OpenSharingTasks"
+			      id="com.architexa.diagrams.sharing.dynamic"/>
+			</menu>
+		   <separator name="group.help"
+                visible="false" />
+   		</menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="com.architexa.diagrams.editors.RSEMultiPageEditor"
+            contributorClass="com.architexa.diagrams.editors.MultiPageEditorContributor"
+            extensions="mpe, relo, chrono, strata, atxa"
+            icon="icons/rse-document.png"
+            id="com.architexa.diagrams.editors.RSEMultiPageEditor"
+            default="true"
+            name="RSE Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+         <editorContribution
+            id="rse.RSEMultiPageEditorContributions"
+            targetID="com.architexa.diagrams.editors.RSEMultiPageEditor">
+         <action 
+         	   class="com.architexa.diagrams.ui.RSELinkedTrackerDelegator"
+         	   icon="icons/synced.gif"
+         	   id="com.architexa.diagrams.ui.linkedExploration"
+          	   label="Toggle on or off linked exploration"
+          	   style="toggle"
+          	   state="false"
+          	   toolbarPath="Normal/additions"
+          	   tooltip="Track Explorations in Editor"/>
+      </editorContribution>
+   </extension>
+
+</plugin>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Architexa Log4j
+Bundle-SymbolicName: com.architexa.utils.log4j;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-ClassPath: ReloLog4j.jar,
+ log4j-1.2.9.jar
+Bundle-Vendor: Architexa, Inc
+Export-Package: com.architexa.utils.log4j,
+ org.apache.log4j
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.console,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench
+Bundle-RequiredExecutionEnvironment: J2SE-1.4

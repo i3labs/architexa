@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compositeCheatsheet name="Getting started with Architexa">
+   <taskGroup name="Getting started with Architexa" kind="set">
+      <intro>
+         Welcome to the Architexa tutorial.
+		 It will help you get started using layered, class, and sequence diagrams.
+		 Let's get started!
+      </intro>
+      <onCompletion>
+         Great! You have completed the tutorials for all diagram types.
+      </onCompletion>
+      <task kind="cheatsheet" name="Using Layered Diagrams"
+            id="createLayeredDiagram">
+             <param name="id" value="com.architexa.diagrams.all.ui.layeredCheatSheet" />
+   			 <param name="showIntro" value="true" />
+			   <intro>
+			      This tutorial guides you through the creation of a Layered Diagram.
+			   </intro>
+			   <onCompletion>
+			      Finished creating a Layered Diagram.
+			   </onCompletion>
+      </task>
+      <task kind="cheatsheet" name="Using Class Diagrams"
+            id="createClassDiagram">
+             <param name="id" value="com.architexa.diagrams.all.ui.classCheatSheet" />
+			   <param name="showIntro" value="true" />
+			   <intro>
+			      This tutorial guides you through the creation of a Class Diagram.
+			   </intro>
+			   <onCompletion>
+			      Finished creating a Class Diagram.
+			   </onCompletion>
+	 </task>
+      <task kind="cheatsheet" name="Using Sequence Diagrams"
+            id="createSequenceDiagram">
+             <param name="id" value="com.architexa.diagrams.all.ui.sequenceCheatSheet" />
+  		 <param name="showIntro" value="true" />
+		   	<intro>
+			      This tutorial guides you through the creation of a Sequence Diagram.
+			   </intro>
+			   <onCompletion>
+			      Finished creating a Sequence Diagram.
+			   </onCompletion>
+      </task>
+   </taskGroup>
+</compositeCheatsheet>

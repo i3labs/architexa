@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!--
+	Written using tutorial and sample code provided by Chris Aniszczyk <caniszczyk@gmail.com>
+	at http://wiki.eclipse.org/DocumentationGuidelines/CrowdSourcingExample
+-->
+
+<project name="com.architexa.help" default="all">
+    <description>
+            Generate Architexa User Guide in the Eclipse help content from the Architexa wiki
+    </description>
+	
+	<!-- Properties --> 
+	<property name="help.doc.url.base" value="http://architexa.com/user-guide"/>
+	<property name="docFolder" value="doc"/>
+	<property name="imageFolder" value="images"/>
+	<property name="tempSVNFolder" value="temp"/>
+	
+	
+	<!-- Set up the classpath so we can use the WikiText Ant tasks -->	
+	<path id="wikitext.tasks.classpath">
+		<fileset dir="lib">
+			<include name="org.eclipse.mylyn.wikitext.*core*.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef classpathref="wikitext.tasks.classpath" 
+		resource="org/eclipse/mylyn/internal/wikitext/mediawiki/core/tasks/tasks.properties"/>
+	<taskdef classpathref="wikitext.tasks.classpath" 
+		resource="org/eclipse/mylyn/wikitext/core/util/anttask/tasks.properties"/>
+	
+	
+	<target name="all" depends="init" description="Generate the Architexa User Guide in Eclipse help">		
+			
+			<!-- Set up the base wiki location that we want to get
+			 the wiki content from, and convert it to Eclipse help -->
+			<mediawiki-to-eclipse-help 
+				wikiBaseUrl="${help.doc.url.base}"
+				helpPrefix="${docFolder}"
+				validate="true"
+				failonvalidationerror="true" 
+				prependImagePrefix="${imageFolder}" 
+				formatoutput="false" 
+				dest="${docFolder}" 	
+				title="Architexa User Guide" 
+				generateUnifiedToc="true">
+						
+				<!-- Set up the wiki pages that we'll get content from and that will be included in toc.xml -->
+				<!-- 
+					path name is the url after the base url http://www.architexa.com/user-guide
+					title is the label that appears in the content tree
+					tocParentName is a previously declared path name that this page will appear under in the content tree
+				-->
+				
+				<!-- Diagramming Tools -->
+				<path name="Tools" title="Diagramming Tools"/>
+				<path name="Tools/Layered_Diagram" 
+					  title="Layered Diagram"
+				      tocParentName="Tools"/>
+				<path name="Tools/Class_Diagram" 
+					  title="Class Diagram"
+				      tocParentName="Tools"/>
+				<path name="Tools/Sequence_Diagram" 
+					  title="Sequence Diagram"
+				      tocParentName="Tools"/>
+			
+				<!-- Supporting Views -->
+				<path name="Views" title="Supporting Views"/>
+				<path name="Views/Related_Diagrams_View" 
+					  title="Related Diagrams View"
+				      tocParentName="Views"/>
+				<path name="Views/Thumbnail_View" 
+					  title="Thumbnail View"
+				      tocParentName="Views"/>
+							
+				<!-- Common Tasks -->
+				<path name="Tasks" title="Common Tasks"/>
+				<path name="Tasks/Understand_a_new_project,_library,_or_section_of_code" 
+					  title="Understand new code"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Understand_what_you_have_been_looking_at_(create_diagram_from_tabs)" 
+					  title="Generate diagram of Java tabs"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Find_cycles_in_your_architecture" 
+					  title="Find cycles in your architecture"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Searching_and_opening_the_results_in_a_diagram" 
+					  title="Generate diagram of search results"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Debug_easily_by_using_diagrams_to_see_control_flow" 
+					  title="Debug"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Analyze_logic_(and_ensure_all_cases_are_handled_effectively)" 
+					  title="Analyze Logic"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Have_easier_code_reviews_by_understanding_changes_with_diagrams" 
+					  title="Make code reviews easier"
+				      tocParentName="Tasks"/>
+				
+				<path name="Tasks/Document_a_code_concept" 
+					  title="Document a concept"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Document_while_you_work_by_creating_a_diagram_in_the_background" 
+					  title="Generate diagram automatically as you work"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Quickly_explain_concepts_to_coworkers/managers" 
+					  title="Explain concepts to others"
+				      tocParentName="Tasks"/>
+				<path name="Tasks/Keep_documentation_up_to_date" 
+					  title="Keep documentation up to date"
+					  tocParentName="Tasks"/>
+
+				<path name="Tasks/Easily_switch_from_one_diagram_type_to_another" 
+					  title="Switch Diagram Type"
+				      tocParentName="Tasks"/>
+				
+				<!-- Sharing -->
+				<path name="Sharing" title="Sharing Tools"/>
+				<path name="Sharing/Share_Online" 
+					title="Share on Server"
+					tocParentName="Sharing"/>
+				<path name="Sharing/Share_via_Email" 
+					title="Share via Email"
+					tocParentName="Sharing"/>
+				<path name="Sharing/Retrieve_diagrams" 
+					title="Retrieve Shared Diagrams"
+					tocParentName="Sharing"/>
+				
+				<!-- Documenting -->
+				<path name="Documenting" title="Best Practices for Creating Documentation"/>
+				<path name="Documenting/Code_Concepts" 
+					title="Documenting Code Concepts"
+					tocParentName="Documenting"/>
+				<path name="Documenting/Layered_Diagram" 
+					title="Document with Layered Diagram"
+					tocParentName="Documenting"/>
+				<path name="Documenting/Class_Diagram" 
+					title="Document with Class Diagram"
+					tocParentName="Documenting"/>
+				<path name="Documenting/Sequence_Diagram" 
+					title="Document with Sequence Diagram"
+					tocParentName="Documenting"/>
+				
+				<!-- Configuration -->
+				<path name="Configuration" title="Configuration"/>
+				<path name="Configuration/Account_and_Collaboration" 
+					title="Account + Collaboration"
+					tocParentName="Configuration"/>
+				<path name="Configuration/Build_Preferences" 
+					title="Build Preferences"
+					tocParentName="Configuration"/>
+				<path name="Configuration/Updating_Indexes" 
+					title="Updating Indexes"
+					tocParentName="Configuration"/>
+				
+				<!-- Add some info at the bottom that lets users
+				     know how they can request new content. -->									
+				<pageAppendum>
+					
+					---- Your question not answered? Send an email to support@architexa.com ----
+				</pageAppendum>
+				
+			</mediawiki-to-eclipse-help>
+			
+			<antcall target="test"/> 
+		</target>
+
+	<target name="init">
+		<mkdir dir="${docFolder}"/>
+	</target>
+
+	<target name="clean" depends="init">
+		<!-- Need to keep the .svn folder to avoid problems with the
+		committed doc folder, so save .svn folder contents in a temp folder -->
+		<copy todir="${tempSVNFolder}/.svn">
+			<fileset dir="${docFolder}/.svn"/>
+		</copy>
+		<!-- Delete the doc folder -->
+		<delete dir="${docFolder}" includeemptydirs="true" failonerror="false"/>
+		<!-- Copy the .svn folder back into the doc folder -->
+		<copy todir="${docFolder}/.svn">
+			<fileset dir="${tempSVNFolder}/.svn"/>
+		</copy>
+		<!-- Delete the temp folder -->
+		<delete dir="${tempSVNFolder}" failonerror="false"/>
+	</target>
+	
+	<target name="test" depends="init" description="verify that all of the HTML files are well-formed XML">
+			<echo level="info">
+				Validating help content XML and HTML files: The Eclipse help system expects well-formed XML
+
+				If validation fails it is because either:
+
+				* the userguide source code is poorly formed, or
+				* the WikiText MediaWiki parser has a bug
+
+				Problems with userguide source are usually caused by improper use of HTML markup in the MediaWiki source,
+				or inadvertently starting a line with a space character (in MediaWiki this starts a preformatted block)
+			</echo>
+
+			<!--
+			Don't bother with DTD validation: we only care if the files are well-formed.
+			We therefore provide an empty DTD 
+			-->
+			<echo file="${docFolder}/__empty.dtd" message="" />
+			<xmlvalidate lenient="true">
+				<fileset dir="${docFolder}">
+					<include name="**/*.xml"/>
+					<include name="**/*.html"/>
+				</fileset>
+				<dtd publicid="-//W3C//DTD XHTML 1.0 Transitional//EN" location="${docFolder}/__empty.dtd"/>
+			</xmlvalidate>
+	</target>
+
+</project>

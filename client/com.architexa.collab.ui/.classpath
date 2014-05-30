@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-codec-1.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.apache.lucene_1.9.1.v20080530-1600.jar" sourcepath="lib/org.apache.lucene_1.9.1.v20080530-1600.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.apache.lucene.analysis_1.9.1.v20080530-1600.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.apache.lucene.analysis.source_1.9.1.v20080530-1600.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/activation.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/mail.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   
+   <extension point="org.eclipse.ui.preferencePages">
+ 	  <page id="CollabPreferencePage"
+ 		name="Collaboration"
+    	class="com.architexa.collab.ui.CollabPreferencePage"
+    	category="com.architexa.intro.preferences.ReloPreferencePage">
+   	  </page>
+      <page
+        class="com.architexa.collab.ui.BuildPreferencePage"
+        id="buildPreferencePage"
+        name="Build Preferences"
+        category="com.architexa.intro.preferences.ReloPreferencePage">
+      </page>
+      <page
+        class="com.architexa.collab.ui.LibraryCodePreferencePage"
+        id="libCodePreferencePage"
+        name="Library Code Visibility"
+        category="com.architexa.intro.preferences.ReloPreferencePage">
+      </page>
+
+   </extension>
+
+</plugin>

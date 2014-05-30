@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+<!--
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Layered Diagram Editor"
+            default="true"
+            extensions="strata"
+            icon="icons/office-document.png"
+            class="com.architexa.diagrams.editors.RSEMultiPageEditor"
+            contributorClass="com.architexa.diagrams.editors.MultiPageEditorContributor"
+            id="com.architexa.diagrams.strata.editor">
+            
+             contributorClass="com.architexa.diagrams.strata.ui.StrataEditorContributor"
+            class="com.architexa.diagrams.strata.ui.StrataEditor" 
+      </editor>
+   </extension>
+
+	-->
+	
+   <!-- actions for jdt toolbar -->
+   <extension point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="com.architexa.diagrams.strata.editorContributions"
+            targetID="com.architexa.diagrams.strata.editor">
+         <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced_tabs.PNG"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTrackerAllTabs"
+               label="All Tabs Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Open Java Editor Tabs in Diagram Editor"/>    
+         <!-- <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced.gif"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTracker"
+               label="Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Environment Explorations in Diagram Editor"/> -->
+      </editorContribution>
+      <editorContribution
+            id="com.architexa.diagrams.strata.editorContributions1"
+            targetID="com.architexa.diagrams.editors.RSEMultiPageEditor">
+         <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced_tabs.PNG"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTrackerAllTabs"
+               label="All Tabs Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Open Java Editor Tabs in Diagram Editor"/>    
+         <!-- <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced.gif"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTracker"
+               label="Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Environment Explorations in Diagram Editor"/> -->
+      </editorContribution>
+   </extension>
+
+   <!-- This view needs to be resurrected -->
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Architexa"
+            id="com.architexa.diagrams">
+      </category>
+      <view
+            name="Layered Diagram"
+            icon="icons/office-document.png"
+            category="com.architexa.diagrams"
+            class="com.architexa.diagrams.strata.ui.StrataView"
+            id="com.architexa.diagrams.strata.ui.StrataView">
+      </view>
+   </extension>
+   
+   <!-- undo/redo for chrono view -->
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.architexa.diagrams.strata.strataViewOnlyContributions"
+            targetID="com.architexa.diagrams.strata.ui.StrataView">
+         <!-- we are currently flipping the order below to show undo first, but this should be done in the 'correct way' -->
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalRedoAction"
+               icon="icons/redo.gif"
+               id="com.architexa.diagrams.strata.redoAction"
+               label="Redo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Redo Last Action"/>
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalUndoAction"
+               icon="icons/undo.gif"
+               id="com.architexa.diagrams.strata.undoAction"
+               label="Undo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Undo Last Action"/>
+         <!-- removeAll -->
+         <action
+               class="com.architexa.diagrams.strata.ui.RemoveAllAction"
+               icon="icons/rem_all.gif"
+               id="com.architexa.diagrams.strata.ui.RemoveAll"
+               label="Remove All"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Remove All Items in Diagram"/>
+         <!-- Linked Tracker View buttons -->
+         <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced_tabs.PNG"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTrackerAllTabs"
+               label="All Tabs Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Open Java Editor Tabs in Diagram Editor"/>    
+         <!-- <action
+               class="com.architexa.diagrams.strata.ui.JDTLinkedTracker$LinkedTrackerActionDelegate"
+               icon="icons/synced.gif"
+               id="com.architexa.diagrams.strata.ui.JDTLinkedTracker"
+               label="Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Environment Explorations in Diagram Editor"/> -->     
+               
+      </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.strata.StrataDiagramEngine">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.strata.SCore">
+      </startup>
+   </extension>
+
+</plugin>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.architexa.rse.prod.ArchitexaBrowsingPerspective"
+            icon="icons/rse-document.png"
+            id="com.architexa.rse.prod.ArchitexaBrowsingPerspective"
+            name="Architexa Browsing">
+      </perspective>
+   </extension>
+    <extension
+         id="com.architexa.rse.workbench"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.architexa.rse.prod.RSEApplication">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="com.architexa.rse.workbench"
+            name="Architexa RSE">
+         <property
+               name="appName"
+               value="Architexa RSE">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/architexa-big.png">
+         </property>
+         <property
+               name="aboutText"
+               value="Architexa RSE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/architexa.png">
+         </property>
+      </product>
+   </extension>
+   <!-- details here: http://dev.eclipse.org/mhonarc/lists/ide4edu-dev/msg00155.html -->
+   <extension
+         point="org.eclipse.ui.activities">
+      <activity
+            id="com.architexa.rse.prod.core"
+            name="Core RSE Activity">
+      </activity>
+      <!--
+      // we pretty much want to disable everything, i.e.
+      <activityPatternBinding
+            activityId="com.architexa.rse.prod.core"
+            pattern=".*">
+      </activityPatternBinding>
+      // unfortunately:
+      //  1. that does not really disable everything. we ignore those that we can't disable easily (as via above)
+      //  2. the above also disables architexa, so we disable everything in org.*
+      //  3. we don't want to disable some items:
+      //     - org.eclipse.ui.help.aboutAction
+      //
+      // for now we let #3 be removed as well - we can add our own commands 
+      // when we want to add those or figure out more details later (we will
+      // likely not need to worry about it)
+      //
+      // we don't really need to filter out the below because it is included, but we might need it
+            pattern="org.eclipse.search.*"
+      -->
+      <activityPatternBinding
+            activityId="com.architexa.rse.prod.core"
+            pattern="org.*">
+      </activityPatternBinding>
+   </extension>
+
+</plugin>

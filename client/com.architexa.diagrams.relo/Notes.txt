@@ -1,0 +1,126 @@
+TODO's
+
+o Misc
+ - CodeUnit => Artifact
+ - Make Graph inherit from Vertex
+ - DerivedCodeUnits should not inherit from CodeUnit
+ - Scale
+   - Private, Protected methods
+   - Private, Protected, Icons
+   - Large Number of Methos in a class
+ - Eliminate Hacks
+ - GEF Integration
+   - Show menu on click not right click
+   - Eliminate jiggle.Graph
+   - Eliminate jiggle.JiggleObject
+   - Cache distances
+-------------------
+o Fix Demo
+ v Get realize parent working for methods
+ v Get incrementality working (atleast for packages)
+ v Maintain main CU's location (before and after layout) [control panning]
+   v Might want to remove change of origin but instead keep the first object's 
+     original location in the center
+ v Inheritance lines should be orthogonal/step-wise/... not straight line
+ v Track down infinite loop (in laying out)
+
+
+
+o Test (with Relo/Jiggle)
+ - Show all classes working
+ v Method call's working
+o Feature
+ - Icon for multiple children
+ - Click on icon to be able to select on a child to zoom
+ - Same as above for items shown as lists (as with methods)
+ - Menu's working
+
+
+
+o Change layout of methods
+o Vertical scaling (scrollbar)
+o Implement call heirarchy 
+	- Default rule to not show a parent
+	- For other views to show one - what does this mean?
+	- UI to changes between the two
+o Implement support for association/reference
+o Support relations with bended edges
+o Figure out story about kinds of agents:
+	- those that run all the time (show relationships between shown objects)
+	- those that run automatically
+	- that that run on selection
+o Alternative agent story:
+	- agent solves one kind of problem (possibly litening to multiple events)
+		- e.g.: parent asserted needs to look at both addition of child and selection level changing
+	- agent look at one event and does necessary tasks
+
+
+v Use layout hints so that items don't move a lot
+o Support scaling horizontally (layout hints as a grid)
+o Support scaling vertically (scrollbar)
+
+
+
+View Agents
+v on selection, show encl.
+v show common properties on anything being displayed
+
+
+
+Agents
+------
+Show parent 
+ - of selected
+ - all parents
+Show items if multiple objects points to it
+Constraints
+----------
+Color
+ - types [Packages, Classes, Methods]
+ - class type [Interface, Class, Exception, ??? - let customize?]
+ - methods [Constructors, Public, Proteted, Private]
+Horizontal
+ - call heirarchy
+Vertical
+ - inheritance
+Containment
+ - inclusion
+ - inheritance
+ - [call heirarchy]
+Visible (per node/kind of node)
+
+
+..
+Objects
+ Packages [show]
+ Files [don't show]
+ Classes [show-all]
+   Interfaces
+   Classes
+   [xyz]
+ Methods [show-all]
+   Constructors
+   Other
+ Implementations [show]
+ Fields [show-all]
+ 
+Relations
+ Inheritance
+ Inclusion
+   Package->Package
+   Package->Classes
+   Classes->Classes
+   Classes->Methods
+   Classes->Methods
+ Method Calls
+ ? - Instantiations
+ ? - Aggregation
+ ? - Associations
+ 
+ 
+ 
+ 
+> Method's should not be called if they would result in a no-op. If such 
+  method's are called they will noop but also print to stderr. The only case 
+  that this is not clear is whether agents should even fire, but if they do, 
+  they should check before queueing commands, etc.

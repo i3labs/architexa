@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" sourcepath="E:/sw-info/commons-collections-3.1" kind="lib" path="commons-collections-3.1.jar">
+		<attributes>
+			<attribute value="http://jakarta.apache.org/commons/collections/apidocs-COLLECTIONS_3_1" name="javadoc_location"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

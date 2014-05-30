@@ -1,0 +1,27 @@
+Model Heirarchy [need more details for this section]
+---------------
+CodeUnit
+DerivedCodeUnit
+
+
+EditPart heirarchy
+------------------
+AbstractGraphicalEditPart2: <<What we think should have been in AGEP>>
+	Fundamental: setFigure, findEditPart, createOrFindEditPart, execute
+	Debugging/Logging support
+	Stores realized children
+
+AbstractReloEditPart: <<Container of CUEP's>>
+	AgentManager connection
+	Graphlayout support
+
+CodeUnitEditPart: <<Intelligent EP's>>
+	Detail level - semihack
+	Selection level - semihack
+	getContentPane getLabel toString(ctx)
+	core rules support: assertParenthood, realizeChildrenCUs, realizeParent
+	inference operations: addCommonRelationships, showIncludedRelationships
+	operations for customization: createFigure(dl), updateMembers(), buildContextMenu(...)
+
+
+ReloController extends AVEP

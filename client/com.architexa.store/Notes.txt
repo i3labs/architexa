@@ -1,0 +1,4 @@
+o Want to move to hsqldb or Derby for release
+o Might want to merge code with RDFX, possible problems:
+	- They may be exposing only a simpler interface than what Jena provides
+	- We want to use a large (scalabale in size) DB, they may only be using a memory backed store.

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://update.architexa.com/client-extended">
+      Architexa RSE Update Site
+   </description>
+   <feature url="features/com.architexa.rse_2.0.2.qualifier.jar" id="com.architexa.rse" version="2.0.2.qualifier">
+      <category name="Architexa - core"/>
+   </feature>
+   <feature url="features/com.architexa.rse.integration.subclipse_2.0.2.qualifier.jar" id="com.architexa.rse.integration.subclipse" version="2.0.2.qualifier">
+      <category name="Architexa - extensions"/>
+   </feature>
+   <!--<feature url="features/com.architexa.groupServer_2.0.2.qualifier.jar" id="com.architexa.groupServer" version="2.0.2.qualifier">
+      <category name="Architexa - extensions"/>
+   </feature>-->
+   <feature url="features/com.architexa.rse.entJava.spring_2.0.2.qualifier.jar" id="com.architexa.rse.entJava.spring" version="2.0.2.qualifier">
+      <category name="Architexa - extensions"/>
+   </feature>
+   <!--<feature url="features/com.architexa.rse.experimental.localServer_2.0.2.qualifier.jar" id="com.architexa.rse.experimental.localServer" version="2.0.2.qualifier">
+      <category name="Architexa - other (experimental)"/>
+   </feature>-->
+   <category-def name="Architexa - core" label="Architexa - core"/>
+   <category-def name="Architexa - extensions" label="Architexa - extensions"/>
+   <!--<category-def name="Architexa - other (experimental)" label="Architexa - other (experimental)"/> -->
+</site>

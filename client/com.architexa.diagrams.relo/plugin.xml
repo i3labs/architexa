@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+ 	 <!--
+     <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Class Diagram Editor"
+            default="true"
+            icon="icons/relo-document.png"
+            extensions="relo"
+            contributorClass="com.architexa.diagrams.relo.ui.ReloEditorContributor"
+            class="com.architexa.diagrams.relo.ui.ReloEditor"
+            id="com.architexa.diagrams.relo.editor">
+            
+      </editor>
+     
+      <editor
+            name="Browsing Editor"
+            default="false"
+            icon="icons/relo-document.png"
+            contributorClass="org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditorActionContributor"
+            class="com.architexa.diagrams.relo.jdt.JavaEditorlet"
+            id="com.architexa.diagrams.relo.jdt.JavaEditorlet">
+      </editor>
+      
+   </extension>
+   -->
+   <!-- disabled - thumbnail has moved into RSE-Core, and View in itself needs to be resurrected later -->
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Architexa"
+            id="com.architexa.diagrams">
+      </category>
+      <view
+            name="Class Diagram"
+            icon="icons/relo-document.png"
+            category="com.architexa.diagrams"
+            class="com.architexa.diagrams.relo.ui.ReloView"
+            id="com.architexa.diagrams.relo.ui.ReloView">
+      </view>
+   </extension>
+   <!--
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Architexa"
+            id="com.architexa.diagrams">
+      </category>
+      <view
+            name="Class Diagrams Thumbnail"
+            icon="icons/relo16.gif"
+            category="com.architexa.diagrams.relo"
+            class="com.architexa.diagrams.relo.ui.ReloThumbnailView"
+            id="com.architexa.diagrams.relo.ui.ReloThumbnailView">
+      </view>
+   </extension>
+   -->
+   
+   <!-- undo/redo for relo view -->
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.architexa.diagrams.relo.reloViewOnlyContributions"
+            targetID="com.architexa.diagrams.relo.ui.ReloView">
+         <!-- we are currently flipping the order below to show undo first, but this should be done in the 'correct way' -->
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalRedoAction"
+               icon="icons/redo.gif"
+               id="com.architexa.diagrams.relo.redoAction"
+               label="Redo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Redo Last Action"/>
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalUndoAction"
+               icon="icons/undo.gif"
+               id="com.architexa.diagrams.relo.undoAction"
+               label="Undo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Undo Last Action"/>
+      </viewContribution>
+   </extension>
+   
+   <!-- capabilities for relo view and editor -->
+   <extension point="org.eclipse.ui.editorActions">
+      <!-- <editorContribution
+            id="com.architexa.diagrams.relo.reloEditorContribution"
+            targetID="com.architexa.diagrams.relo.editor">
+         <action
+               class="com.architexa.diagrams.relo.ui.RemoveAllAction"
+               icon="icons/rem_all.gif"
+               id="com.architexa.diagrams.relo.ui.RemoveAll"
+               label="Remove All"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Remove All Items in Diagram"/>
+      </editorContribution> -->
+      
+      <editorContribution
+            id="com.architexa.diagrams.relo.reloEditorContribution"
+            targetID="com.architexa.diagrams.editors.RSEMultiPageEditor">
+	   	 <!-- removeAll -->
+         <action
+               class="com.architexa.diagrams.relo.ui.RemoveAllAction"
+               icon="icons/rem_all.gif"
+               id="com.architexa.diagrams.relo.ui.RemoveAll"
+               label="Remove All"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Remove All Items in Diagram"/>
+      </editorContribution>
+   </extension>
+   <extension point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.architexa.diagrams.relo.reloViewContribution"
+            targetID="com.architexa.diagrams.relo.ui.ReloView">
+		 <!-- removeAll -->
+         <action
+               class="com.architexa.diagrams.relo.ui.RemoveAllAction"
+               icon="icons/rem_all.gif"
+               id="com.architexa.diagrams.relo.ui.RemoveAll"
+               label="Remove All"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Remove All Items in Diagram"/>
+      </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.relo.ReloCore">
+      </startup>
+   </extension>
+</plugin>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Getting started with Architexa">
+   <intro>
+      <description>
+		 Welcome to the Layered Diagram tutorial.
+		 It will help you get started using Architexa's layered diagram editor.
+		 Let's get started!
+      </description>
+   </intro>
+   <item title="Opening a Layered Diagram" >
+      <description>
+		 1. In the package explorer, right click on your project.<br/><br/>
+		 2. Mouse over the <b>Open In Diagram</b> menu and select <b>Layered Diagram.</b><br/><br/>
+		 3. In the Layered Diagram that opens, double click a package. (Large 
+			packages may take a few moments to open).<br/><br/>
+		 4. The packages at the bottom of the diagram depend on those above.<br/><br/>
+		 5. Mouse over some packages and classes, and notice how dependency lines appear<br/>
+      </description>
+   </item>
+   <item title="Exploring the Diagram" >
+      <description>
+    	 1. Click on a package or class.<br/><br/>
+		 2. Click on one of the arrow buttons. (If no arrows appear on your selected 
+		 	class/package, it has no dependers or dependees, so select a different one).<br/><br/>
+		 3. After clicking the arrow, select one of the dependers/dependees from the menu that appears.<br/><br/>
+		 -> Notice how the dependency fits into the larger picture of your codebase.
+      </description>
+   </item>
+</cheatsheet>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Getting started with Architexa">
+   <intro>
+      <description>
+		 Welcome to the Class Diagram tutorial.
+		 It will help you get started using Architexa's class diagram editor.
+		 Let's get started!
+      </description>
+   </intro>
+   <item title="Opening a Class" >
+      <description>
+		 1. In the package explorer, right click on a class that contains some methods.<br/><br/>
+		 2. Mouse over the <b>Open In Diagram</b> menu and select <b>Class Diagram.</b><br/><br/>
+		 3. In the Class Diagram that opens, click on a class.<br/><br/>
+		 4. Click the 'members' button that appears at the bottom of the class.<br/><br/>
+		 5. From the menu, select a method to add to the diagram or select 'Show All', 
+			which will add all of the listed members to the diagram.<br/> 
+      </description>
+   </item>
+   <item title="Exploring a Class" >
+      <description>
+		 1. Click on a method that the class now contains.<br/><br/>
+		 2. If no arrows appear, this method is not called by any method and makes no calls, so select another method.<br/>
+		 3. Press the arrow on the left to see a list of all of the callers of this method.<br/><br/>
+		 4. Press the arrow on the right to see a list of all of calls this method 
+			makes, and select one of these methods to add it to the diagram.<br/><br/>
+      </description>
+   </item>
+   <item title="Expanding the diagram" >
+      <description>
+		 1. Click on a class in the diagram. Explore what classes it inherits from or what 
+			classes subclass it by pressing the vertical arrows that appear at the top 
+			and bottom of the class. (If no arrows appear, this class does not inherit 
+			from any class in your workspace and has no subclasses).<br/><br/>
+		 2. Try adding additional classes, methods, or packages to the diagram to explore 
+			by dragging them into the diagram from the package explorer.<br/><br/>
+		 3. Transition from your diagram to the java editor by double clicking on a class in the diagram.
+      </description>
+   </item>
+</cheatsheet>

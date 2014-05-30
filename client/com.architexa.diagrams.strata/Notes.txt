@@ -1,0 +1,27 @@
+Architectural Notes
+-------------------
+
+ToDo:
+
+0.1.x
+> Bolding/sizing of fonts for containers
+> low: tcl should not be labelled as tcl
+> low: when you open lapis and remove everything else, the label on lapis disappears (but does not show on top), etc, etc
+
+0.n1.x
+> Support splitting of all/noisiest packages OR indication of noisy packages
+
+0.n2.x
+> Filtering out relationships
+> Focusing on relationships and nodes
+
+0.n3.x
+> Faceted refinement
+
+0.n4.x
+> Abstraction / aggregation
+
+0.n5.x
+> Concepts
+
+Bugs:

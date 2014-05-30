@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description url="http://update.architexa.com/client">
+      Architexa RSE Update Site
+   </description>
+   <feature url="features/com.architexa.rse_2.0.2.qualifier.jar" id="com.architexa.rse" version="2.0.2.qualifier">
+      <category name="Architexa RSE - Client (required)"/>
+   </feature>
+   <category-def name="Architexa RSE - Client (required)" label="Architexa RSE - Client (required)"/>
+</site>

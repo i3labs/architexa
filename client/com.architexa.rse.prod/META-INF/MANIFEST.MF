@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Architexa Product Plugin
+Bundle-SymbolicName: com.architexa.rse.prod;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-Activator: com.architexa.rse.prod.Activator
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide.application,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ com.architexa.inspector,
+ com.architexa.diagrams,
+ com.architexa.store,
+ com.architexa.intro,
+ com.architexa.diagrams.jdt,
+ com.architexa.external.eclipse.gef
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: lib/ojdbc6.jar,
+ .

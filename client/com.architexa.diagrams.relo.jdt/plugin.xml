@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+     <!--
+     <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Architexa Java Navigation"
+            description="Architexa Java Navigation Action Set"
+            visible="true"
+            id="com.architexa.diagrams.relo.jdt.actionsSet"
+            >
+         <action
+               label="Open Class Diagram..."
+               class="com.architexa.diagrams.relo.jdt.actions.OpenReloSessionAction2"
+               icon="icons/relo-document.png"
+               menubarPath="navigate/open.ext2"
+               id="openReloSession">
+         </action>
+      </actionSet>
+   </extension>
+   -->
+   <!-- actions for jdt toolbar -->
+   <extension point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="com.architexa.diagrams.relo.jdt.reloSessionEditorContributions"
+            targetID="com.architexa.diagrams.editors.RSEMultiPageEditor">
+         <!--<action
+               class="com.architexa.diagrams.relo.jdt.browse.JDTLinkedTracker$LinkedTrackerAction"
+               icon="icons/synced.gif"
+               id="com.architexa.diagrams.relo.jdt.linkedTracker"
+               label="Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Environment Explorations in Editor"/> -->
+         <action
+               class="com.architexa.diagrams.relo.jdt.browse.EmbeddedMethodAction"
+               icon="icons/embedded-method.png"
+               id="com.architexa.diagrams.relo.jdt.embeddedMethod"
+               label="Embeded Method"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Show Embedded Method while Track Environment Explorations in Editor"/>
+      </editorContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.architexa.diagrams.relo.jdt.reloSessionViewContributions"
+            targetID="com.architexa.diagrams.relo.ui.ReloView">
+         <action
+               class="com.architexa.diagrams.relo.jdt.browse.JDTLinkedTracker$LinkedTrackerAction"
+               icon="icons/synced.gif"
+               id="com.architexa.diagrams.relo.jdt.linkedTracker"
+               label="Tracker"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Track Environment Explorations in Editor"/>
+         <action
+               class="com.architexa.diagrams.relo.jdt.browse.EmbeddedMethodAction"
+               icon="icons/embedded-method.png"
+               id="com.architexa.diagrams.relo.jdt.embeddedMethod"
+               label="Embeded Method"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Show Embedded Method while Track Environment Explorations in Editor"/>
+      </viewContribution>
+   </extension>
+   
+   
+   <extension
+   		point="org.eclipse.ui.startup">
+   	  <startup class="com.architexa.diagrams.relo.jdt.browse.LiveJDTTracker"/>
+      <startup
+            class="com.architexa.diagrams.relo.jdt.ReloDiagramEngine">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.relo.jdt.parts.JDTEditPartsModel">
+      </startup>
+   </extension>
+   
+   <!-- We need to bring back the Relo View later -->
+   <!--
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <viewShortcut id="com.architexa.diagrams.relo.ui.ReloView"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaBrowsingPerspective">
+         <viewShortcut id="com.architexa.diagrams.relo.ui.ReloView"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.jdt.ui.JavaHierarchyPerspective">
+         <viewShortcut id="com.architexa.diagrams.relo.ui.ReloView"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.debug.ui.DebugPerspective">
+         <viewShortcut id="com.architexa.diagrams.relo.ui.ReloView"/>
+      </perspectiveExtension>
+      <perspectiveExtension targetID="org.eclipse.pde.ui.PDEPerspective">
+         <viewShortcut id="com.architexa.diagrams.relo.ui.ReloView"/>
+      </perspectiveExtension>
+   </extension>
+   -->
+
+
+
+</plugin>

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   
+     <extension point="org.eclipse.ui.startup">
+     <startup class="com.architexa.diagrams.generate.startup.GenerateStartup"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+   	  <actionSet id="com.architexa.rse.atxaIntegration.actionSet"
+            label="Architexa RSE Integration Actions"
+            visible="true">
+         <action 
+         	   id="generate.TabsGenerate"
+               label="Open Java Editor Tabs in Diagram"
+               toolbarPath="com.architexa.rse.actionSet/diagramming"
+               icon="icons/open_tabs.PNG"
+               tooltip="Open Java Editor Tabs in Diagram"
+               style="pulldown"
+               class="com.architexa.diagrams.generate.tabs.OpenTabsDiagramGenerator">
+         </action>
+      </actionSet>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+	  
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IResource"
+            adaptable="true"
+            id="generate.viewRevisionTeam">
+         <filter
+               name="projectPersistentProperty"
+               value="org.eclipse.team.core.repository=org.eclipse.team.cvs.core.cvsnature">
+         </filter>
+         <action
+               label="Show Uncommitted Changes In Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.generate.team.TeamMenuAction"
+               menubarPath="team.main/group"
+               id="generate.CVSTeamMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>
+      <!--objectClass="org.eclipse.team.internal.ui.synchronize.SyncInfoModelElement"
+      <objectContribution
+            objectClass="java.lang.Object"
+            adaptable="false"
+            id="generate.viewRevision123">
+         
+         <action
+               label="Open Changes In Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.generate.team.TeamMenuAction"
+               id="generate.TeamMenuAction123"
+               style="pulldown">
+         </action>
+      </objectContribution>
+      -->
+      <!-- Add menu option to IDebugElements (threads, stack frames, and
+           debug targets) and adapt Launch to IDebugElement so menu option
+           appears for Launch as well and therefore all things that appear
+           in the Debug View -->
+      <objectContribution
+            objectClass="org.eclipse.debug.core.model.IDebugElement"
+            id="generate.IDebugElementObjectContrib">
+         <action
+               label="Open Stack Trace in Sequence Diagram"
+               icon="icons/chrono-document.png"
+               class="com.architexa.diagrams.generate.debugger.DebuggerThreadMenuAction"
+               menubarPath="additions"
+               id="generate.OpenTraceInChronoMenuAction"
+			   style="pulldown">
+         </action>
+      </objectContribution>
+      <objectContribution
+            objectClass="org.eclipse.debug.core.ILaunch"
+            id="generate.ILaunchObjectContrib">
+         <action
+               label="Open Stack Trace in Sequence Diagram"
+               icon="icons/chrono-document.png"
+               class="com.architexa.diagrams.generate.debugger.DebuggerThreadMenuAction"
+               menubarPath="additions"
+               id="generate.OpenTraceInChronoMenuAction"
+			   style="pulldown">
+         </action>
+      </objectContribution>
+   </extension>
+   <!--
+   <extension point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.core.runtime.IAdaptable"
+            class="com.architexa.diagrams.generate.debugger.DebugElementAdapterFactory">
+         <adapter
+               type="org.eclipse.debug.core.model.IDebugElement">
+         </adapter>
+      </factory>
+   </extension>
+   -->
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.architexa.diagrams.generate.perspectives.RSEPerspective"
+            icon="icons/rse-document.png"
+            id="com.architexa.diagrams.generate.perspectives.RSEPerspective"
+            name="Architexa">
+      </perspective>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+
+	  <!-- Search view pulldown -->
+      <command
+            defaultHandler="com.architexa.diagrams.generate.search.SearchPulldownHandler"
+            id="com.architexa.diagrams.generate.pulldownCommand"
+            name="com.architexa.diagrams.generate.pulldownCommand">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.search.SearchClassDiagramGenerator"
+            id="com.architexa.diagrams.generate.classFromSearch"
+            name="com.architexa.diagrams.generate.classFromSearch">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.search.SearchLayeredDiagramGenerator"
+            id="com.architexa.diagrams.generate.layeredFromSearch"
+            name="com.architexa.diagrams.generate.layeredFromSearch">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.search.SearchSequenceDiagramGenerator"
+            id="com.architexa.diagrams.generate.sequenceFromSearch"
+            name="com.architexa.diagrams.generate.sequenceFromSearch">
+      </command>
+
+	  <!-- Debug view pulldown -->
+      <command
+            defaultHandler="com.architexa.diagrams.generate.debugger.DebuggerPulldownHandler"
+            id="com.architexa.diagrams.generate.debugger.pulldownCommand"
+            name="com.architexa.diagrams.generate.debugger.pulldownCommand">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.debugger.DebuggerPulldownHandler"
+            id="generate.OpenFilteredTraceInChronoViewerAction"
+            name="generate.OpenFilteredTraceInChronoViewerAction">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.debugger.DebuggerPulldownHandler"
+            id="generate.OpenGroupedTraceInChronoViewerAction"
+            name="generate.OpenGroupedTraceInChronoViewerAction">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.debugger.DebuggerPulldownHandler"
+            id="generate.OpenTraceInChronoViewerAction"
+            name="generate.OpenTraceInChronoViewerAction">
+      </command>
+      
+      	  <!-- History view pulldown -->
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.HistoryPulldownHandler"
+            id="com.architexa.diagrams.generate.team.pulldownCommand"
+            name="com.architexa.diagrams.generate.team.pulldownCommand">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.HistoryPulldownHandler"
+            id="com.architexa.diagrams.strata.editor"
+            name="com.architexa.diagrams.strata.editor">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.HistoryPulldownHandler"
+            id="com.architexa.diagrams.relo.editor"
+            name="com.architexa.diagrams.relo.editor">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.HistoryPulldownHandler"
+            id="com.architexa.diagrams.chrono.editor"
+            name="com.architexa.diagrams.chrono.editor">
+      </command>
+
+	<!-- Sync view pulldown   -->
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.SyncPulldownHandler"
+            id="com.architexa.diagrams.generate.sync.pulldownCommand"
+            name="com.architexa.diagrams.generate.sync.pulldownCommand">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.SyncPulldownHandler"
+            id="com.architexa.diagrams.strata.editor.team"
+            name="com.architexa.diagrams.strata.editor.team">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.SyncPulldownHandler"
+            id="com.architexa.diagrams.relo.editor.team"
+            name="com.architexa.diagrams.relo.editor.team">
+      </command>
+      <command
+            defaultHandler="com.architexa.diagrams.generate.team.SyncPulldownHandler"
+            id="com.architexa.diagrams.chrono.editor.team"
+            name="com.architexa.diagrams.chrono.editor.team">
+      </command>
+    
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+
+	  <!-- Search view pulldown -->
+      <menuContribution
+            locationURI="toolbar:org.eclipse.search.ui.views.SearchView">
+         <command
+               commandId="com.architexa.diagrams.generate.pulldownCommand"
+               icon="icons/rse-document.png"
+               id="com.architexa.diagrams.generate.searchPulldown"
+               label="Generate Diagram from Search Results"
+               style="pulldown"
+               tooltip="Generate Diagram from Search Results">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:com.architexa.diagrams.generate.searchPulldown">
+         <command
+               commandId="com.architexa.diagrams.generate.classFromSearch"
+               icon="icons/relo-document.png"
+               label="Class Diagram"
+               style="push"
+               tooltip="Generate Class Diagram from Search Results">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.generate.layeredFromSearch"
+               icon="icons/office-document.png"
+               label="Layered Diagram"
+               style="push"
+               tooltip="Generate Layered Diagram from Search Results">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.generate.sequenceFromSearch"
+               icon="icons/chrono-document.png"
+               label="Sequence Diagram"
+               style="push"
+               tooltip="Generate Sequence Diagram from Search Results">
+         </command>
+      </menuContribution>
+
+	  <!-- Debug view pulldown -->
+	  <menuContribution
+            locationURI="toolbar:org.eclipse.debug.ui.DebugView?before=threadGroup">
+         <command
+               commandId="com.architexa.diagrams.generate.debugger.pulldownCommand"
+               icon="icons/chrono-document.png"
+               id="com.architexa.diagrams.generate.debugPulldown"
+               label="Open Stack Trace in Sequence Diagram"
+               style="pulldown"
+               tooltip="Open Stack Trace in Sequence Diagram">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:com.architexa.diagrams.generate.debugPulldown">
+         <command
+               commandId="generate.OpenFilteredTraceInChronoViewerAction"
+               icon="icons/jar_hidden.png"
+               label="Library Code Hidden"
+               style="push"
+               tooltip="Generate sequence diagram with library classes and calls filtered out">
+         </command>
+         <command
+               commandId="generate.OpenGroupedTraceInChronoViewerAction"
+               icon="icons/jar_grouped.png"
+               label="Library Code Visible and Grouped"
+               style="push"
+               tooltip="Generate sequence diagram with library classes grouped into a single visible grouped component">
+         </command>
+         <command
+               commandId="generate.OpenTraceInChronoViewerAction"
+               icon="icons/jar_visible.png"
+               label="Library Code Visible and Ungrouped"
+               style="push"
+               tooltip="Generate sequence diagram with library classes visible and shown normally as separate classes">
+         </command>
+      </menuContribution>
+      
+      	  <!-- History view pulldown -->
+	  <menuContribution
+            locationURI="toolbar:org.eclipse.team.ui.GenericHistoryView?after=additions">
+         <command
+               commandId="com.architexa.diagrams.generate.team.pulldownCommand"
+               icon="icons/rse-document.png"
+               id="com.architexa.diagrams.generate.teamPulldown"
+               label="Open Changes Made In Selected Change Set(s) In Diagram"
+               style="pulldown"
+               tooltip="Open Changes Made In Selected Change Set(s) In Diagram">
+         </command>
+      </menuContribution>
+      <menuContribution
+            locationURI="menu:com.architexa.diagrams.generate.teamPulldown">
+         <command
+               commandId="com.architexa.diagrams.strata.editor"
+               icon="icons/office-document.png"
+               label="Layered Diagram"
+               style="push"
+               tooltip="Layered Diagram">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.relo.editor"
+               icon="icons/relo-document.png"
+               label="Class Diagram"
+               style="push"
+               tooltip="Class Diagram">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.chrono.editor"
+               icon="icons/chrono-document.png"
+               label="Sequence Diagram"
+               style="push"
+               tooltip="Sequence Diagram">
+         </command>
+      </menuContribution>
+      
+      
+ 	  <!-- Sync view pulldown   -->
+ 	   <menuContribution
+            locationURI="toolbar:org.eclipse.team.sync.views.SynchronizeView?after=additions">
+         <command
+               commandId="com.architexa.diagrams.generate.sync.pulldownCommand"
+               icon="icons/rse-document.png"
+               id="com.architexa.diagrams.generate.syncPulldown"
+               label="Open Selected Uncommitted Changes In Diagram"
+               style="pulldown"
+               tooltip="Open Selected Uncommitted Changes In Diagram">
+         </command>
+      </menuContribution>
+        <menuContribution
+            locationURI="menu:com.architexa.diagrams.generate.syncPulldown">
+         <command
+               commandId="com.architexa.diagrams.strata.editor.team"
+               icon="icons/office-document.png"
+               label="Layered Diagram"
+               style="push"
+               tooltip="Layered Diagram">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.relo.editor.team"
+               icon="icons/relo-document.png"
+               label="Class Diagram"
+               style="push"
+               tooltip="Class Diagram">
+         </command>
+         <command
+               commandId="com.architexa.diagrams.chrono.editor.team"
+               icon="icons/chrono-document.png"
+               label="Sequence Diagram"
+               style="push"
+               tooltip="Sequence Diagram">
+         </command>			
+      </menuContribution>
+      
+      
+	  <menuContribution locationURI="menu:atxaMenu?after=com.architexa.diagrams.openNew">
+			<menu
+         icon="icons/open_tabs.PNG"
+         id="atxaMenu.openTabs"
+         label="Open Java Editor Tabs in Diagram">
+			  <dynamic class="com.architexa.diagrams.generate.tabs.OpenTabsDiagramGenerator"
+			      id="atxaMenu.openTabs.dynamic"/>
+			</menu>
+   		</menuContribution>
+   </extension>
+
+</plugin>

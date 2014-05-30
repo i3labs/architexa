@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Architexa"
+            id="com.architexa.diagrams">
+      </category>
+      <view
+            name="Inspector"
+            icon="icons/tree_explorer.gif"
+            category="com.architexa.diagrams"
+            class="com.architexa.inspector.InspectorView"
+            id="com.architexa.inspector.views.InspectorView">
+      </view>
+   </extension>
+
+</plugin>

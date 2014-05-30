@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<toc topic="doc/Tools/Tools.html" label="Architexa User Guide">
+	<topic href="doc/Tools/Tools.html" label="Diagramming Tools">
+		<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html" label="Layered Diagram">
+			<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html" label="Creating a Layered Diagram">
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Starting_from_the_package_explorer" label="Starting from the package explorer"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Creating_a_blank_diagram_in_a_new_editor" label="Creating a blank diagram in a new editor"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Creating_a_blank_diagram_in_a_view" label="Creating a blank diagram in a view"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Using_a_linked_view.2Feditor_to_create_a_diagram" label="Using a linked view/editor to create a diagram"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#More" label="More"></topic>
+			</topic>
+			<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#How_Layered_Diagrams_Work" label="How Layered Diagrams Work"></topic>
+			<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Exploring_a_Layered_Diagram" label="Exploring a Layered Diagram">
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Opening_a_package" label="Opening a package"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Moving_and_Layering" label="Moving and Layering"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Adding_a_member" label="Adding a member"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Adding_a_dependent_.2F_dependee" label="Adding a dependent / dependee"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Focusing_on_a_specific_package" label="Focusing on a specific package"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Breaking_a_package" label="Breaking a package"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Deleting_an_element" label="Deleting an element"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Changing_how_dependency_arrows_are_shown" label="Changing how dependency arrows are shown"></topic>
+				<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Relayering" label="Relayering"></topic>
+			</topic>
+			<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Documenting_with_a_Layered_Diagram" label="Documenting with a Layered Diagram"></topic>
+			<topic href="doc/Tools/Layered_Diagram/Layered-Diagram.html#Layered_Diagram_Tasks" label="Layered Diagram Tasks"></topic>
+		</topic>
+		<topic href="doc/Tools/Class_Diagram/Class-Diagram.html" label="Class Diagram">
+			<topic href="doc/Tools/Class_Diagram/Class-Diagram.html" label="Creating a Class Diagram">
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Starting_from_the_code" label="Starting from the code"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Starting_from_the_package_explorer" label="Starting from the package explorer"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Creating_a_blank_diagram_in_a_new_editor" label="Creating a blank diagram in a new editor"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Creating_a_blank_diagram_in_a_view" label="Creating a blank diagram in a view"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Using_a_linked_view.2Feditor_to_create_a_diagram" label="Using a linked view/editor to create a diagram"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#More" label="More"></topic>
+			</topic>
+			<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Exploring_a_Class_Diagram" label="Exploring a Class Diagram">
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Moving_items" label="Moving items"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Deleting_items" label="Deleting items"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Adding_members" label="Adding members"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Adding_hierarchy_relationships" label="Adding hierarchy relationships"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Adding_caller.2Fcallee" label="Adding caller/callee"></topic>
+				<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Advanced_Commands" label="Advanced Commands"></topic>
+			</topic>
+			<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Documenting_with_a_Class_Diagram" label="Documenting with a Class Diagram"></topic>
+			<topic href="doc/Tools/Class_Diagram/Class-Diagram.html#Class_Diagram_Tasks" label="Class Diagram Tasks"></topic>
+		</topic>
+		<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html" label="Sequence Diagram">
+			<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html" label="Creating a Sequence Diagram">
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Starting_from_the_code" label="Starting from the code"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Starting_from_the_package_explorer" label="Starting from the package explorer"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Creating_a_blank_diagram_in_a_new_editor" label="Creating a blank diagram in a new editor"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Creating_a_blank_diagram_in_a_view" label="Creating a blank diagram in a view"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Using_a_linked_view.2Feditor_to_create_a_diagram" label="Using a linked view/editor to create a diagram"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#More" label="More"></topic>
+			</topic>
+			<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Exploring_and_Building_a_Sequence_Diagram" label="Exploring and Building a Sequence Diagram">
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Adding_Methods" label="Adding Methods"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Adding_Calls_a_Method_Makes" label="Adding Calls a Method Makes"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Adding_Callers_to_a_Method" label="Adding Callers to a Method"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Adding_Overrides" label="Adding Overrides"></topic>
+			</topic>
+			<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Documenting_with_Sequence_diagrams" label="Documenting with Sequence diagrams"></topic>
+			<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Sequence_Diagrams_Tasks" label="Sequence Diagrams Tasks">
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Grouping_of_Classes" label="Grouping of Classes"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Ease_Code_Reviews" label="Ease Code Reviews"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Simplify_Debugging" label="Simplify Debugging"></topic>
+				<topic href="doc/Tools/Sequence_Diagram/Sequence-Diagram.html#Analyze_Logic" label="Analyze Logic"></topic>
+			</topic>
+		</topic>
+	</topic>
+	<topic href="doc/Views/Views.html" label="Supporting Views">
+		<topic href="doc/Views/Related_Diagrams_View/Related-Diagrams-View.html" label="Related Diagrams View"></topic>
+		<topic href="doc/Views/Thumbnail_View/Thumbnail-View.html" label="Thumbnail View"></topic>
+	</topic>
+	<topic href="doc/Tasks/Tasks.html" label="Common Tasks">
+		<topic href="doc/Tasks/Tasks.html" label="Understanding Tasks"></topic>
+		<topic href="doc/Tasks/Tasks.html#Documenting_Tasks" label="Documenting Tasks"></topic>
+		<topic href="doc/Tasks/Tasks.html#Code_Review_Tasks" label="Code Review Tasks"></topic>
+		<topic href="doc/Tasks/Tasks.html#Sharing_Tasks" label="Sharing Tasks"></topic>
+		<topic href="doc/Tasks/Tasks.html#Miscellaneous" label="Miscellaneous"></topic>
+		<topic href="doc/Tasks/Understand_a_new_project,_library,_or_section_of_code/Understand-a-new-project,-library,-or-section-of-code.html" label="Understand new code">
+			<topic href="doc/Tasks/Understand_a_new_project,_library,_or_section_of_code/Understand-a-new-project,-library,-or-section-of-code.html" label="Getting a High Level view"></topic>
+			<topic href="doc/Tasks/Understand_a_new_project,_library,_or_section_of_code/Understand-a-new-project,-library,-or-section-of-code.html#Diving_into_details" label="Diving into details"></topic>
+		</topic>
+		<topic href="doc/Tasks/Understand_what_you_have_been_looking_at_(create_diagram_from_tabs)/Understand-what-you-have-been-looking-at-(create-diagram-from-tabs).html" label="Generate diagram of Java tabs"></topic>
+		<topic href="doc/Tasks/Find_cycles_in_your_architecture/Find-cycles-in-your-architecture.html" label="Find cycles in your architecture"></topic>
+		<topic href="doc/Tasks/Searching_and_opening_the_results_in_a_diagram/Searching-and-opening-the-results-in-a-diagram.html" label="Generate diagram of search results"></topic>
+		<topic href="doc/Tasks/Debug_easily_by_using_diagrams_to_see_control_flow/Debug-easily-by-using-diagrams-to-see-control-flow.html" label="Debug"></topic>
+		<topic href="doc/Tasks/Analyze_logic_(and_ensure_all_cases_are_handled_effectively)/Analyze-logic-(and-ensure-all-cases-are-handled-effectively).html" label="Analyze Logic">
+			<topic href="doc/Tasks/Analyze_logic_(and_ensure_all_cases_are_handled_effectively)/Analyze-logic-(and-ensure-all-cases-are-handled-effectively).html" label="If Blocks"></topic>
+			<topic href="doc/Tasks/Analyze_logic_(and_ensure_all_cases_are_handled_effectively)/Analyze-logic-(and-ensure-all-cases-are-handled-effectively).html#Loops" label="Loops"></topic>
+		</topic>
+		<topic href="doc/Tasks/Have_easier_code_reviews_by_understanding_changes_with_diagrams/Have-easier-code-reviews-by-understanding-changes-with-diagrams.html" label="Make code reviews easier"></topic>
+		<topic href="doc/Tasks/Document_a_code_concept/Document-a-code-concept.html" label="Document a concept"></topic>
+		<topic href="doc/Tasks/Document_while_you_work_by_creating_a_diagram_in_the_background/Document-while-you-work-by-creating-a-diagram-in-the-background.html" label="Generate diagram automatically as you work"></topic>
+		<topic href="doc/Tasks/Quickly_explain_concepts_to_coworkers/managers/managers.html" label="Explain concepts to others"></topic>
+		<topic href="doc/Tasks/Keep_documentation_up_to_date/Keep-documentation-up-to-date.html" label="Keep documentation up to date"></topic>
+		<topic href="doc/Tasks/Easily_switch_from_one_diagram_type_to_another/Easily-switch-from-one-diagram-type-to-another.html" label="Switch Diagram Type">
+			<topic href="doc/Tasks/Easily_switch_from_one_diagram_type_to_another/Easily-switch-from-one-diagram-type-to-another.html" label="View a portion of a current diagram in a new diagram"></topic>
+			<topic href="doc/Tasks/Easily_switch_from_one_diagram_type_to_another/Easily-switch-from-one-diagram-type-to-another.html#Switch_between_a_Sequence_Diagram_and_a_Class_Diagram" label="Switch between a Sequence Diagram and a Class Diagram"></topic>
+		</topic>
+	</topic>
+	<topic href="doc/Sharing/Sharing.html" label="Sharing Tools">
+		<topic href="doc/Sharing/Share_Online/Share-Online.html" label="Share on Server"></topic>
+		<topic href="doc/Sharing/Share_via_Email/Share-via-Email.html" label="Share via Email"></topic>
+		<topic href="doc/Sharing/Retrieve_diagrams/Retrieve-diagrams.html" label="Retrieve Shared Diagrams"></topic>
+	</topic>
+	<topic href="doc/Documenting/Documenting.html" label="Best Practices for Creating Documentation">
+		<topic href="doc/Documenting/Code_Concepts/Code-Concepts.html" label="Documenting Code Concepts">
+			<topic href="doc/Documenting/Code_Concepts/Code-Concepts.html" label="To Document a Concept"></topic>
+			<topic href="doc/Documenting/Code_Concepts/Code-Concepts.html#If_you_are_documenting_an_API" label="If you are documenting an API"></topic>
+			<topic href="doc/Documenting/Code_Concepts/Code-Concepts.html#If_you_are_documenting_the_Core" label="If you are documenting the Core"></topic>
+		</topic>
+		<topic href="doc/Documenting/Layered_Diagram/Layered-Diagram.html" label="Document with Layered Diagram"></topic>
+		<topic href="doc/Documenting/Class_Diagram/Class-Diagram.html" label="Document with Class Diagram"></topic>
+		<topic href="doc/Documenting/Sequence_Diagram/Sequence-Diagram.html" label="Document with Sequence Diagram"></topic>
+	</topic>
+	<topic href="doc/Configuration/Configuration.html" label="Configuration">
+		<topic href="doc/Configuration/Account_and_Collaboration/Account-and-Collaboration.html" label="Account + Collaboration">
+			<topic href="doc/Configuration/Account_and_Collaboration/Account-and-Collaboration.html" label="Setting Account Information"></topic>
+			<topic href="doc/Configuration/Account_and_Collaboration/Account-and-Collaboration.html#Creating_and_Managing_Groups" label="Creating and Managing Groups"></topic>
+			<topic href="doc/Configuration/Account_and_Collaboration/Account-and-Collaboration.html#Manage_your_contacts" label="Manage your contacts"></topic>
+			<topic href="doc/Configuration/Account_and_Collaboration/Account-and-Collaboration.html#Configure_SMTP" label="Configure SMTP"></topic>
+		</topic>
+		<topic href="doc/Configuration/Build_Preferences/Build-Preferences.html" label="Build Preferences">
+			<topic href="doc/Configuration/Build_Preferences/Build-Preferences.html" label="Selecting Projects to Build"></topic>
+			<topic href="doc/Configuration/Build_Preferences/Build-Preferences.html#Setup_Build_Schedule" label="Setup Build Schedule"></topic>
+		</topic>
+		<topic href="doc/Configuration/Updating_Indexes/Updating-Indexes.html" label="Updating Indexes">
+			<topic href="doc/Configuration/Updating_Indexes/Updating-Indexes.html" label="Updating Index"></topic>
+			<topic href="doc/Configuration/Updating_Indexes/Updating-Indexes.html#Rebuild_Complete_Index" label="Rebuild Complete Index"></topic>
+		</topic>
+	</topic>
+</toc>

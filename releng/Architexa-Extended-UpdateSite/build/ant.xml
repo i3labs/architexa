@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Architexa-Extended-UpdateSite" default="Hello" basedir=".">
+	
+	<property name="server" value="architexa.com"/>
+	<property name="sitePath" value="/update.architexa.com/client-extended"/>
+	<property name="username" value="architexaweb"/>
+	<property name="password" value="atxaS3cur3"/>
+	
+	<property name="keystore.path" value="C:\keystore\atxakeystore"/>
+	<property name="keystore.password" value="stores3cur3"/>
+	<property name="cert.alias" value="atxacert"/>
+	<property name="privatekey.password" value="certs3cur3"/>
+	
+	<property name="manualInstallZipFile" value="client-extended.zip"/>
+	
+	<target name="SignZipDeletesiteUploadtosite">
+		<antcall target="SignJars"></antcall>
+		<antcall target="GenerateZipForManualInstall"></antcall>
+		<antcall target="DeleteClientUpdateRemoteSite"></antcall>
+		<antcall target="UploadToClientUpdateRemoteSite"></antcall>
+	</target>
+		
+	<target name="Hello">
+		<echo message="Why is this target needed?"/>
+	</target>
+	<target name="DeleteForBuild">
+		<delete>
+			<fileset dir=".">
+				<include name="features/*.jar"/>
+				<include name="plugins/*.jar"/>
+				<include name="artifacts.jar"/>
+				<include name="content.jar"/>
+				<include name="${manualInstallZipFile}"/>
+				<include name="logs.zip"/>
+			</fileset>
+		</delete>
+	</target>
+	<target name="DeleteClientUpdateRemoteSite">
+		<ftp 
+			action="del"
+			remotedir="${sitePath}"
+			server="${server}" 
+			userid="${username}" 
+			password="${password}">
+			<fileset>
+				<include name="features/*.jar"/>
+				<include name="plugins/*.jar"/>
+				<include name="web/*"/>
+				<include name="*"/>
+			</fileset>
+		</ftp>
+	</target>
+	<target name="UploadToClientUpdateRemoteSite">
+		<ftp verbose="true"
+			action="send"
+			remotedir="${sitePath}"
+			server="${server}" 
+			userid="${username}" 
+			password="${password}">
+			<fileset dir=".">
+				<include name="features/*.jar"/>
+				<include name="plugins/*.jar"/>
+				<include name="web/*"/>
+				<include name="*"/>
+			</fileset>
+		</ftp>
+		<!-- For now, deleting artifacts.jar and content.jar after upload to
+		     avoid a "MD5 hash is not as expected" error. See ticket #886 -->
+		<ftp 
+			action="del"
+			remotedir="${sitePath}"
+			server="${server}" 
+			userid="${username}" 
+			password="${password}">
+			<fileset>
+				<include name="artifacts.jar"/>
+				<include name="content.jar"/>
+			</fileset>
+		</ftp>
+	</target>
+	
+	<!-- Makes client.zip, which will be uploaded by UploadToClientUpdateRemoteSite
+	Contents of client.zip:  
+	artifacts.jar
+	content.jar
+	features\[the jar com.architexa.rse_x.jar in \features]
+	plugins\[all the jars in \plugins]
+	-->
+	<target name="GenerateZipForManualInstall">
+		<!-- Copy artifacts.jar and content.jar into \client-extended -->
+		<!-- For now, not including artifacts.jar and content.jar to
+			 avoid a "MD5 hash is not as expected" error (see ticket #886).
+			 and including site.xml so p2 can use that instead. -->
+		<!--
+		<copy todir="client-extended" file="artifacts.jar"/>
+		<copy todir="client-extended" file="content.jar"/>
+		-->
+		<copy todir="client-extended" file="site.xml"/>
+		<!-- Copy the contents of the \features folder 
+		     into the \client-extended\features folder -->
+		<copy todir="client-extended/features">
+			<fileset dir="features"/>
+		</copy>
+		<!-- Copy the contents of the \plugins folder 
+		     into the \client-extended\plugins folder -->
+		<copy todir="client-extended/plugins">
+			<fileset dir="plugins"/>
+		</copy>
+		<!-- Zip the \client-extended folder -->
+		<zip basedir="client-extended" destfile="${manualInstallZipFile}"></zip>
+		<!-- Delete the \client-extended folder -->
+		<delete dir="client-extended" includeemptydirs="true" failonerror="false"/>
+	</target>
+	
+	<target name="SignJars">
+		<!-- Sign feature JARs -->
+		<echo level="info">Signing Feature JAR...</echo>
+		<signjar 
+			alias="${cert.alias}" 
+			keystore="${keystore.path}" 
+			storepass="${keystore.password}"
+			keypass="${privatekey.password}">
+			<path>
+				<fileset dir="features"/>
+			</path>
+		</signjar>
+		<!-- Sign plug-in JARs -->
+		<echo level="info">Signing Plug-in JARs...</echo>
+		<signjar 
+			alias="${cert.alias}" 
+			keystore="${keystore.path}" 
+			storepass="${keystore.password}"
+			keypass="${privatekey.password}">
+			<path>
+				<fileset dir="plugins"/>
+			</path>
+		</signjar>
+		<!-- Verify signed JARs -->
+		<echo level="info">Verifying JARs...</echo>
+	    <verifyjar 
+	    	keystore="${keystore.path}"
+	    	storepass="${keystore.password}"
+	    	certificates="true">
+	    	<path>
+	    		<fileset dir="features"/>
+	    		<fileset dir="plugins"/>
+	    	</path>
+	    </verifyjar>
+	</target>    	
+	
+</project>

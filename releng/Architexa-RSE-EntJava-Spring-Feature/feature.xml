@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.architexa.rse.entJava.spring"
+      label="Architexa RSE - Enterprise Java Support - Spring"
+      version="2.0.2.qualifier"
+      provider-name="Architexa, Inc.">
+
+   <description url="http://www.architexa.com/user-guide/JavaExtensions">
+      Architexa RSE - Spring Integration
+Support for Architexa integration into Spring UI components
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="Architexa RSE Extensions Update Site" url="http://update.architexa.com/client-extended"/>
+   </url>
+
+   <requires>
+      <import feature="com.architexa.rse" version="2.0.2.qualifier"/>
+   </requires>
+
+   <plugin
+         id="com.architexa.extensions.entJava.spring"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

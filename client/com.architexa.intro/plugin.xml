@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup class="com.architexa.intro.Java5Check"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.architexa.intro.preferences.ReloPreferencePage"
+            id="com.architexa.intro.preferences.ReloPreferencePage"
+            name="Architexa"/>
+   </extension>
+
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer class="com.architexa.intro.preferences.PreferenceConstants"/>
+   </extension>
+
+   <extension point = "org.eclipse.ui.actionSets">
+     <actionSet id="com.architexa.rse.accounts.actionSet"
+            label="Architexa RSE Account Actions"
+            visible="true">
+            <action
+               class="com.architexa.rse.FeedbackDialog$FeedbackDlgAction"
+               icon="icons/mail-forward.png"
+               id="com.architexa.rse.FeedbackDialog$FeedbackDlgAction"
+               label="Provide Feedback..."
+               style="push"
+               tooltip="Provide Feedback on Architexa"
+			   menubarPath="file/ArchitexaMenu/Architexa" />
+            <menu
+                  id="ArchitexaMenu"
+                  label="Architexa"
+                  path="file/">
+               <separator
+                     name="Architexa">
+               </separator>
+            </menu>
+      </actionSet>
+      
+      
+       <actionSet id="com.architexa.rse.accounts.actionSet.menubar"
+            label="Architexa RSE Account Actions"
+            visible="true">
+            <action
+               class="com.architexa.rse.FeedbackDialog$FeedbackDlgAction"
+               icon="icons/mail-forward.png"
+               id="com.architexa.rse.FeedbackDialog$FeedbackDlgAction"
+               label="Provide Feedback..."
+               style="push"
+               tooltip="Provide Feedback"
+			   menubarPath="atxaMenu/group.feedback" />
+			<action
+               class="com.architexa.rse.OpenHelpAction"
+               icon="icons/help_contents.gif"
+               id="com.architexa.rse.OpenHelpAction"
+               label="User Guide"
+               style="push"
+               tooltip="Open Architexa User Guide in Eclipse"
+			   menubarPath="atxaMenu/group.help" />
+		   <!-- <action
+		         class="com.architexa.rse.AboutArchitexaDialog$AboutArchitexaAction"
+		         icon="icons/architexa-logo-icon.png"
+		         id="com.architexa.intro.about"
+		         label="About..."
+		         menubarPath="atxaMenu/"
+		         style="push"
+		         tooltip="About Architexa">
+		   </action> -->   
+      </actionSet>
+      
+   </extension>  
+
+</plugin>

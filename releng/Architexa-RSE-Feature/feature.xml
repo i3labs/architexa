@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.architexa.rse"
+      label="Architexa RSE (Rich Source Explorer) - (Required)"
+      version="2.0.2.qualifier"
+      provider-name="Architexa, Inc."
+      plugin="com.architexa.intro">
+
+   <description url="http://www.architexa.com">
+      Architexa RSE (Rich Source Explorer)
+   </description>
+
+   <copyright url="http://www.architexa.com">
+      Architexa, Inc (www.architexa.com)
+   </copyright>
+
+   <license url="http://www.architexa.com">
+      %license
+   </license>
+
+   <url>
+      <update label="Architexa RSE Update Site" url="http://update.architexa.com/client"/>
+   </url>
+
+   <plugin
+         id="com.architexa.diagrams.relo"
+         download-size="390"
+         install-size="390"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.diagrams.relo.jdt"
+         download-size="138"
+         install-size="138"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.collab"
+         download-size="1589"
+         install-size="1589"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.collab.ui"
+         download-size="1700"
+         install-size="1700"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.diagrams.chrono"
+         download-size="657"
+         install-size="657"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.diagrams.strata"
+         download-size="151"
+         install-size="151"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.diagrams.jdt"
+         download-size="143"
+         install-size="143"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.diagrams"
+         download-size="580"
+         install-size="580"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.external.eclipse"
+         download-size="2"
+         install-size="2"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.external.jiggle"
+         download-size="11"
+         install-size="11"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.intro"
+         download-size="18"
+         install-size="18"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.store"
+         download-size="1013"
+         install-size="1013"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.utils.log4j"
+         download-size="318"
+         install-size="318"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.external.org.apache.commons.collections"
+         download-size="474"
+         install-size="474"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.diagrams.generate"
+         download-size="81"
+         install-size="81"
+         version="2.0.2.qualifier"/>
+
+   <plugin
+         id="com.architexa.external.eclipse.draw2d"
+         download-size="484"
+         install-size="484"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.external.eclipse.gef"
+         download-size="741"
+         install-size="741"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.debug"
+         download-size="25"
+         install-size="25"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.diagrams.all.ui"
+         download-size="10"
+         install-size="10"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.help"
+         download-size="4300"
+         install-size="4300"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.entJava"
+         download-size="202"
+         install-size="202"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.compat"
+         download-size="0"
+         install-size="0"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="com.architexa.inspector"
+         download-size="0"
+         install-size="0"
+         version="2.0.2.qualifier"
+         unpack="false"/>
+
+</feature>

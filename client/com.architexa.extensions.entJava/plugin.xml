@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.extensions.entJava.Struts1ExtensionBuilder">
+      </startup>
+      <startup
+            class="com.architexa.extensions.entJava.spring.SpringExtensionBuilder">
+      </startup>
+      <startup
+            class="com.architexa.extensions.entJava.Struts2ExtensionBuilder">
+      </startup>
+      <startup
+            class="com.architexa.extensions.entJava.spring.SWFExtensionBuilder">
+      </startup>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.extensions.entJava.EJCore">
+      </startup>
+       <startup
+            class="com.architexa.extensions.entJava.JAXRSAnnotationFactory">
+      </startup>
+       <startup
+            class="com.architexa.extensions.entJava.spring.SpringAnnotationFactory">
+      </startup>
+       <startup
+             class="com.architexa.extensions.entJava.spring.SWFAnnotationFactory">
+       </startup>
+       <startup
+             class="com.architexa.extensions.entJava.Struts2AnnotationFactory"></startup>
+   </extension>
+
+</plugin>

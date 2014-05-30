@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Relo Core
+Bundle-SymbolicName: com.architexa.diagrams.relo; singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-ClassPath: Relo.jar
+Bundle-Activator: com.architexa.diagrams.relo.ReloPlugin
+Bundle-Vendor: Architexa, Inc
+Export-Package: com.architexa.diagrams.relo,
+ com.architexa.diagrams.relo.actions,
+ com.architexa.diagrams.relo.agent,
+ com.architexa.diagrams.relo.commands,
+ com.architexa.diagrams.relo.commands.old,
+ com.architexa.diagrams.relo.eclipse.gef,
+ com.architexa.diagrams.relo.figures,
+ com.architexa.diagrams.relo.graph,
+ com.architexa.diagrams.relo.modelBridge,
+ com.architexa.diagrams.relo.parts,
+ com.architexa.diagrams.relo.ui,
+ com.architexa.diagrams.relo.utils
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.views,
+ org.eclipse.core.resources,
+ org.eclipse.ui,
+ com.architexa.store,
+ com.architexa.external.org.apache.commons.collections,
+ com.architexa.external.jiggle,
+ com.architexa.external.eclipse,
+ com.architexa.diagrams,
+ com.architexa.utils.log4j,
+ com.architexa.external.eclipse.gef,
+ com.architexa.external.eclipse.draw2d,
+ com.architexa.intro,
+ org.eclipse.text,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.jface.text,
+ com.architexa.collab
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Eclipse-LazyStart: true

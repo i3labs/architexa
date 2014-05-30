@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.startup">
+      <startup class="com.architexa.diagrams.all.ui.startup.AllUIStartup"/>
+   </extension>
+   
+     <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.architexa.diagrams.DiagramObjectContrib"
+            objectClass="java.lang.Object">
+         <action
+               label="Open in Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.all.ui.startup.OpenInDiagramMenuAction"
+               enablesFor="+"
+               menubarPath="group.open"
+               id="com.architexa.diagrams.OpenInDiagram"
+               style="pulldown">
+         </action>
+      </objectContribution>
+   </extension>
+   <extension point="org.eclipse.ui.cheatsheets.cheatSheetContent">
+        <category
+              id="com.architexa.diagrams.all.ui.cheatsheet.axtaCategory"
+              name="Architexa">
+        </category>
+   		   <cheatsheet
+   		   	  composite="true"
+              category="com.architexa.diagrams.all.ui.cheatsheet.axtaCategory"
+              contentFile="cheatsheet.xml"
+              id="com.architexa.diagrams.all.ui.tutorialCheatSheet"
+              name="Architexa: Getting Started">
+				   <description>Architexa Tutorial</description>
+		   </cheatsheet>
+		   <cheatsheet
+   		      category="com.architexa.diagrams.all.ui.cheatsheet.axtaCategory"
+              contentFile="layeredCheatsheet.xml"
+              id="com.architexa.diagrams.all.ui.layeredCheatSheet"
+              name="Layered Diagrams">
+				   <description>Layered Diagrams</description>
+		   </cheatsheet>
+		   <cheatsheet
+   		      category="com.architexa.diagrams.all.ui.cheatsheet.axtaCategory"
+              contentFile="classCheatsheet.xml"
+              id="com.architexa.diagrams.all.ui.classCheatSheet"
+              name="Class Diagrams">
+				   <description>Class Diagrams</description>
+		   </cheatsheet>
+		   <cheatsheet
+   		      category="com.architexa.diagrams.all.ui.cheatsheet.axtaCategory"
+              contentFile="sequenceCheatsheet.xml"
+              id="com.architexa.diagrams.all.ui.sequenceCheatSheet"
+              name="Sequence Diagrams">
+				   <description>Sequence Diagrams</description>
+		   </cheatsheet>
+   </extension>
+
+<extension point = "org.eclipse.ui.actionSets">
+   	    <actionSet id="com.architexa.rse.actionSet"
+            label="Architexa RSE Actions"
+            visible="true">
+	            <action
+               class="com.architexa.diagrams.all.ui.startup.OpenNewEditor"
+               icon="icons/new_editor.png"
+               id="openNewEditor"
+               label="Open New"
+               style="pulldown"
+               toolbarPath="diagramming"
+               tooltip="Open a new diagram editor"/>
+        </actionSet>
+   </extension>
+
+ <extension name="Architexa" point="org.eclipse.ui.menus">
+		 <menuContribution locationURI="menu:atxaMenu?before=group.build">
+			<menu
+	         icon="icons/new_editor.png"
+    	     id="com.architexa.diagrams.openNew"
+        	 label="Open New Diagram Editor">
+			  <dynamic class="com.architexa.diagrams.all.ui.startup.OpenNewEditor"
+			      id="com.architexa.diagrams.openNew.dynamic"/>
+			</menu>
+   		</menuContribution>
+   </extension>
+
+    <extension point = "org.eclipse.ui.actionSets">
+       <actionSet id="com.architexa.diagrams.cheatsheet"
+            label="Open Architexa CheatSheet"
+            visible="true">
+            <action
+                  class="com.architexa.diagrams.all.ui.startup.OpenAtxaCheatSheetAction"
+                  icon="icons/cheatsheet_subitem_obj.gif"
+                  id="rse.connect"
+                  label="Quick Start"
+                  menubarPath="atxaMenu/group.tasks">
+            </action>
+            <action
+                  class="com.architexa.diagrams.all.ui.startup.Guides"
+                  enablesFor="99"
+                  id="rse.Guides"
+                  label="--Guides--"
+                  menubarPath="atxaMenu/group.tasks">
+            </action>
+      </actionSet>
+   </extension>  
+   
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.architexa.diagrams.all.ui.startup.welcome.CreateAtxaWelcomePage"
+            default="true"
+            icon="icons/architexa-logo-icon.png"
+            id="com.architexa.diagrams.all.ui.startup.welcome.CreateAtxaWelcomePage"
+            name="Welcome to Architexa">
+      </editor>
+   </extension>
+</plugin>
+

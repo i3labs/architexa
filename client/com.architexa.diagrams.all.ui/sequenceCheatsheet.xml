@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cheatsheet title="Getting started with Architexa Sequence Diagrams">
+   <intro>
+      <description>
+		 Welcome to the Sequence Diagram tutorial.
+		 It will help you get started using Architexa's Sequence diagram editor.
+		 Let's get started!
+      </description>
+   </intro>
+   <item title="Opening the Editor" >
+      <description>
+		 1. In the package explorer, right click on a class that contains some methods.<br/><br/>
+		 2. Mouse over the <b>Open In Diagram</b> menu and select <b>Sequence Diagram.</b><br/><br/>
+		 3. Click on the yellow class instance at the top left of the diagram.<br/><br/>
+		 4. Click the 'members' button that appears.<br/><br/>
+		 5. Select a method from the menu.<br/>
+		 <br/>
+		 -> Notice how the method, represented by the blue figure, is added to the 'lifeline' of the instance.<br/>
+         </description>
+    </item>
+    <item title="Adding Items" >
+      <description>
+		 1. Click the blue method box.<br/><br/>
+		 2. Click the arrow that appears on the right side of the method box. (If no arrow 
+			appears, this method invokes no other methods, so select another method from 
+			the instance's member's button).<br/><br/>
+		 3. Select one of the methods in the arrow's menu to add that invocation to the diagram.<br/>
+		 <br/><br/>
+		 -> Notice that the addition of components is animated so that you can follow what is changing in the diagram.<br/>
+		</description>
+    </item>
+   	<item title="Exploring the Diagram" >
+      <description>
+    	1. Try adding additional classes, methods, or packages to the diagram to explore 
+			by dragging them into the diagram from the package explorer.<br/><br/>
+		 2. Select &apos;Add All&apos; or &apos;Add Callee Hierarchy&apos; from its right side arrow to display all of the calls it makes.<br/><br/>
+      </description>
+   </item>	
+</cheatsheet>

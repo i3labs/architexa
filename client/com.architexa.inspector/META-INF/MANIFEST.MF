@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Inspector
+Bundle-SymbolicName: com.architexa.inspector; singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-Activator: com.architexa.inspector.Activator
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.architexa.store,
+ com.architexa.diagrams,
+ com.architexa.diagrams.jdt,
+ com.architexa.diagrams.relo.jdt,
+ org.eclipse.jdt.core,
+ org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Export-Package: com.architexa.inspector

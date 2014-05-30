@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Enterprise Java Support-Spring
+Bundle-SymbolicName: com.architexa.extensions.entJava.spring;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-Activator: com.architexa.extensions.entjava.spring.Activator
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.springframework.ide.eclipse.beans.ui,
+ org.springframework.beans,
+ org.springframework.core,
+ org.springframework.ide.eclipse.beans.core,
+ org.springframework.ide.eclipse.ui,
+ org.springframework.ide.eclipse,
+ com.architexa.diagrams.jdt,
+ org.springframework.ide.eclipse.core,
+ org.eclipse.core.resources,
+ com.architexa.diagrams,
+ org.eclipse.jdt.core,
+ com.architexa.diagrams.all.ui
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
+Import-Package: com.architexa.diagrams.jdt.builder.asm,
+ org.eclipse.jdt.core

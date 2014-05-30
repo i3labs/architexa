@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<!--  // We dont need this ext point since we changed 'open in diagram' to work for all java objects
+<extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="com.architexa.diagrams.SpringObjectContrib"
+            objectClass="org.springframework.ide.eclipse.beans.ui.model.metadata.BeanMetadataNode">
+         <action
+               label="Open Spring Bean In Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.all.ui.startup.OpenInDiagramMenuAction"
+               enablesFor="+"
+               menubarPath="group.open"
+               id="com.architexa.diagrams.OpenInDiagramMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>
+      <objectContribution
+            adaptable="true"
+            id="com.architexa.diagrams.SpringObjectContrib"
+            objectClass="org.springframework.ide.eclipse.beans.core.internal.model.BeanProperty">
+         <action
+               label="Open Spring Bean In Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.all.ui.startup.OpenInDiagramMenuAction"
+               enablesFor="+"
+               menubarPath="group.open"
+               id="com.architexa.diagrams.OpenInDiagramMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>
+      
+      <objectContribution
+            adaptable="true"
+            id="com.architexa.diagrams.SpringObjectContrib"
+            objectClass="org.springframework.ide.eclipse.beans.core.internal.model.Bean">
+         <action
+               label="Open Spring Bean In Diagram"
+               icon="icons/rse-document.png"
+                class="com.architexa.diagrams.all.ui.startup.OpenInDiagramMenuAction"
+               enablesFor="+"
+               menubarPath="group.open"
+               id="com.architexa.diagrams.OpenInDiagramMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>
+   </extension>
+   -->
+<extension
+      point="org.eclipse.ui.startup">
+   <startup
+         class="com.architexa.extensions.entjava.spring.JDTSpringUtils">
+   </startup>
+</extension>
+</plugin>

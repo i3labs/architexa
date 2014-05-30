@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   
+   <extension point="org.eclipse.ui.startup">
+     <startup class="com.architexa.diagrams.generate.subclipse.GenerateSubclipseStartup"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            id="generate.viewRevisionTeam"
+            objectClass="org.eclipse.core.resources.IResource">
+         <filter
+               name="projectPersistentProperty"
+               value="org.eclipse.team.core.repository=org.tigris.subversion.subclipse.core.svnnature">
+         </filter>
+         <action
+               label="Show Uncommitted Changes In Diagram"
+               icon="icons/rse-document.png"
+               class="com.architexa.diagrams.generate.subclipse.SubclipseTeamMenuAction"
+               menubarPath="team.main/group"
+               id="generate.SubclipseTeamMenuAction"
+               style="pulldown">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>

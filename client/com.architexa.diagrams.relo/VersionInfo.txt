@@ -1,0 +1,106 @@
+Legend
+- : to do
+v : done
+? : is it worth doing
++ : pushed
+x : can't do / na 
+
+Version 0.1.0 [target: feature test | Done]
+v Basic Graph View
+	- Bridges with JDT
+	- Embeds SWT components
+	- Basic support for semantic zooming
+	- Basic animation support
+v Java Editor showing only a single java element (e.g.: method body), includes:
+	- Syntax highlighting
+	- Opening definition on F3, Ctrl+Click
+	- Disabled ruler: vertical annotation, overview + folding (to save space for embedding)
+	- Embedded in GEF view
+v Agents:
+	- To show common relationships (currently only inheritance)
+	- For interaction: show childrens, parents
+
+Version 0.2.0 [target: integraion for minimal/local distribution | Done]
+v Integrate components
+v Fix editor sizing
+v Get opening working
+v Get F3 working
+v Get multiple items working
+v Make all objects have details level
+	- focus
+	- inferred
+	- requested
+v Show all objects parent
+	- add 'selection data'
+v Show call heirarchy relationship
+	- add to context menu
+
+Version 0.2.1 [target: bug fixes]
+v Get new cu's showing up in the right portion of the tree
+v Fix bug in realizeparent/assertparent to make sure that it happens in the right tree <-- are the names ok??
+	[test case: AttributeFigure.getAttribute calls FigureAttributes.*]
+v Get common relatinships to show up for clicking on figures package
+x Get method call lines fixed (sort bugs compared with call heirarchy)
+	Methods are currently not added to map because CDAG tries to lay out the graph wierdly
+	(this issue will need to be sorted out for jiggle)
+x Fix CDAG layout to show in grid view
+	Results are bad, we really need jiggle
+v Get editor scrolling fixed
+v Get parent showing up for new (queried) methods
+v Fix click to show children of classes
+v Scripting support fixes + help
+
+Version 0.3.0 [target: feedback]
+v Change Icon
+v Make icon appear in release
+v Show all relationships for shown items
+? Context menu for navigation, Menu:
+		+ Change view:
+		- Show:
+			v Called Methods
+			- Protected Methods
+			- Private Methods
+			? Children
+- Change click strategy
+	v Disable click to show children
+	v Enable double-click to show children
+	- Layer for preview with 50% transparency on click (ghosting)
+v Fix hiding of artifacts
+- Strategy: showing private and protected items
+v Support for '...' and selection of one of the items
+- Graph layout engine fixes (jiggle)
+		- Packing fixes
+		- Constrants penalty vector
+v Caching support [1 week]
+- Method scaling (when a class has >10 children) [2-3 days]
+v Handles [2-3 days]
+v HSQLDB
+v Fix icon displays
+v Drag and Drop from JDT
+
+
+Version 0.3.1
+v Saving
+v Bug on Parsing source files not in Java build path
+
+Version 0.3.2
+v Bug on not showing parent (caused because of NPE when no init. relationships)
+v Bugs with toolbar: Exception on Closing Part + Overlap of Calls toolbar
+
+Version 0.3.3 [target: bug fix]
+- Support inner classes
+
+Later
+- Support chunking
+- Fix animation
+	- get jquery scenario working perfectly
+	- get lapis exploring scenario working
+- Undo support strategy
+
+Version 0.3.5 [target: bottom-up complete]
+- Use learning of task model
+
+Version 0.4.0 [target: additional features]
+	
+Version 0.4.0 [target: nice to have features]
+- Support Content Assist in the script window

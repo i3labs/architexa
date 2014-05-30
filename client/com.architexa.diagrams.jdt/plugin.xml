@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.architexa.diagrams.jdt.IJavaElementContainer"
+            class="com.architexa.diagrams.jdt.IJaveElementContainerToIJavaElementAdapterFactory">
+         <adapter
+               type="org.eclipse.jdt.core.IJavaElement">
+         </adapter>
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.architexa.diagrams.jdt.ArtifactContainer"
+            class="com.architexa.diagrams.jdt.ArtifactContainerToArtifactAdapterFactory">
+         <adapter
+               type="com.architexa.diagrams.model.Artifact">
+         </adapter>
+      </factory>
+   </extension>
+
+   <extension 
+   		 id="properties.AtxaBuildPathPropertiesPage"
+         name="Relo"
+         point="org.eclipse.ui.propertyPages">
+	  <page 
+	  		objectClass="org.eclipse.core.resources.IProject"
+    		adaptable="true"
+     		name="Architexa Build Properties" 
+     		class="com.architexa.diagrams.jdt.properties.AtxaBuildPathPropertiesPage"
+     		id="com.architexa.diagrams.jdt.properties.ReloPropertiesPage">
+	  </page>
+	</extension>
+   
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.architexa.diagrams.jdt.actionSet"
+            label="Reinit Repository Action Set"
+            visible="true">
+         <action
+               class="com.architexa.diagrams.jdt.actions.ReinitRepository"
+               id="com.architexa.diagrams.jdt.actions.ReinitRepository"
+               label="&amp;Rebuild Complete Index"
+               menubarPath="file/ArchitexaMenu/Architexa">
+         </action>
+         <action
+               class="com.architexa.diagrams.jdt.actions.UpdateRepository"
+               id="com.architexa.diagrams.jdt.actions.UpdateRepository"
+               label="&amp;Update Indexes"
+               menubarPath="file/ArchitexaMenu/Architexa">
+         </action>
+         <menu
+               id="ArchitexaMenu"
+               label="Architexa"
+               path="file/">
+            <separator
+                  name="Architexa">
+            </separator>
+         </menu>
+      </actionSet>
+      
+      
+      <actionSet
+            id="com.architexa.diagrams.jdt.actionSet.menubar"
+            label="Reinit Repository Action Set"
+            visible="true">
+         <action
+               class="com.architexa.diagrams.jdt.actions.ReinitRepository"
+               id="com.architexa.diagrams.jdt.actions.ReinitRepository"
+               label="&amp;Rebuild Complete Index"
+               menubarPath="atxaMenu/group.build">
+         </action>
+         <action
+               class="com.architexa.diagrams.jdt.actions.UpdateRepository"
+               id="com.architexa.diagrams.jdt.actions.UpdateRepository"
+               label="&amp;Update Indexes"
+               menubarPath="atxaMenu/group.build">
+         </action>
+      </actionSet>
+
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.jdt.builder.asm.AnonymousMethodsBuildProcessor">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.jdt.builder.asm.InferOverridesBuildProcessor">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.jdt.builder.asm.ResolveBrokenReferencesBuildProcessor">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.jdt.builder.asm.LogicalContainmentHeirarchyProcessor">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.jdt.builder.ResourceQueueManager">
+      </startup>
+      <startup
+            class="com.architexa.diagrams.jdt.JDTStartup">
+      </startup>
+   </extension>
+
+
+
+</plugin>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="com.architexa.internal.debug.actionSet1"
+            label="label"
+            visible="true">
+         <menu
+               id="DebugMenu"
+               label="Debug_Architexa"
+               path="file/">
+            <separator
+                  name="Architexa">
+            </separator>
+         </menu>
+         <action
+               class="com.architexa.internal.debug.GenerateUniquePassword"
+               id="com.architexa.internal.debug.action1"
+               label="GenerateUniquePassword"
+               menubarPath="file/DebugMenu/Debug"
+               style="push">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

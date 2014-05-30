@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Architexa Intro
+Bundle-SymbolicName: com.architexa.intro;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-ClassPath: ReloIntro.jar,
+ lib/httpclient-4.0.1.jar,
+ lib/httpcore-4.0.1.jar,
+ lib/httpmime-4.0.1.jar,
+ lib/commons-codec-1.4.jar,
+ lib/uuid-3.2.jar
+Bundle-Activator: com.architexa.intro.AtxaIntroPlugin
+Bundle-Vendor: Architexa, Inc
+Export-Package: com.architexa.intro,
+ com.architexa.intro.preferences,
+ com.architexa.rse,
+ com.architexa.rse.update
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui,
+ org.eclipse.jdt.ui,
+ org.eclipse.jdt.core,
+ com.architexa.utils.log4j,
+ com.architexa.collab
+Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5

@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Debug Plug-in
+Bundle-SymbolicName: com.architexa.debug;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-Activator: com.architexa.debug.Activator
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.architexa.collab,
+ com.architexa.diagrams,
+ com.architexa.diagrams.chrono,
+ com.architexa.diagrams.generate,
+ com.architexa.diagrams.jdt,
+ com.architexa.diagrams.relo,
+ com.architexa.diagrams.relo.jdt,
+ com.architexa.diagrams.strata,
+ com.architexa.intro,
+ com.architexa.store,
+ com.architexa.collab.ui,
+ com.architexa.utils.log4j
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Eclipse-LazyStart: true
+Bundle-ActivationPolicy: lazy

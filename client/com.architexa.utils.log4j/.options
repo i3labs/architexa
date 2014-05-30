@@ -1,0 +1,2 @@
+# Prints debug information to consolse plug-in is running on
+com.architexa.utils.log4j/outputToConsole=false

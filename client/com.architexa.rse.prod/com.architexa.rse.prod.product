@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Architexa RSE" id="com.architexa.rse.prod.product" application="com.architexa.rse.workbench" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/com.architexa.rse.prod/icons/architexa-big.png"/>
+      <text>
+         Architexa RSE
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/com.architexa.rse.prod/icons/architexa.png"/>
+
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="com.architexa.rse" version="2.0.2.qualifier"/>
+   </features>
+
+
+</product>

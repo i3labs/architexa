@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Chrono Plug-in
+Bundle-SymbolicName: com.architexa.diagrams.chrono; singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-ClassPath: sequence.jar,
+ lib/asm-2.2.3.jar
+Bundle-Activator: com.architexa.diagrams.chrono.sequence.SeqPlugin
+Bundle-Vendor: Architexa, Inc
+Export-Package: com.architexa.diagrams.chrono.animation,
+ com.architexa.diagrams.chrono.commands,
+ com.architexa.diagrams.chrono.controlflow,
+ com.architexa.diagrams.chrono.editparts,
+ com.architexa.diagrams.chrono.editpolicies,
+ com.architexa.diagrams.chrono.figures,
+ com.architexa.diagrams.chrono.models,
+ com.architexa.diagrams.chrono.sequence,
+ com.architexa.diagrams.chrono.services,
+ com.architexa.diagrams.chrono.ui,
+ com.architexa.diagrams.chrono.util
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.editors,
+ org.eclipse.jface.text,
+ com.architexa.external.eclipse.draw2d,
+ com.architexa.external.eclipse.gef,
+ com.architexa.store,
+ com.architexa.diagrams,
+ com.architexa.diagrams.relo,
+ org.eclipse.jdt.core,
+ org.eclipse.jdt.ui,
+ org.eclipse.debug.core,
+ com.architexa.diagrams.jdt,
+ com.architexa.diagrams.relo.jdt,
+ com.architexa.utils.log4j,
+ com.architexa.external.eclipse,
+ com.architexa.intro,
+ com.architexa.collab,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.views,
+ org.eclipse.ui.workbench.texteditor
+Bundle-ActivationPolicy: lazy
+Plugin-Class: com.architexa.diagrams.chrono.sequence.SeqPlugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Eclipse-LazyStart: true

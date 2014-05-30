@@ -1,0 +1,39 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Relo JDT Support
+Bundle-SymbolicName: com.architexa.diagrams.relo.jdt; singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-ClassPath: ReloJDT.jar
+Bundle-Activator: com.architexa.diagrams.relo.jdt.ReloJDTPlugin
+Bundle-Vendor: Architexa, Inc
+Export-Package: com.architexa.diagrams.relo.jdt,
+ com.architexa.diagrams.relo.jdt.actions,
+ com.architexa.diagrams.relo.jdt.browse,
+ com.architexa.diagrams.relo.jdt.commands,
+ com.architexa.diagrams.relo.jdt.parts,
+ com.architexa.diagrams.relo.jdt.services
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jdt.core,
+ org.eclipse.jdt.ui,
+ org.eclipse.ui,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.workbench.texteditor,
+ org.eclipse.jface.text,
+ com.architexa.external.eclipse.gef,
+ org.eclipse.core.resources,
+ com.architexa.store,
+ com.architexa.diagrams.relo,
+ com.architexa.external.org.apache.commons.collections,
+ com.architexa.external.jiggle,
+ org.eclipse.jdt.debug,
+ org.eclipse.debug.core,
+ com.architexa.external.eclipse,
+ com.architexa.diagrams,
+ com.architexa.utils.log4j,
+ com.architexa.intro,
+ com.architexa.diagrams.jdt,
+ org.eclipse.search
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Eclipse-LazyStart: true

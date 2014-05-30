@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+<!--
+     <extension point="org.eclipse.ui.editors">
+      <editor
+            contributorClass="com.architexa.diagrams.chrono.ui.SeqEditorContributor"
+  			class="com.architexa.diagrams.chrono.ui.SeqEditor"
+            default="true"
+            extensions="chrono"
+            icon="icons/chrono-document.png"
+            id="com.architexa.diagrams.chrono.editor"
+            name="Sequence Diagram Editor">
+	  </editor>
+   </extension> -->
+   
+   <extension point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="sequence.sequenceEditorContributions"
+            targetID="com.architexa.diagrams.chrono.editor">
+            
+            <!--  targetID="com.architexa.diagrams.editors.RSEMultiPageEditor"> -->
+         <!--    
+         <action
+               class="com.architexa.diagrams.chrono.ui.SeqEditorFilter"
+               icon="icons/ignore.gif"
+               id="sequence.hide"
+               label="Hide"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Hide Library Code"/>
+         -->
+         <action
+               class="com.architexa.diagrams.chrono.ui.InteractionAction"
+               icon="icons/forward_nav.gif"
+               id="sequence.interaction"
+               label="Show interactions among all classes shown"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Show interactions among all classes shown"/>
+         <!--<action 
+         	   class="com.architexa.diagrams.chrono.ui.JDTLinkedTracker$LinkedExploration"
+         	   icon="icons/synced.gif"
+         	   id="sequence.linkedExploration"
+          	   label="Toggle on or off linked exploration"
+          	   style="toggle"
+          	   state="false"
+          	   toolbarPath="Normal/additions"
+          	   tooltip="Track Environment Explorations in Editor"/> -->
+      </editorContribution>
+      
+      <editorContribution
+            id="sequence.sequenceEditorContributions1"
+            targetID="com.architexa.diagrams.editors.RSEMultiPageEditor">
+         <!--
+         <action
+               class="com.architexa.diagrams.chrono.ui.SeqEditorFilter"
+               icon="icons/ignore.gif"
+               id="sequence.hide"
+               label="Hide"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Hide Library Code"/>
+         -->
+         <action
+               class="com.architexa.diagrams.chrono.ui.InteractionAction"
+               icon="icons/forward_nav.gif"
+               id="sequence.interaction"
+               label="Show interactions among all classes shown"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Show interactions among all classes shown"/>
+         <!-- <action 
+         	   class="com.architexa.diagrams.chrono.ui.JDTLinkedTracker$LinkedExploration"
+         	   icon="icons/synced.gif"
+         	   id="sequence.linkedExploration"
+          	   label="Toggle on or off linked exploration"
+          	   style="toggle"
+          	   state="false"
+          	   toolbarPath="Normal/additions"
+          	   tooltip="Track Environment Explorations in Editor"/> -->
+      </editorContribution>
+   </extension>
+   
+   <!-- Moving functionality into RSE-Core -->
+   <extension point="org.eclipse.ui.views">
+      <category
+            name="Architexa"
+            id="com.architexa.diagrams">
+      </category>
+      <view
+            name="Sequence Diagram"
+            icon="icons/chrono-document.png"
+            category="com.architexa.diagrams"
+            class="com.architexa.diagrams.chrono.ui.SeqView"
+            id="com.architexa.diagrams.sequence.ui.SeqView">
+      </view>
+   </extension>
+      <!--
+   <extension point="org.eclipse.ui.views">
+      <view
+            name="Seq Thumbnail"
+            category="sequence"
+            class="com.architexa.diagrams.chrono.ui.SeqThumbnailView"
+            id="sequence.ui.ReloThumbnailView">
+      </view>
+   </extension>
+      -->
+   
+   <extension point="org.eclipse.ui.actionSetPartAssociations">
+            <actionSetPartAssociation targetID="com.architexa.rseEditorsOnly.actionSet">
+            	<!-- <part id="com.architexa.diagrams.relo.editor"/>
+   			    <part id="com.architexa.diagrams.strata.editor"/>
+   			    <part id="com.architexa.diagrams.chrono.editor"/> -->
+   			    <part id="com.architexa.diagrams.editors.RSEMultiPageEditor"/>
+  			</actionSetPartAssociation>
+  			<actionSetPartAssociation targetID="com.architexa.rseEditorsOnly.collabActionSet">
+            	<!-- <part id="com.architexa.diagrams.relo.editor"/>
+   			    <part id="com.architexa.diagrams.strata.editor"/>
+   			    <part id="com.architexa.diagrams.chrono.editor"/> -->
+   			    <part id="com.architexa.diagrams.editors.RSEMultiPageEditor"/>
+  			</actionSetPartAssociation>
+   </extension>
+    
+   <!-- undo/redo for chrono view -->
+   <extension
+         point="org.eclipse.ui.viewActions">
+      <viewContribution
+            id="com.architexa.diagrams.chrono.chronoViewOnlyContributions"
+            targetID="com.architexa.diagrams.sequence.ui.SeqView">
+         <!-- we are currently flipping the order below to show undo first, but this should be done in the 'correct way' -->
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalRedoAction"
+               icon="icons/redo.gif"
+               id="com.architexa.diagrams.chrono.redoAction"
+               label="Redo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Redo Last Action"/>
+         <action
+               class="com.architexa.org.eclipse.gef.ui.parts.GraphicalView$GraphicalUndoAction"
+               icon="icons/undo.gif"
+               id="com.architexa.diagrams.chrono.undoAction"
+               label="Undo"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Undo Last Action"/>
+         <!-- removeAll -->
+         <action
+               class="com.architexa.diagrams.chrono.ui.RemoveAllAction"
+               icon="icons/rem_all.gif"
+               id="com.architexa.diagrams.chrono.ui.RemoveAll"
+               label="Remove All"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Remove All Items in Diagram"/>
+        <!-- LinkedTracker and other actions -->
+        <!-- 
+        <action
+               class="com.architexa.diagrams.chrono.ui.SeqEditorFilter"
+               icon="icons/ignore.gif"
+               id="sequence.hide"
+               label="Hide"
+               style="toggle"
+               toolbarPath="Normal/additions"
+               tooltip="Hide Library Code"/>
+         -->
+         <action
+               class="com.architexa.diagrams.chrono.ui.InteractionAction"
+               icon="icons/forward_nav.gif"
+               id="sequence.interaction"
+               label="Show interactions among all classes shown"
+               style="push"
+               toolbarPath="Normal/additions"
+               tooltip="Show interactions among all classes shown"/>
+         <!-- <action 
+         	   class="com.architexa.diagrams.chrono.ui.JDTLinkedTracker$LinkedExploration"
+         	   icon="icons/synced.gif"
+         	   id="sequence.linkedExploration"
+          	   label="Toggle on or off linked exploration"
+          	   style="toggle"
+          	   state="false"
+          	   toolbarPath="Normal/additions"
+          	   tooltip="Track Environment Explorations in Editor"/> -->
+      </viewContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="com.architexa.diagrams.chrono.sequence.ChronoDiagramEngine">
+      </startup>
+   </extension>
+   
+</plugin>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin
+   id="com.architexa.external.org.apache.commons.collections"
+   name="Apache Commons Collections"
+   version="2.0.2.qualifier"
+   provider-name="Architexa, Inc">
+
+   <runtime>
+      <library name="commons-collections-3.1.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+</plugin>

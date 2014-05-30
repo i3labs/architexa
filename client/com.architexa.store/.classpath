@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/openrdf-model-1.2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/openrdf-util-1.2.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/rio-1.0.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/sesame-1.2.6.jar" sourcepath="lib/sesame-1.2.6-src.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

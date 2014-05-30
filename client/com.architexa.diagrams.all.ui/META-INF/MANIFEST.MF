@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Diagrams.All.UI
+Bundle-SymbolicName: com.architexa.diagrams.all.ui;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.ui.cheatsheets,
+ com.architexa.intro,
+ com.architexa.diagrams,
+ com.architexa.diagrams.strata,
+ com.architexa.diagrams.chrono,
+ com.architexa.diagrams.relo.jdt,
+ com.architexa.collab.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms,
+ org.eclipse.core.resources
+Export-Package: com.architexa.diagrams.all.ui.startup
+Import-Package: org.eclipse.ui.internal.intro.impl.util

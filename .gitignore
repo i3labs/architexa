@@ -1,0 +1,9 @@
+
+# eclipse specific git ignore
+.metadata
+
+# ignore anything inside a project-group/project's bin directory
+*/*/bin/**
+
+# ignore generated files <-- don't really need these since they will be in the bin directory
+# *.class

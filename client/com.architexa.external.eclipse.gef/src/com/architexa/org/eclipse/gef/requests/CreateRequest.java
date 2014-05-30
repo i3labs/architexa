@@ -1,0 +1,123 @@
+/*******************************************************************************
+ * Copyright (c) 2000, 2005 IBM Corporation and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+package com.architexa.org.eclipse.gef.requests;
+
+import com.architexa.org.eclipse.draw2d.geometry.Dimension;
+import com.architexa.org.eclipse.draw2d.geometry.Point;
+import com.architexa.org.eclipse.gef.RequestConstants;
+
+
+
+/**
+ * A Request to create a new object.
+ */
+public class CreateRequest
+	extends com.architexa.org.eclipse.gef.Request
+	implements DropRequest
+{
+
+private Object newObject;
+
+private Dimension size;
+private Point location;
+
+private CreationFactory creationFactory;
+
+/**
+ * Creates a CreateRequest with the default type.
+ */
+public CreateRequest() {
+	setType(RequestConstants.REQ_CREATE);
+}
+
+/**
+ * Creates a CreateRequest with the given type.
+ *
+ * @param type The type of request.
+ */
+public CreateRequest(Object type) {
+	setType(type);
+}
+
+/**
+ * Returns the CreationFactory for this request.
+ * @return the CreationFactory
+ */
+protected CreationFactory getFactory() {
+	return creationFactory;
+}
+
+/**
+ * Returns the location of the object to be created.
+ * 
+ * @return the location
+ */
+public Point getLocation() {
+	return location;
+}
+
+/**
+ * Gets the new object from the factory and returns that object.
+ * 
+ * @return the new object
+ */
+public Object getNewObject() {
+	if (newObject == null)
+		newObject = getFactory().getNewObject();
+	return newObject;
+}
+
+/**
+ * Returns the type of the new object.
+ * 
+ * @return the type of the new object
+ */
+public Object getNewObjectType() {
+	return getFactory().getObjectType();
+}
+
+/**
+ * Returns the size of the object to be created.
+ * 
+ * @return the size
+ */
+public Dimension getSize() {
+	return size;
+}
+
+/**
+ * Sets the factory to be used when creating the new object.
+ * 
+ * @param factory the factory
+ */
+public void setFactory(CreationFactory factory) {
+	creationFactory = factory;
+}
+
+/**
+ * Sets the location where the new object will be placed.
+ *
+ * @param location the location
+ */
+public void setLocation(Point location) {
+	this.location = location;
+}
+
+/**
+ * Sets the size of the new object.
+ *
+ * @param size the size
+ */
+public void setSize(Dimension size) {
+	this.size = size;
+}
+
+}

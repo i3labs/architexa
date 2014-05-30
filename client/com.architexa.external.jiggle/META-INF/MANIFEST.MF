@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jiggle Interface Plug-in
+Bundle-SymbolicName: com.architexa.external.jiggle
+Bundle-Version: 2.0.2.qualifier
+Bundle-Vendor: Architexa, Inc
+Require-Bundle: com.architexa.external.eclipse.draw2d,
+ com.architexa.external.eclipse.gef
+Export-Package: jiggle
