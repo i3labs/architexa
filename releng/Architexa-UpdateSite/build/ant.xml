@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+Needs variables to be setup: sitePath, server, username, password.
+Needs build/*.jar to be set as Global Entries for Eclipse Preferences for the Ant Runtime.
+-->
+
 <project name="Architexa-UpdateSite" default="Hello" basedir=".">
 	
-	<property name="server" value="architexa.com"/>
-	<property name="sitePath" value="/update.architexa.com/client"/>
-	<property name="username" value="USERNAME"/>
-	<property name="password" value="PASSWORD"/>
-	
-	<property name="keystore.path" value="C:\keystore\atxakeystore"/>
-	<property name="keystore.password" value="PASSWORD"/>
-	<property name="cert.alias" value="atxacert"/>
-	<property name="privatekey.password" value="PASSWORD"/>
-	
-	<property name="manualInstallZipFile" value="client.zip"/>
-	
-	<target name="SignZipDeletesiteUploadtoSite">
-		<antcall target="SignJars"></antcall>
+	<target name="ZipDeleteSiteUploadToSite">
 		<antcall target="GenerateZipForManualInstall"></antcall>
 		<antcall target="DeleteClientUpdateRemoteSite"></antcall>
 		<antcall target="UploadToClientUpdateRemoteSite"></antcall>
@@ -31,60 +23,11 @@
 				<include name="plugins/*.jar"/>
 				<include name="artifacts.jar"/>
 				<include name="content.jar"/>
-				<include name="${manualInstallZipFile}"/>
+				<include name="client.zip"/>
 				<include name="logs.zip"/>
 			</fileset>
 		</delete>
 	</target>
-	<!--
-	<target name="ListRemoteSite">
-		<ftp 
-			action="list"
-			remotedir="/architexa.com/rse/update"
-			listing="ftp-listing.txt" 
-			server="architexa.com" 
-			userid="${username}" 
-			password="${password}">
-			<fileset>
-				<include name="**"/>
-			</fileset>
-		</ftp>
-	</target>
-	-->
-	<!--
-	<target name="DeleteRemoteSite">
-		<ftp 
-			action="del"
-			remotedir="/architexa.com/rse/update"
-			server="architexa.com" 
-			userid="${username}" 
-			password="${password}">
-			<fileset>
-				<include name="features/*.jar"/>
-				<include name="plugins/*.jar"/>
-				<include name="web/*"/>
-				<include name="*"/>
-			</fileset>
-		</ftp>
-	</target>
-	-->
-	<!--
-	<target name="UploadToRemoteSite">
-		<ftp 
-			action="send"
-			remotedir="/architexa.com/rse/update"
-			server="architexa.com" 
-			userid="${username}" 
-			password="${password}">
-			<fileset dir=".">
-				<include name="features/*.jar"/>
-				<include name="plugins/*.jar"/>
-				<include name="web/*"/>
-				<include name="*"/>
-			</fileset>
-		</ftp>
-	</target>
-	-->
 	<target name="DeleteClientUpdateRemoteSite">
 		<ftp 
 			action="del"
@@ -128,40 +71,6 @@
 			</fileset>
 		</ftp>
 	</target>
-	<!--
-	<target name="DeleteInternalReleaseSite">
-		<ftp 
-			action="del"
-			remotedir="/architexa.com/rse/internal-release"
-			server="architexa.com" 
-			userid="${username}" 
-			password="${password}">
-			<fileset>
-				<include name="features/*.jar"/>
-				<include name="plugins/*.jar"/>
-				<include name="web/*"/>
-				<include name="*"/>
-			</fileset>
-		</ftp>
-	</target>
-	-->
-	<!--
-	<target name="UploadToInternalReleaseSite">
-		<ftp 
-			action="send"
-			remotedir="/architexa.com/rse/internal-release"
-			server="architexa.com" 
-			userid="${username}" 
-			password="${password}">
-			<fileset dir=".">
-				<include name="features/*.jar"/>
-				<include name="plugins/*.jar"/>
-				<include name="web/*"/>
-				<include name="*"/>
-			</fileset>
-		</ftp>
-	</target>
-	-->
 	
 	<!-- Makes client.zip, which will be uploaded by UploadToClientUpdateRemoteSite
 	Contents of client.zip:  
@@ -191,45 +100,9 @@
 			<fileset dir="plugins"/>
 		</copy>
 		<!-- Zip the \client folder -->
-		<zip basedir="client" destfile="${manualInstallZipFile}"></zip>
+		<zip basedir="client" destfile="client.zip"></zip>
 		<!-- Delete the \client folder -->
 		<delete dir="client" includeemptydirs="true" failonerror="false"/>
 	</target>
 	
-	<target name="SignJars">
-		<!-- Sign feature JAR -->
-		<echo level="info">Signing Feature JAR...</echo>
-		<signjar 
-			alias="${cert.alias}" 
-			keystore="${keystore.path}" 
-			storepass="${keystore.password}"
-			keypass="${privatekey.password}">
-			<path>
-				<fileset dir="features"/>
-			</path>
-		</signjar>
-		<!-- Sign plug-in JARs -->
-		<echo level="info">Signing Plug-in JARs...</echo>
-		<signjar 
-			alias="${cert.alias}" 
-			keystore="${keystore.path}" 
-			storepass="${keystore.password}"
-			keypass="${privatekey.password}">
-			<path>
-				<fileset dir="plugins"/>
-			</path>
-		</signjar>
-		<!-- Verify signed JARs -->
-		<echo level="info">Verifying JARs...</echo>
-	    <verifyjar 
-	    	keystore="${keystore.path}"
-	    	storepass="${keystore.password}"
-	    	certificates="true">
-	    	<path>
-	    		<fileset dir="features"/>
-	    		<fileset dir="plugins"/>
-	    	</path>
-	    </verifyjar>
-	</target>    	
-    	
 </project>
