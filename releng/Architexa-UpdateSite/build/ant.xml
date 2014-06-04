@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Needs variables to be setup: sitePath, server, username, password.
-Needs build/*.jar to be set as Global Entries for Eclipse Preferences for the Ant Runtime.
+Requirements:
+1. Setup: build/*.jar should be set as Global Entry for Eclipse Preferences for the Ant Runtime.
+2. For all ant targets -
+   2a. variables to be setup: sitePath, server, username, password.
+   2b. base directory should to be the current project, i.e. ${workspace_loc:/Architexa-UpdateSite}
 -->
 
 <project name="Architexa-UpdateSite" default="Hello" basedir=".">
 	
-	<target name="ZipDeleteSiteUploadToSite">
+	<target name="ZipDeleteAndUploadToSite">
 		<antcall target="GenerateZipForManualInstall"></antcall>
 		<antcall target="DeleteClientUpdateRemoteSite"></antcall>
 		<antcall target="UploadToClientUpdateRemoteSite"></antcall>
