@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Commons Collections
+Bundle-SymbolicName: com.architexa.external.org.apache.commons.collections;singleton:=true
+Bundle-Version: 2.0.2.qualifier
+Bundle-Vendor: Architexa, Inc
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.apache.commons.collections,
+ org.apache.commons.collections.functors
