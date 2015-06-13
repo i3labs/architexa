@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLConnection;
@@ -21,8 +20,6 @@ import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.osgi.framework.adaptor.BundleData;
-import org.eclipse.osgi.framework.internal.core.AbstractBundle;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
@@ -38,7 +35,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-import org.eclipse.ui.PlatformUI;
 import org.osgi.framework.Bundle;
 
 import com.architexa.collab.UIUtils;
@@ -343,17 +339,19 @@ public class FeedbackDialog extends ResizableDialog {
 			} 
 		} else {
 		
-			try {
-				Field[] fields = AbstractBundle.class.getDeclaredFields();
-				for (int i =0; i< fields.length; i++) {
-					if (!fields[i].getName().equals("bundledata")) continue;
-					fields[i].setAccessible(true);
-					BundleData bd = (BundleData) fields[i].get(bundle);
-					return (String) bd.getVersion().toString();
-				}
-			} catch (Throwable e) {
-				s_logger.error("Error while sending feedback", e);
-			}
+			//try {
+			//	//NEEDS TESTING AND FIXING (class.forName)
+			//	Field[] fields = bundle.getClass().forName("AbstractBundle").getDeclaredFields();
+			//	for (int i =0; i< fields.length; i++) {
+			//		if (!fields[i].getName().equals("bundledata")) continue;
+			//		fields[i].setAccessible(true);
+			//		Object bd = fields[i].get(bundle);
+			//		return (String) bd.getClass().getMethod("getVersion", null).toString();
+			//	}
+			//} catch (Throwable e) {
+			//	s_logger.error("Error while sending feedback", e);
+			//}
+			return "<=3.4";
 		}
 		return "";
 	}
