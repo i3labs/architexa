@@ -366,8 +366,10 @@ public class RSEApplication implements IApplication, IExecutableExtension {
         // At this point workspace has been detected to be from a version
         // other than the current ide version -- find out if the user wants
         // to use it anyhow.
-        String title = IDEWorkbenchMessages.IDEApplication_versionTitle;
-        String message = NLS.bind(IDEWorkbenchMessages.IDEApplication_versionMessage, url.getFile());
+        String title = "Different Workspace Version";
+        String message = NLS.bind(
+        		"This workspace was written with a different version of the product and needs to be updated.\n\n{0}\n\nUpdating the workspace may make it incompatible with other versions of the product.\nPress OK to update the workspace and open it.  Press Cancel to select a different workspace."
+        		, url.getFile());
 
         MessageBox mbox = new MessageBox(shell, SWT.OK | SWT.CANCEL
                 | SWT.ICON_WARNING | SWT.APPLICATION_MODAL);
