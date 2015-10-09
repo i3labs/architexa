@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<quotes>
+<item>
+	<text>Sometimes it can be too much work to go back and update diagrams once the coding process is underway, especially when under a tight deadline</text>
+	<name>James Sugrue</name>
+	<date></date>
+	<source>Java Lobby</source>
+	<sourceLink>http://java.dzone.com/articles/how-architexa-makes-life-easy</sourceLink>
+	<imgLoc>/images/quotes/mh_logo_java.gif</imgLoc>
+</item> 
+<item>
+	<text>'surf' the source code through UML diagrams, so that one may be viewing more or less detail as you need. It is not all or nothing, which is usually the case with traditional UML tools.</text>
+	<name>Abraham</name>
+	<date></date>
+	<source>JavaHispano</source>
+	<sourceLink>http://javahispano.org/contenidos/es/architexa__un_plugin_de_uml_para_eclipse/</sourceLink>
+	<imgLoc>/images/quotes/JavaHispanoLogo.png</imgLoc>
+</item>
+<item>
+	<text>New generation UML tools finally coming?</text>
+	<name>Gabriel Scerbak</name>
+	<date></date>
+	<source>Twitter</source>
+	<sourceLink>http://twitter.com/The0retico/status/13808214322</sourceLink>
+	<imgLoc>/images/quotes/twitlogo.png</imgLoc>
+</item>	
+<item>
+	<text>Focused on developing a wider range of features that will help programmers explore and understand knotty code bases.</text>
+	<name>Scott Kirsner</name>
+	<date>June 29, 2010</date>
+	<source>Boston Globe</source>
+	<sourceLink>http://www.boston.com/business/technology/innoeco/2010/06/architexa_aims_to_make_it_easi.html</sourceLink>
+	<imgLoc>/images/quotes/bcom_small.gif</imgLoc>
+</item>
+</quotes>

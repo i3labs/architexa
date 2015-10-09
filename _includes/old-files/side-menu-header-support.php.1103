@@ -1,0 +1,116 @@
+<div id="body-left">
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px"><li>
+
+<?php if (strbeg($scriptName, "/support/index")) { ?>
+	Overview
+<?php } else { ?>
+	<a href="/support/index">Overview</a>
+<?php } ?>
+</li>
+
+
+<!-- USER GUIDE-->
+
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/user-guide")) { ?>
+	User Guide
+<?php } else { ?>
+<a href="/user-guide/Table_of_Contents">User Guide</a>
+<?php } ?>
+</li>
+
+<li><ul>
+<li style="list-style-type: none;">
+	<a href="/user-guide/Tools">Diagramming Tools</a>
+</li>
+
+<li style="list-style-type: none;">
+	<a href="/user-guide/Sharing">Sharing Tools</a>
+</li>
+
+<li style="list-style-type: none;">
+	<a href="/user-guide/Views">Supporting Views</a>
+</li>
+
+<li style="list-style-type: none;">
+	<a href="/user-guide/Tasks">Common Tasks</a>
+</li>
+
+<li style="list-style-type: none;">
+	<a href="/user-guide/Documenting">Best Practices</a>
+</li>
+
+<li style="list-style-type: none;">
+	<a href="/user-guide/Configuration">Configuration</a>
+</li>
+
+</ul></li>
+
+
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/support/faq")) { ?>
+	FAQ
+<?php } else { ?>
+	<a href="/support/faq">FAQ</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/forums")) { ?>
+	Forums
+<?php } else { ?>
+	<a href="/forums">Forums</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/support/webinar")) { ?>
+	Webinar
+<?php } else { ?>
+	<a href="/support/webinar">Webinar</a>
+<?php } ?>
+
+</li>
+
+
+<!--
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/user-guide")) { ?>
+	User Guide
+<?php } else { ?>
+	<a href="/user-guide">User Guide</a>
+<?php } ?>
+
+</li>
+-->
+
+<!--
+<li style="margin-top:10px">
+	<a href="mailto:support@architexa.com">Email Us</a>
+</li>
+-->
+</ul>
+</div> <!-- end submenu -->
+
+<!-- SERVICES-->
+<div style="margin-bottom:15px;" class="subMenuLeft">
+<ul style="list-style-type:none;padding-left:35px"><li>
+
+<?php if (strbeg($scriptName, "/solutions/services")) { ?>
+	Services
+<?php } else { ?>
+	<a href="/solutions/services">Services</a>
+<?php } ?>
+
+</li></ul>
+</div> 
+
+</div> <!-- end float -->
+
+<div id="body-contents">
+

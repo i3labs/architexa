@@ -1,0 +1,69 @@
+<div id="body-left">
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px"><li>
+
+<?php if (strbeg($scriptName, "/start/index")) { ?>
+	Register
+<?php } else { ?>
+	<a href="/start/index">Register</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/start/install")) { ?>
+	Installation Details
+<?php } else { ?>
+	<a href="/start/install">Installation Details</a>
+<?php } ?>
+</li>
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/start/tour")) { ?>
+	Take a Tour
+<?php } else { ?>
+	<a href="/start/tour">Take a Tour</a>
+<?php } ?>
+</li></ul>
+</div> <!-- end sub-menu -->
+
+
+
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px">
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/start/pricing")) { ?>
+	Pricing
+<?php } else { ?>
+	<a href="/start/pricing">Pricing</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/start/open-source")) { ?>
+	Open Source Initiative
+<?php } else { ?>
+	<a href="/start/open-source">Open Source Initiative</a>
+<?php } ?>
+
+</li>
+<li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/start/collaboration")) { ?>
+	Collaboration
+<?php } else { ?>
+	<a href="/start/collaboration">Collaboration</a>
+<?php } ?>
+
+</li>
+</ul>
+</div>
+
+<div style="margin-top:15px;font-weight:bold">Questions?</div>
+See <a href="/support">Architexa Support</a> or <br />call us at (617) 500-2596
+
+</div> <!-- end float -->
+
+<div id="body-contents">

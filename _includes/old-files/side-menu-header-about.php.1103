@@ -1,0 +1,71 @@
+<div id="body-left">
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px"><li>
+
+<?php if (strbeg($scriptName, "/about/index")) { ?>
+	Company Info
+<?php } else { ?>
+	<a href="/about/index">The Company</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/about/team")) { ?>
+	Our Team
+<?php } else { ?>
+	<a href="/about/team">Our Team</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+
+<?php if (strbeg($scriptName, "/about/affiliation")) { ?>
+	Our Affiliations
+<?php } else { ?>
+	<a href="/about/affiliation">Our Affilliations</a>
+<?php } ?>
+
+</li><li style="margin-top:10px">
+<?php if (strbeg($scriptName, "/about/contact")) { ?>
+	Contact Us
+<?php } else { ?>
+	<a href="/about/contact">Contact Us</a>
+<?php } ?>
+
+</li></ul>
+</div> <!-- end sub-menu -->
+
+<!-- Tech Menu-->
+
+<div class="subMenuLeft" style="margin-top:15px;">
+
+<ul style="list-style-type:none;padding-left:35px">
+<li>
+<?php if (strbeg($scriptName, "/about/labs/index")) { ?>
+	Labs
+<?php } else { ?>
+	<a href="/about/labs/index">Labs</a>
+<?php } ?>
+</li>
+
+<li style="margin-top:10px">
+<?php if (strbeg($scriptName, "/about/credits")) { ?>
+	Thanks!
+<?php } else { ?>
+	<a href="/about/credits">Thanks!</a>
+<?php } ?>
+</li>
+
+</ul>
+</div> <!-- end Tech menu -->
+
+
+
+<div style="margin-top:15px;font-weight:bold">Questions?</div>
+<a href="/support">Architexa Support</a>
+
+</div> <!-- end float -->
+
+<div id="body-contents">
+
+
