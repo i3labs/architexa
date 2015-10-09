@@ -1,0 +1,10 @@
+{% comment %}
+ topMenuStrict: Same as top menu but much more strict - it doesn't support nesting and is only shown when the exact match happens, such as with the homepage
+{% endcomment %}
+
+{% capture extUri %}{{ include.tgtUri }}.html{% endcapture %}
+{% if page.url == extUri %}
+	<li><span>{{include.lbl}}</span></li>
+{% else %} 
+	<li><a href='{{site.baseurl}}{{ include.tgtUri }}'>{{include.lbl}}</a></li>
+{% endif %}

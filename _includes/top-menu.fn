@@ -1,0 +1,11 @@
+{% comment %}
+ topMenu: based on uri to output one of two things:
+ if selected:     <li><span>Learn More</span></li>
+ if not selected: <li><a href="/learn-more/index">Learn More</a><
+{% endcomment %}
+
+{% if page.url contains include.tgtUri %}
+	<li><span>{{include.lbl}}</span></li>
+{% else %} 
+	<li><a href='{{site.baseurl}}{{ include.tgtUri }}{{ include.tgtUriEx }}'>{{include.lbl}}</a></li>
+{% endif %}
