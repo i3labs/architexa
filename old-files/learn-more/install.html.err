@@ -1,0 +1,592 @@
+<title>Get Started with Architexa | Architexa</title>
+	<link rel="shortcut icon" href="/web/20110823114810im_/http://www.architexa.com/favicon.ico">
+	<style type="text/css">
+	<!--
+	/* class */
+	.main a:link {color: #ffff00; text-decoration: none; }
+	.main a:active {color: #0000ff; text-decoration: underline; }
+	.main a:visited {color: #ffff00; text-decoration: none; }
+	.main a:hover {color: #ff0000; text-decoration: none; }
+
+	/* id */
+	#content a:link {color: #cc6600; text-decoration: none; }
+	#content a:active {color: #0000ff; text-decoration: underline; }
+	#content a:visited {color: #cc6600; text-decoration: none; }
+	#content a:hover {color: #ff0000; text-decoration: none; }
+
+	a:link {color: #ffff00; text-decoration: none; }
+	a:active {color: #0000ff; text-decoration: underline; }
+	a:visited {color: #ffff00; text-decoration: none; }
+	a:hover {color: #ff0000; text-decoration: none; }
+
+	#menu a:link {color: #888888; text-decoration: none; }
+	#menu a:active {color: #888888; text-decoration: none; }
+	#menu a:visited {color: #888888; text-decoration: none; }
+	#menu a:hover {color: #ff4444; text-decoration: none; }
+
+	.main {
+		color: #444444;
+		text-align:left;
+		margin:0 auto;
+		width:850px;
+		//font-family: Verdana, Arial, sans-serif;
+		font-family:Calibri,Helvetica,Geneva,Arial,Verdana,sans-serif;
+		//font-size: 0.75em;
+		//line-height: 150%;
+	}
+	p {
+		padding-top: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	code {
+		font-size: 1.2em;
+	}
+	#body-left {
+		float:left;
+	}
+	.subMenuLeft {
+		background: #cccccc;
+		color: white;
+		width: 175px;
+		margin-top: 25px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	/* body-left/subMenuLeft + body-contents = 800 ~ 850 total */
+	#body-contents {
+		float:right; 
+		width:625px; 
+		margin-left: 5px;
+		//margin-top: 6px;
+	}
+	.note {
+		color: black;
+		background-color: #CCCCCC;
+		border: 1px solid #999999;
+
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.floatImage {
+		float:right;
+		margin:15px;
+		font-size: 80%;
+		text-align: center;
+	}
+	.leftImage {
+		margin:15px;
+		font-size: 80%;
+		text-align: left;
+	}
+	.calloutPara {
+		padding: 5px;
+		padding-bottom: 10px;
+		margin-top:25px;
+		font-size: 90%;
+		width: 200px;
+		background: #cccccc;
+		border: 1px solid #999999;
+	}
+	.calloutPlus {
+		margin: 10px 0px; 
+		padding: 5px; 
+		width:100%;
+	}
+
+	h1 {
+		font-size: 165%;
+		//margin-top: 25px;
+	}
+	h2 {
+		font-size: 130%;
+		margin: 5px 0 5px 0;
+		line-height: 140%;
+	}
+	h3 {
+		font-size: 100%;
+		margin: 15px 0 0px 0;
+		font-variant: small-caps;
+	}
+	h4 {
+		font-size: 100%;
+		font-weight: bold;
+		margin: 15px 0 0px 0;
+	}
+	ul {
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+	li {margin: 3px 0 3px -20px;}
+
+	
+	#lmContDiv {
+		overflow: auto;
+	}
+	
+	#lmImageAlign {
+		float: right;
+		margin-top : 10px;
+	}
+
+	#lmTextAlign {
+		width : 60%;
+	}
+	
+	hr {
+		background-color : #CCCCCC;
+		border : 0px;
+	}
+	-->
+	</style>
+
+<script type="text/javascript" src="/web/20110823114810js_/http://www.architexa.com/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript"> 
+
+function clh() {
+var e = document.getElementById(location.hash);
+ if (e != null) {
+  e.style.backgroundColor = 'transparent';
+ }
+}
+
+function h() {
+var e = document.getElementById(location.hash);
+ if (e != null) {
+  e.style.backgroundColor = '#FFFF00';
+ }
+ setTimeout('clh()', 1500);
+}
+
+</script>
+
+</head>
+<!--
+<body bgcolor="#00476B" style="padding:0px;margin:0px"> 
+selected for the new color scheme -->
+<body onload="h()" bgcolor="#F0F0F0" style="padding:0px;margin:0px;text-align:center">
+
+<!--
+<div style="margin:0 auto;width:900px;">
+-->
+
+<div class="topbar" style="padding:0px;width:100%;text-align:left;background-color:#00476B; border-bottom: 3px double #ffffff">
+<div class="main">
+
+<center>
+<table border="0" width="100%">
+<tr>
+<td rowspan="2" width="425" valign=top>
+<!-- banner -->
+<a href="/web/20110823114810/http://www.architexa.com/" style="white-space:nowrap">
+	<!--<img style="border:0" src="/images/logo-icon.png">-->
+	<img alt="Architexa - Understand and Document" style="border:0" src="/web/20110823114810im_/http://www.architexa.com/images/architexaHP.jpg">
+</a>
+</td>
+<td rowspan="2" >&nbsp;</td>
+<td width="250" valign="top" align="right">
+	<div id="menu" style="font-size:80%">
+<!--
+	Signup |
+	Blog | 
+	Forums | 
+	Feedback
+-->
+<div style="color:#ffffff">
+	
+	<a href="/web/20110823114810/http://my.architexa.com/">Log In</a>
+	|
+	<a href="/web/20110823114810/http://blog.architexa.com/">Blog</a>
+	|
+	<a href="/web/20110823114810/http://www.architexa.com/about/contact">Contact Us</a>
+</div>	
+
+	</div>
+</td></tr>
+<tr>
+<td width=400 valign=center>
+<!--
+Note: <b>Beta</b> - Please do not distribute this url.<br>
+-->
+
+<div style="color:#cccccc;white-space:nowrap;float:right;">
+
+<!--
+<a href="/">Home</a>
+-->
+
+<!-- menu -->
+
+<!--
+-->
+
+
+	| <a href="/web/20110823114810/http://www.architexa.com/learn-more/index">Learn More</a> |
+
+	Download |
+
+	<a href="/web/20110823114810/http://www.architexa.com/solutions/index">Solutions</a> |
+
+	<a href="/web/20110823114810/http://www.architexa.com/support/index">Support</a> |
+
+	<a href="/web/20110823114810/http://www.architexa.com/about/index">About Us</a>
+
+</div>
+
+</td>
+</tr>
+</table>
+</center>
+</div> <!-- main -->
+</div> <!-- topbar -->
+
+<div class="main" id="content">
+
+<div class="main-body"> 
+<!-- // selected for the new color scheme 
+<div class="main-body" style="background-color:white> -->
+
+
+<div id="body-left">
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px"><li>
+
+	<a href="/web/20110823114810/http://www.architexa.com/start/index">Register</a>
+
+</li><li style="margin-top:10px">
+
+	Installation Details
+</li>
+<li style="margin-top:10px">
+
+	<a href="/web/20110823114810/http://www.architexa.com/start/tour">Take a Tour</a>
+</li></ul>
+</div> <!-- end sub-menu -->
+
+
+
+<div class="subMenuLeft">
+
+<ul style="list-style-type:none;padding-left:35px">
+<li style="margin-top:10px">
+
+	<a href="/web/20110823114810/http://www.architexa.com/start/pricing">Pricing</a>
+
+</li><li style="margin-top:10px">
+
+	<a href="/web/20110823114810/http://www.architexa.com/start/open-source">Open Source Initiative</a>
+
+</li>
+<li style="margin-top:10px">
+
+	<a href="/web/20110823114810/http://www.architexa.com/start/collaboration">Collaboration</a>
+
+</li>
+</ul>
+</div>
+
+<div style="margin-top:15px;font-weight:bold">Questions?</div>
+See <a href="/web/20110823114810/http://www.architexa.com/support">Architexa Support</a> or <br />call us at (617) 500-2596
+
+</div> <!-- end float -->
+
+<div id="body-contents">
+
+<!-- Google Website Optimizer Tracking Script -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['gwo._setAccount', 'UA-18945881-1']);
+  _gaq.push(['gwo._trackPageview', '/0545621509/goal']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- End of Google Website Optimizer Tracking Script -->
+
+
+
+<style type="text/css"> 
+<!--
+	.tableBox {
+		padding:10px;
+		background-color:#fff;
+		border: 2px solid #CCC;
+	}
+	.details {
+		font-size:.9em;
+		padding-left:5px;
+	}
+-->
+</style>
+<h2 style="width:405px; text-align:left;"><a style="color:grey; font-weight:normal;" href="/web/20110823114810/http://www.architexa.com/start/index">1. Register&nbsp&nbsp>>&nbsp </a>2. Download<a style="color:grey; font-weight:normal;" href="/web/20110823114810/http://www.architexa.com/start/tour">&nbsp&nbsp>>&nbsp 3. Take a Tour</a></h2>
+
+<!-- <div style="color:black;background-color:#ddd;padding:15px; margin-bottom:146px;width:435px;"> 
+ -->
+<style type="text/css"> 
+<!--
+	.testContent {
+		background: #FFF;
+		border: 1px solid #E4E4E4;
+		color: #616161;
+		display: table-cell;
+		padding: 12px;
+		text-align: center;
+		z-index: 9;
+	}
+	.testQuote{
+		font-family: Georgia, Times, serif;
+		font-size: 15px;
+		padding: 0px;
+ 	}
+	.author{
+		color: #9B9B9B;
+		font-family: Georgia, Times, serif;
+		font-size: 12px;
+		font-style: italic;
+		padding: 0px;
+	}
+	.tableBox {
+		padding:10px;
+		background-color:#fff;
+		border: 2px solid #CCC;
+	}
+
+-->
+</style>
+
+	<div style="float:right;width:200px">
+
+<script src="/web/20110823114810js_/http://code.jquery.com/jquery-latest.min.js"></script> 
+<div style="text-align:center">
+<span id="nav" style="padding-top:10px;"> 
+		 <img id="1" onClick="slideTo('testimonial-1')" src="/web/20110823114810im_/http://www.architexa.com/images/bullet_active.gif"/> 
+		 <img id="2" onClick="slideTo('testimonial-2')" src="/web/20110823114810im_/http://www.architexa.com/images/bullet.gif"/> 
+		 <img id="3" onClick="slideTo('testimonial-3')" src="/web/20110823114810im_/http://www.architexa.com/images/bullet.gif"/> 
+</span>  		
+<div style="margin-left: auto; margin-right: auto; height:235px; width:175px; padding-top:1px;" align="center" id="quotes"> 
+			<div id="testimonial-1" class="testContent"> 
+				<span class="testQuote">" 'surf' the source code through UML diagrams, so that one may be viewing more or less detail as you need. It is not all or nothing, which is usually the case with traditional UML tools."</span><br> 
+				<span class="author">- Abraham, <a href="/web/20110823114810/http://javahispano.org/contenidos/es/architexa__un_plugin_de_uml_para_eclipse/">JavaHispano</a></span> 
+			</div> 
+			<div id="testimonial-2" class="testContent"> 
+				<span class="testQuote">"Sometimes it can be too much work to go back and update diagrams once the coding process is underway, especially when under a tight deadline"</span><br> 
+				<span class="author">- James Sugrue, <a href="/web/20110823114810/http://java.dzone.com/articles/how-architexa-makes-life-easy">JavaLobby</a></span> 
+			</div> 
+			<div id="testimonial-3" class="testContent"> 
+				<span class="testQuote">"New generation UML tools finally coming?"</span><br> 
+				<span class="author">- Gabriel Scerbak, <a href="/web/20110823114810/http://twitter.com/The0retico/status/13808214322">Twitter</a></span> 
+			</div> 
+		</div> 
+</div>
+</div>
+		<script> 
+function init() {
+ $('#quotes div').hide();
+ $('#quotes div:first').show();
+}
+ 
+function slide() {
+    var $top = $('#quotes div:visible');
+    var num = $top.attr('id').split('-').pop();
+    var $topNav = $('#'+num);
+ 
+    var $next;
+    var $nextNav;
+ if($top.next().length > 0) {
+ 	 $next = $top.next();
+	 $nextNav = $topNav.next();
+ } else {
+       $next = $('#quotes div:first');
+       $nextNav = $('#nav img:first');
+ }
+  $top.fadeOut("slow",function() {
+   $next.fadeIn("slow");
+ 
+  });
+ 
+ $topNav.attr("src","/images/bullet.gif");
+ $nextNav.attr("src","/images/bullet_active.gif");
+}
+ 
+function slideTo(id) {
+    var $top = $('#quotes div:visible');
+    var num = $top.attr('id').split('-').pop();
+    var $topNav = $('#'+num);
+ 
+    var $next =$('#'+id);
+    num = $next.attr('id').split('-').pop();
+    var $nextNav = $('#'+num);
+  $top.fadeOut("slow", function() {
+	 $next.fadeIn("slow");
+  });
+  $topNav.attr("src","/images/bullet.gif");
+  $nextNav.attr("src","/images/bullet_active.gif"); 
+ 
+}
+ 
+$(document).ready(function() {
+ init();
+    setInterval( "slide()", 10000 );
+});
+</script> 
+
+	<div style="border:1px;color:red;font-weight:bold" >
+     		</div>
+<div style=" margin-bottom:152px;width:386px" class="tableBox">
+		<p>Achitexa is currently available as a java plugin for the Eclipse IDE. Use the following update site url to install Architexa from within Eclipse:<br>
+		<ul>	<li>
+			<b><code style="font-size:1.4em;">http://update.architexa.com/client</code></b>
+		</li></ul>
+		<br>Make sure to have your registration account information available to activate the plugin upon installation. 
+
+		<h4 class="header"><a href="">Installation Details (Eclipse 3.5+)</a></h4>
+		<div class="details">
+		<ol> 
+                <li> 
+                In Eclipse, select <b>Help &gt; Install New Software...</b> In the dialog that appears, click on the <b>Add...</b> button.
+                Enter the update site URL into the "Location" text box: <code>http://update.architexa.com/client</code>. 
+                <!--
+                In Eclipse, select <b>Help &gt; Install New Software...</b> In the dialog that appears, enter the update site URL into the "Work with" text box:
+                <code>/web/20110823114810/http://update.architexa.com/client</code>. Click on the <b>Add...</b> button. -->
+                </li> 
+                <li> 
+                Leave the name text box empty (the name will be retrieved from the update site). Click <b>OK</b>.
+                </li> 
+                <li> 
+                The main pane should update to show the Architexa RSE Client. Select the checkbox next to it. Click <b>Next</b>.
+                </li> 
+                <li> 
+                Review the features that you are about to install. Click <b>Next</b>. Accept the license agreements, click <b>Finish</b>, and restart Eclipse when prompted.
+                </li> 
+                </ol> 
+                <br>
+		</div>
+
+		<h4 class="header"><a href="">Older Versions (Eclipse 3.2 - 3.4)</a></h4>
+		<div class="details">
+			<h3>Eclipse 3.2 (Callisto), 3.3 (Europa), and Eclipse 3.4 (Ganymede)</h3> 
+			<ol> 
+			<li>In Eclipse, select <b>Help &gt; Software Updates &gt; Find and Install...</b> In the dialog that appears, select <b>Search for new features to install</b> and click <b>Next</b></li> 
+			<li>Click <b>New Remote Site</b>. Enter a name for the update site and the following value for the URL: <code>http://update.architexa.com/client</code>. Click <b>OK</b>.</li> 
+			<li>Ensure that the newly-added site is checked to indicate that it will be searched for features to install. Click <b>Finish</b>.</li> 
+			<li>In the subsequent Search Results dialog, select the checkbox for the Architexa update site. Click <b>Next.</b></li> 
+			<li>Accept the license agreements, click <b>Next</b>, click <b>Finish</b>, and finally click <b>Install</b>. Restart Eclipse when prompted.</li> 
+			</ol> 
+
+		</div>
+		<h4 class="header"><a href="">Installing Architexa's Extended Features</a></h4>
+		<div class="details">
+			Architexa recently released two optional extensions to the normal Architexa Suite:
+			<ul>
+				<li>We offer an extended client that contains subclipse integration to allow for faster more informative code reviews.</li>
+				<li>Our extended client also comes with a group server so that teams can utilize the benefits of our server in-house.</li>
+			</ul>
+			These features are available from a special update site. Please use the following update site to install these plugins instead of the one above.
+		<ul><li>
+			<b><code style="font-size:1.4em;">http://update.architexa.com/client-extended</code></b>
+		</li></ul>
+		</div>
+
+		<h4 class="header"><a href="">Installing Architexa From Behind a Firewall</a></h4>
+		<div class="details">
+			If you are unable to use the update site to install Architexa, you can install manually:
+			<ol>
+			<li>Download the zip file located at <a href="/web/20110823114810/http://update.architexa.com/client/client.zip">http://update.architexa.com/client/client.zip</a>
+				<br /><i>(For manually installing the extended features use: <a href="/web/20110823114810/http://update.architexa.com/client-extended/client-extended.zip">http://update.architexa.com/client-extended/client-extended.zip</a>)</i>
+			</li>
+			
+			<li>Extract the zip file locally to a folder called "client"</li>
+			<li>In Eclipse:
+				<ol>
+				<li>For Eclipse 3.5+, Help > Install New Software > Add > Local</li>
+				<li>For earlier Eclipse versions, Software Updates > Find and Install > Search for new features to install > Help > New Local Site</li>
+				<li>Browse to the client-extended folder just created and select it. Enter "Architexa" for Name.</li>
+				</ol>
+			</li>
+			</ol>
+		</div>
+		<br>
+<script>
+jQuery(document).ready(function(){
+	$('.header').click(function() {
+		$(this).next().toggle('normal');
+		return false;
+	}).next().hide();
+});
+</script>
+
+		<p>To see the most recent changes and updates check out our <a href="/web/20110823114810/http://www.architexa.com/forums/forum/announcements">Announcements</a> page.</p>
+		<p>Please take a look at our <a href="/web/20110823114810/http://www.architexa.com/support/faq">FAQ</a> page and our <a href="/web/20110823114810/http://www.architexa.com/forums">forum</a> if you have any questions or problems.</p>
+
+	<div style="margin-top:25px;float:right;">
+		<h4><a href="/web/20110823114810/http://www.architexa.com/start/install#" onclick="window.location = 'tour';">Take a Tour</a></h4>
+	</div>
+</div>
+
+ <!-- Google Website Optimizer Conversion Script -->
+<script type="text/javascript">
+if(typeof(_gat)!='object')document.write('<sc'+'ript src="http'+
+(document.location.protocol=='https:'?'s://ssl':'://www')+
+'.google-analytics.com/ga.js"></sc'+'ript>')</script>
+<script type="text/javascript">
+try {
+var gwoTracker=_gat._getTracker("UA-20121784-1");
+gwoTracker._trackPageview("/1897503668/goal");
+}catch(err){}</script>
+<!-- End of Google Website Optimizer Conversion Script -->
+
+
+
+</div>
+<div style="clear:both"/>
+<div style="background:#cccccc; color:#333333; margin-top:5px; padding-top:5px; padding-bottom:5px; padding-left:5px; border:1px solid #999999;">
+
+Make sense of your code now!
+<a href="/web/20110823114810/http://www.architexa.com/start/index">
+<b>Get Started </b></a>
+
+
+</div>
+</div>
+
+<div style="padding:10px 0px; height:50px;">
+<div style="float:left; font-size:smaller;">Copyright &copy;2011 Architexa, Inc. All rights reserved.<br/>
+<a href="/web/20110823114810/http://www.architexa.com/privacy">Privacy Policy</a> 
+</div>
+<div valign="middle" style="float:right; vertical-align:middle; font-weight:bold">
+<table valign="middle">
+<tr valign="middle">
+ <td>Follow Architexa</td>
+ <td><a class="image" href="/web/20110823114810/http://feeds.feedburner.com/Architexa"><img width="20" src="/web/20110823114810im_/http://blog.architexa.com/wp-content/themes/simplex/images/rss2.png"/></a></td>
+ <td><a class="image" href="/web/20110823114810/http://www.facebook.com/Architexa"><img width="20" src="/web/20110823114810im_/http://blog.architexa.com/wp-content/themes/simplex/images/facebook2.png"/></a></td>
+ <td><a class="image" href="/web/20110823114810/http://twitter.com/Architexa"><img width="20" src="/web/20110823114810im_/http://blog.architexa.com/wp-content/themes/simplex/images/twitter2.png"/></a></td>
+
+</tr>
+</table>
+</div> 
+</div>
+
+
+<script src="/web/20110823114810js_/http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(213593); }catch(err){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="/web/20110823114810im_/http://in.getclicky.com/213593ns.gif" /></p></noscript>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 11:48:10 Aug 23, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:43:22 Feb 20, 2013.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->

@@ -1,0 +1,675 @@
+<title>Introduction to Architexa | Architexa</title>
+	<link rel="shortcut icon" href="/web/20111107070326im_/http://www.architexa.com/favicon.ico">
+	<style type="text/css">
+	<!--
+	/* class */
+	.main a:link {color: #ffff00; text-decoration: none; }
+	.main a:active {color: #0000ff; text-decoration: underline; }
+	.main a:visited {color: #ffff00; text-decoration: none; }
+	.main a:hover {color: #ff0000; text-decoration: none; }
+
+	/* id */
+	#content a:link {color: #cc6600; text-decoration: none; }
+	#content a:active {color: #0000ff; text-decoration: underline; }
+	#content a:visited {color: #cc6600; text-decoration: none; }
+	#content a:hover {color: #ff0000; text-decoration: none; }
+
+	a:link {color: #ffff00; text-decoration: none; }
+	a:active {color: #0000ff; text-decoration: underline; }
+	a:visited {color: #ffff00; text-decoration: none; }
+	a:hover {color: #ff0000; text-decoration: none; }
+
+	#menu a:link {color: #888888; text-decoration: none; }
+	#menu a:active {color: #888888; text-decoration: none; }
+	#menu a:visited {color: #888888; text-decoration: none; }
+	#menu a:hover {color: #ff4444; text-decoration: none; }
+
+	.main {
+		color: #444444;
+		text-align:left;
+		margin:0 auto;
+		width:850px;
+		//font-family: Verdana, Arial, sans-serif;
+		font-family:Calibri,Helvetica,Geneva,Arial,Verdana,sans-serif;
+		//font-size: 0.75em;
+		//line-height: 150%;
+	}
+	p {
+		padding-top: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	code {
+		font-size: 1.2em;
+	}
+	#body-left {
+		float:left;
+		padding-left:20px;
+		font-size:1em;
+	}
+	
+	/* Old Grey Box SubMenu */
+	.subMenuLeft {
+		background: #cccccc;
+		color: white;
+		width: 175px;
+		margin-top: 25px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	/* New Blue Effect SubMenu */
+	#subMenuLeft2 a {
+		background: #EBF2F2; border-left: 4px solid #A1C1BE;
+		text-decoration: none;
+		display: block;
+		width: 150px; margin: -6px 0 10px -10px; padding: 6px 1px 6px 10px; 
+		}
+		
+	#subMenuLeft2 a:hover {
+		background: #EBF7F8; border-left: 4px solid #333;
+	}
+
+	#subMenuLeft2 a:link {color: #c60; text-decoration: none;  }
+	#subMenuLeft2 a:active {color: #c60; text-decoration: none;  }
+	#subMenuLeft2 a:visited {color: #c60; text-decoration: bold; }
+	#subMenuLeft2 a:hover {color: #333; text-decoration: bold; font-weight:bold; }
+	
+	#selected{
+		background: #EBF7F8; border-left: 4px solid #333;
+		font-weight: bold;
+		width: 150px; margin: -6px 0 10px -10px; padding: 6px 1px 6px 10px; 
+	}
+	
+	#nested a {
+		background: url("../images/dbg.png") left no-repeat #fafafa; 
+		border: none;
+		width: 130px; margin: -8px 0 10px -15px; padding: 6px 1px 6px 20px; 
+		font-size: smaller;
+	}
+	#nested a:hover {
+		background: url("../images/dbg2hover.png") left no-repeat #EBF7F8; 
+		border: none;
+	}
+	
+	#nested-selected {
+		background: url("../dbg2hover.png") left no-repeat #EBF7F8;
+		border: none;
+		font-weight: bold;
+		width: 130px; margin: -8px 0 10px -15px; padding: 6px 1px 6px 20px;
+	}
+	
+	/* body-left/subMenuLeft + body-contents = 800 ~ 850 total */
+	#body-contents {
+		float:right; 
+		width:605px; 
+		margin-left: 5px;
+		padding-right: 20px;
+		//margin-top: 6px;
+	}
+	
+	#body-contents-IE {
+		float:right; 
+		padding-left: 20px;
+		padding-right: 10px;
+	}
+	
+	.note {
+		color: black;
+		background-color: #CCCCCC;
+		border: 1px solid #999999;
+
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.floatImage {
+		float:right;
+		margin:15px;
+		font-size: 80%;
+		text-align: center;
+	}
+	.leftImage {
+		margin:15px;
+		font-size: 80%;
+		text-align: left;
+	}
+	.calloutPara {
+		padding: 5px;
+		padding-bottom: 10px;
+		margin-top:25px;
+		font-size: 90%;
+		width: 200px;
+		background: #eee;
+		border: 1px solid #ddd;
+	}
+	.calloutPlus {
+		margin: 10px 0px; 
+		padding: 5px; 
+		width:100%;
+	}
+
+	h1 {
+		font-size: 165%;
+		//margin-top: 25px;
+	}
+	h2 {
+		font-size: 130%;
+		margin: 5px 0 5px 0;
+		line-height: 140%;
+	}
+	h3 {
+		font-size: 100%;
+		margin: 15px 0 0px 0;
+		font-variant: small-caps;
+	}
+	h4 {
+		font-size: 100%;
+		font-weight: bold;
+		margin: 15px 0 0px 0;
+	}
+	ul {
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+	li {margin: 3px 0 3px -20px;}
+
+	
+	#lmContDiv {
+		overflow: auto;
+	}
+	
+	#lmImageAlign {
+		float: right;
+		margin-top : 10px;
+	}
+
+	#lmTextAlign {
+		width : 60%;
+	}
+	
+	hr {
+		background-color : #CCCCCC;
+		border : 0px;
+	}
+	-->
+	</style>
+
+<script type="text/javascript" src="/web/20111107070326js_/http://www.architexa.com/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript"> 
+
+function clh() {
+var e = document.getElementById(location.hash);
+ if (e != null) {
+  e.style.backgroundColor = 'transparent';
+ }
+}
+
+function h() {
+var e = document.getElementById(location.hash);
+ if (e != null) {
+  e.style.backgroundColor = '#FFFF00';
+ }
+ setTimeout('clh()', 1500);
+}
+
+</script>
+
+</head>
+<!--
+<body bgcolor="#00476B" style="padding:0px;margin:0px"> 
+selected for the new color scheme -->
+<!--lighter shade of grey: #FAFAFA-->
+<body onload="h()" bgcolor="#F0F0F0" style="padding:0px;margin:0px;text-align:center">
+
+<!--
+<div style="margin:0 auto;width:900px;">
+-->
+<style type="text/css">
+		#nav { 
+			padding:0px; 
+		}
+		#nav li { 
+			list-style:none;
+			font-size:14px;
+			float:left;
+			color:#999;
+			margin: -2px;
+			line-height: 25px;
+			font-weight:bold;
+		}
+		#nav li a {   
+			font-size:14px;
+			float:left;
+			text-align:center;
+			color:#ffff00;
+			width:80px;
+			line-height: 25px;
+			font-weight:bold;
+		}
+		#nav li a:hover{
+			font-size:14px;
+			text-decoration: none;
+			color:#00476B;
+			background: url("/web/20111107070326/http://www.architexa.com/images/tab-5px.gif") no-repeat;
+			width:80px;
+			position:relative;
+			bottom:-12px;
+			padding-bottom:8px;
+			margin-top:-12px;
+			line-height: 25px;
+			font-weight:bold;
+		}
+		#nav li span{
+			font-size:14px;
+			float:left;
+			text-align:center;
+			color:#00476B;
+			width:80px;
+			background: url("/web/20111107070326/http://www.architexa.com/images/tab-5px.gif") no-repeat;
+			position:relative;
+			bottom:-12px;
+			padding-bottom:8px;
+			margin-top:-12px;
+			line-height: 25px;
+			font-weight:bold;
+		}
+</style>
+<div class="topbar" style="padding:0px;width:100%;text-align:center;background-color:#00476B; height:85px;">
+<div class="main">
+
+
+<table border="0" width="100%" style="position:relative;bottom:-5px;">
+<tbody>
+<tr>
+<td rowspan="2" width="300" valign=top>
+<!-- banner -->
+<a href="/web/20111107070326/http://www.architexa.com/" style="white-space:nowrap">
+	<!--<img style="border:0" src="/images/logo-icon.png">-->
+	<img alt="Architexa - Understand and Document" style="border:0;margin-left:-9px;" src="/web/20111107070326im_/http://www.architexa.com/images/logo-main2.gif">
+</a>
+</td>
+<td rowspan="2" >&nbsp;</td>
+<td width="500" valign="top" align="right">
+	<div id="menu" style="font-size:80%">
+<!--
+	Signup |
+	Blog | 
+	Forums | 
+	Feedback
+-->
+<div style="color:#ffffff">
+	
+	<a href="/web/20111107070326/http://my.architexa.com/">Log In</a>
+	|
+	<a href="/web/20111107070326/http://blog.architexa.com/">Blog</a>
+	|
+	<a href="/web/20111107070326/http://www.architexa.com/about/contact">Contact Us</a>
+</div>	
+
+	</div>
+</td></tr>
+<tr>
+<td width="550px" style="vertical-align:bottom;">
+	<div width="100%" id="nav" style="white-space:nowrap;">
+	<!--
+Note: <b>Beta</b> - Please do not distribute this url.<br>
+-->
+
+
+
+<ul>
+<!--
+<a href="/">Home</a>
+-->
+
+<!-- menu -->
+
+<!--
+XXX/learn-more/videos/class-diagrams/video.phpXX/learn-more/videos/class-diagrams/videoX-->
+
+
+
+
+	<li><a href="/web/20111107070326/http://www.architexa.com/">Home</a></li>
+
+<li> | </li>
+
+	<li><span>Learn More</span></li>
+
+<li> | </li>
+
+	<li><a href="/web/20111107070326/http://www.architexa.com/start/index">Download</a></li>
+
+<li> | </li>
+
+	<li><a href="/web/20111107070326/http://www.architexa.com/solutions/index">Solutions</a></li>
+
+<li> | </li>
+
+	<li><a href="/web/20111107070326/http://www.architexa.com/support/index">Support</a></li>
+
+<li> | </li>
+
+	<li><a href="/web/20111107070326/http://www.architexa.com/about/index">About Us</a></li>
+
+</ul>
+
+
+	</div>
+</td>
+</tr>
+</tbody></table>
+
+<div width="100%"> 
+	<!--Please do NOT remove the following IE hack-->
+
+	<!--[if IE ]>
+	<img alt=" " style="position:relative; bottom:-4px; left:-2px;" src="/web/20111107070326/http://www.architexa.com/images/mainbody-wrap2.gif">
+	<div style="position:relative; left:-2px; background:#fff; border-right:1px solid #ccc; border-left:1px solid #ccc;height:10px;"></div>
+	<![endif]-->
+	<!--[if !IE]>-->
+	<img alt=" " style="position:relative;bottom:-4px;" src="/web/20111107070326im_/http://www.architexa.com/images/mainbody-wrap2.gif">
+	<div style="background:#fff; border-right:1px solid #ccc; border-left:1px solid #ccc;height:10px;"></div>
+	<!--<![endif]-->
+</div>
+
+</div> <!-- main -->
+</div> <!-- topbar -->
+
+<div class="main" id="content">
+<!-- Body with new color scheme: white -->
+<div class="main-body" style="background-color:#fff; border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; padding-bottom:20px;"> 
+
+
+<div id="body-left">
+
+<!--Learn More-->
+<div style="margin-top:15px;font-weight:bold">Learn More
+</div>
+
+<!--[if IE ]>
+<div id="subMenuLeft2" style="margin-top:15px; margin-left: -40px">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="subMenuLeft2" style="margin-top: 15px;">
+<!--<![endif]-->
+
+	<ul style="list-style-type:none;padding-left:35px">
+		
+		<!--test link
+		<li>
+					<a href="/learn-more/index">Selected</a>
+				</li>
+		<!-- end test link-->
+		
+		<li>
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/index">Overview</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/understand">Understand Easily</a>
+				</li>
+
+		<!--
+		<li style="margin-top:10px">
+					<a href="/learn-more/collaborate">Discuss Designs</a>
+				</li>
+		-->
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/maintain">Maintain Effectively</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/knowledge-transfer">Quickly Document</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/code-review">Code Review</a>
+				</li>
+
+		</li>
+		</ul>
+</div> <!-- end learn-more submenu -->
+
+
+<!-- Diagramming Features -->
+<div style="margin-top:15px;font-weight:bold">Diagramming Features
+</div>
+
+<!--[if IE ]>
+<div id="subMenuLeft2" style="margin-top:15px; margin-left: -40px">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="subMenuLeft2" style="margin-top: 15px;">
+<!--<![endif]-->
+
+	<ul style="list-style-type:none;padding-left:35px">
+
+		<li>
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/diagramming-features">Overview</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/layered-diagrams">Layered Diagrams</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/class-diagrams">Class Diagrams</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/sequence-diagrams">Sequence Diagrams</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/ide-integration">IDE Integration</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/share">Collaboration</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/document">Documentation</a>
+				</li>
+
+	</ul>
+</div><!-- end Tools -->
+
+<!-- Videos -->
+<div style="margin-top:15px;font-weight:bold">Videos</div>
+
+<!--[if IE ]>
+<div id="subMenuLeft2" style="margin-top:15px; margin-left: -40px">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="subMenuLeft2" style="margin-top: 15px;">
+<!--<![endif]-->
+
+	<ul style="list-style-type:none;padding-left:35px">
+	
+		<li>
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/intro/video">Introduction</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/layered-diagrams/video">Layered Diagrams</a>
+				</li>
+
+		<li style="margin-top:10px">
+					<div id="selected">Class Diagrams</div>
+				</li>
+
+		<li style="margin-top:10px">
+					<a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/sequence-diagrams/video">Sequence Diagrams</a>
+				</li>
+
+		</ul>
+
+		<!--
+					<a href="/learn-more/videos/intro/video">1. Introduction</a>
+		
+
+		<div style="margin-top:10px">
+					<a href="/learn-more/videos/layered-diagrams/video">2. Layered Diagrams</a>
+				</div>
+
+		<div style="margin-top:10px">
+					3. Class Diagrams
+				</div>
+
+		<div style="margin-top:10px">
+					<a href="/learn-more/videos/sequence-diagrams/video">4. Sequence Diagrams</a>
+				</div>
+		-->
+</div> <!-- end sub-menu -->
+
+<div style="margin-top:15px;font-weight:bold">Questions?</div>
+<a href="/web/20111107070326/http://www.architexa.com/support">Architexa Support</a>
+
+</div> <!-- end float -->
+
+
+<!--[if IE ]>
+<div id="body-contents-IE">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="body-contents">
+<!--<![endif]-->
+
+
+
+
+
+<!--
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="DC.title" content="intro" />
+
+        <title>Created by Camtasia Studio 6</title>
+-->
+<style type="text/css">
+.center
+{
+text-align:center;
+}
+</style>
+<div style="float:right;padding:10px;">
+<a href = "/web/20111107070326/http://www.architexa.com/start/index"><img style = "margin-right: 8px;" src = "/web/20111107070326im_/http://www.architexa.com/images/getStarted.png" width="200" border="0"/></a>
+</div>
+<div style="clear:both;"></div>
+
+<div style="text:bold">
+<div>&nbsp;</div>
+<div style="float:left"><a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/layered-diagrams/video.php">Prev (Layered Diagrams)</a></div>
+<div style="float:right"><a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/sequence-diagrams/video.php">Next (Sequence Diagrams)</a></div>
+<div class="center" style="float:center"><a href="/web/20111107070326/http://www.architexa.com/learn-more/class-diagrams/index.php">More About Class Diagrams</a></div>
+</div>
+<div style="padding:15px;text-align:center">
+<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/p_jUq3lztis&hl=en_US&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="/web/20111107070326oe_/http://www.youtube.com/v/p_jUq3lztis&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+</div>
+<p>Can't see the video? <a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/class-diagrams/index.php">Click here</a></p>
+
+</div>
+<div style="clear:both;"/>
+
+</div>
+
+</div>
+
+<div style="background:#cccccc; color:#333333; padding-top:5px; padding-bottom:5px; padding-left:5px; border:1px solid #999999;">
+	
+	Make sense of your code now!
+	<a href="/web/20111107070326/http://www.architexa.com/start/index">
+	<b>Get Started </b></a>
+	</div>
+
+<!-- FOOTER -->
+
+<style type="text/css"> 
+	#footer a:link {color: #999; text-decoration: none; }
+	#footer a:active {color: #999; text-decoration: none; }
+	#footer a:visited {color: #999; text-decoration: none; }
+	#footer a:hover {color: #c60; text-decoration: strong; }	
+</style>
+
+
+<!-- blue version: background-color: #00476B; -->
+<div id="footer" style=" margin-top:5px; padding-top:5px; padding-bottom:5px; padding-left:5px;">
+<table style="font-size: 14px; color:#fff; width:100%">
+	<tbody><tr> 
+		<td style="width:25%; padding-left:20px; padding-bottom:15px; vertical-align: top;">
+			<div><span style="color:#666; font-weight:bold;">Company</span>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/about/index">About Us</a>
+			<br> <a href="/web/20111107070326/http://blog.architexa.com/">Blog</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/about/contact">Contact Us</a>
+			<br></div>
+		</td>
+		<td style="width:25%; padding-left:20px; vertical-align: top;">
+			<div><span style="color:#666; font-weight:bold;">Product</span>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/learn-more/diagramming-features">Features</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/start/index">Downloads</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/start/pricing">Plans & Prices</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/start/open-source">Open Source Initiative</a>
+			<br></div>
+		</td>
+		<td style="width:25%; padding-left:20px; vertical-align: top;">
+			<div><span style="color:#666; font-weight:bold;">Learn More</span>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/start/tour">Take a Tour</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/learn-more/videos/intro/video">Videos</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/user-guide/Table_of_Contents">User Guide</a>
+			<br></div>
+		</td>
+		<td style="width:25%; padding-left:20px; vertical-align: top;">
+			<div><span style="color:#666; font-weight:bold;">Resources</span>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/support/faq">FAQ</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/forums/">Forum</a>
+			<br> <a href="/web/20111107070326/http://www.architexa.com/solutions/services/">Services</a>
+			<br></div>
+		</td>
+	</tr>
+</tbody></table>
+</div><!--end footer-->
+
+
+
+<div style="padding:10px 0px; height:50px;">
+<div style="float:left; font-size:smaller;">
+Copyright �2011 Architexa, Inc. All rights reserved.
+<a href="/web/20111107070326/http://www.architexa.com/privacy">Privacy Policy</a> | 
+<a href="/web/20111107070326/http://www.architexa.com/terms-of-service"> Terms of Use</a> 
+</div>
+<div valign="middle" style="float:right; vertical-align:middle;font-size:smaller;">
+<table valign="middle">
+<tr valign="middle">
+ <td>Follow Architexa</td>
+ <td><a class="image" href="/web/20111107070326/http://feeds.feedburner.com/Architexa"><img width="20" src="/web/20111107070326im_/http://blog.architexa.com/wp-content/themes/simplex/images/rss2.png"/></a></td>
+ <td><a class="image" href="/web/20111107070326/http://www.facebook.com/Architexa"><img width="20" src="/web/20111107070326im_/http://blog.architexa.com/wp-content/themes/simplex/images/facebook2.png"/></a></td>
+ <td><a class="image" href="/web/20111107070326/http://twitter.com/Architexa"><img width="20" src="/web/20111107070326im_/http://blog.architexa.com/wp-content/themes/simplex/images/twitter2.png"/></a></td>
+
+</tr>
+</table>
+</div> 
+</div>
+
+
+<script src="/web/20111107070326js_/http://static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(213593); }catch(err){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="/web/20111107070326im_/http://in.getclicky.com/213593ns.gif" /></p></noscript>
+</body>
+</html>
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 7:03:26 Nov 7, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:39:44 Feb 20, 2013.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
