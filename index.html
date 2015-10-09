@@ -26,7 +26,7 @@
 .news li {margin:3px 0px 5px -20px;}
 .news {
 	list-style-position:outside;
-	list-style-image: url("/architexa/images/news_icon14.png");
+	list-style-image: url("{{site.baseurl}}/images/news_icon14.png");
 	font-size:14px;
 }
 
@@ -52,7 +52,7 @@
 <script type="text/javascript">
 <!--
 function img(imgID, imgName) {
-	document.images[imgID].src = '/architexa/images/' + imgName + '.png';
+	document.images[imgID].src = '/architexa{{site.baseurl}}/images/' + imgName + '.png';
 }
 // -->
 </script>
@@ -87,9 +87,9 @@ function img(imgID, imgName) {
       sleep: 2,
       fade: 1
     }, [
-      { src: '/architexa/images/lay_hp3.png' },
-      { src: '/architexa/images/seq_hp.png' },
-      { src: '/architexa/images/class_hp.png' }
+      { src: '{{site.baseurl}}/images/lay_hp3.png' },
+      { src: '{{site.baseurl}}/images/seq_hp.png' },
+      { src: '{{site.baseurl}}/images/class_hp.png' }
     ])
   });
 
@@ -99,10 +99,10 @@ function img(imgID, imgName) {
 
 
 	<div style="position:relative">
-		<img name="play" src="/architexa/images/playIconOff.png" border="0" style="position:absolute;top:-140px;left:180px"/>
+		<img name="play" src="{{site.baseurl}}/images/playIconOff.png" border="0" style="position:absolute;top:-140px;left:180px"/>
 	</div>
 	<div style="text-align:center">
-		<a href="/learn-more/videos/intro/video"><img style="padding-top:10px;" src="/architexa/images/thumbnails/watchIntro.png" width="200" border="0"/></a>
+		<a href="/learn-more/videos/intro/video"><img style="padding-top:10px;" src="{{site.baseurl}}/images/thumbnails/watchIntro.png" width="200" border="0"/></a>
 	</div>
 
 </a>
@@ -187,30 +187,30 @@ function img(imgID, imgName) {
 		<!--<h1>Painlessly Work with Complex Code</h1>-->
 		<h1 class="sectionHead" style="padding-left:20px;">Understand and Document Code</h1>
 		<div class="frontBox"> 
-            <div style="float:left;height:132px;"><a title="Layered architectural diagrams" href="/learn-more/layered-diagrams" ><img class="frontImg" src="/architexa/images/hp/folder.png" alt=""></a></div>
+            <div style="float:left;height:132px;"><a title="Layered architectural diagrams" href="/learn-more/layered-diagrams" ><img class="frontImg" src="{{site.baseurl}}/images/hp/folder.png" alt=""></a></div>
             <h3 class="frontHead"><a title="Layered architectural diagrams" href="/learn-more/layered-diagrams">Layered architectural diagrams</a></h3> 
             <p>Introduce new developers to architectural concepts quickly. Maintain and communicate architectural components. <br><br>
 			<div id="blueLink"><a class="frontMore" href="/learn-more/layered-diagrams" >Learn more <small>&gt;&gt;</small></a></div></p>         
         </div> 
 		<div class="frontBox"> 
-            <div style="float:left;height:132px;"><a title="Class and sequence diagrams" href="/learn-more/understand" ><img class="frontImg" src="/architexa/images/hp/class2.png" alt=""></a></div>
+            <div style="float:left;height:132px;"><a title="Class and sequence diagrams" href="/learn-more/understand" ><img class="frontImg" src="{{site.baseurl}}/images/hp/class2.png" alt=""></a></div>
             <h3 class="frontHead"><a title="Class and sequence diagrams" href="/learn-more/understand">Class and sequence diagrams</a></h3> 
             <p>Get an overview of new, complex, or large code bases. Understand and solve problems in legacy code. <br><br>
 			<div id="blueLink"><a class="frontMore" href="/learn-more/understand" >Learn more <small>&gt;&gt;</small></a></div></p>         
         </div>
 		<div class="frontBox"> 
-            <div style="float:left;height:132px;"><a title="Document code architecture" href="/learn-more/document" ><img class="frontImg" src="/architexa/images/hp/notepad.png" alt=""></a></div>
+            <div style="float:left;height:132px;"><a title="Document code architecture" href="/learn-more/document" ><img class="frontImg" src="{{site.baseurl}}/images/hp/notepad.png" alt=""></a></div>
             <h3 class="frontHead"><a title="Document code architecture" href="/learn-more/document">Document code architecture</a></h3> 
             <p>Easily create documentation to share between team members. Set architectural boundaries for the shifting needs of agile teams. <br><br><div id="blueLink"><a class="frontMore" href="/learn-more/document" >Learn more <small>&gt;&gt;</small></a></div></p>         
         </div> 
 		<div class="frontBox"> 
-            <div style="float:left;height:132px;"><a title="Share and collaborate visually" href="/learn-more/share" ><img class="frontImg" src="/architexa/images/hp/globe.jpg" alt=""></a></div>
+            <div style="float:left;height:132px;"><a title="Share and collaborate visually" href="/learn-more/share" ><img class="frontImg" src="{{site.baseurl}}/images/hp/globe.jpg" alt=""></a></div>
             <h3 class="frontHead"><a title="Share and collaborate visually" href="/learn-more/share">Share and collaborate visually</a></h3> 
             <p>Transfer knowledge from departing team members to new hires. Share views of complex concepts and architectural components. <br><br><div id="blueLink"><a class="frontMore" href="/learn-more/share" >Learn more <small>&gt;&gt;</small></a></div></p>         
 		</div>
 		<!--
 		<div class="frontBox"> 
-			<div style="float:left;height:132px;"><a title="Code and architectural review" href="/learn-more/code-review" ><img class="frontImg" src="/architexa/images/hp/magnify.png" alt=""></a></div>
+			<div style="float:left;height:132px;"><a title="Code and architectural review" href="/learn-more/code-review" ><img class="frontImg" src="{{site.baseurl}}/images/hp/magnify.png" alt=""></a></div>
 			<h3 class="frontHead"><a title="Code and architectural review" href="/learn-more/code-review">Code and architectural review</a></h3> 
 			<p>Maintain code quality by simplifying code review. Diagram new features as they are committed to prevent code erosion. <br><br><div id="blueLink"><a class="frontMore" href="/learn-more/code-review" >Learn more <small>&gt;&gt;</small></a></div></p>         
 		</div>
@@ -263,38 +263,38 @@ function img(imgID, imgName) {
 		<div style="margin-left: auto; margin-right: auto; height:150px; width:400px; padding-top:18px;" align="center" id="quotes">
 			<div id="testimonial-0" class="testContent"> 
 				<span style="font-weight:bold; color:#444;font-size:1.2em;" class="testQuote">Featured Customers:</span><br> 		
-				<a href="http://www.citi.com/"><img style="height:40px" border=0 alt="citi" src="/architexa/images/quotes/citi.gif" /></a>
-				<a href="https://www.fidelity.com/"><img style="width: 160px;" border=0 alt="fidelity" src="/architexa/images/quotes/fidelity-investments-or.png" /></a>
-				<a href="http://www.nakinasystems.com/"><img style="width: 76px;" border=0 alt="nakina" src="/architexa/images/quotes/nakina.jpg" /></a>
-				<a href="http://www.omgeo.com/"><img style="height: 58px;" border=0 alt="omego" src="/architexa/images/quotes/omego.jpg" /></a>		
-				<a valign="middle" href="http://www.logiball.de/"><img valign="middle" border=0 alt="logiball" src="/architexa/images/quotes/logiball.gif" /></a>					
+				<a href="http://www.citi.com/"><img style="height:40px" border=0 alt="citi" src="{{site.baseurl}}/images/quotes/citi.gif" /></a>
+				<a href="https://www.fidelity.com/"><img style="width: 160px;" border=0 alt="fidelity" src="{{site.baseurl}}/images/quotes/fidelity-investments-or.png" /></a>
+				<a href="http://www.nakinasystems.com/"><img style="width: 76px;" border=0 alt="nakina" src="{{site.baseurl}}/images/quotes/nakina.jpg" /></a>
+				<a href="http://www.omgeo.com/"><img style="height: 58px;" border=0 alt="omego" src="{{site.baseurl}}/images/quotes/omego.jpg" /></a>		
+				<a valign="middle" href="http://www.logiball.de/"><img valign="middle" border=0 alt="logiball" src="{{site.baseurl}}/images/quotes/logiball.gif" /></a>					
 	
 			</div>
 			
 			<div id="testimonial-1" class="testContent"> 
 				<span style="font-weight:bold; color:#444;font-size:1.2em;" class="testQuote">Affiliations:</span><br> 		
-				<a href="/about/affiliation"><img border="0" src="/architexa/images/eclipse_logo.png" style="height:45px"></a>
-				<a href="/about/affiliation"><img border="0" src="/architexa/images/agile_logo.png" style="height:47px"></a>
-				<a href="/about/affiliation"><img border="0" src="/architexa/images/IASA_logo.png"  style="height:47px"></a>
+				<a href="/about/affiliation"><img border="0" src="{{site.baseurl}}/images/eclipse_logo.png" style="height:45px"></a>
+				<a href="/about/affiliation"><img border="0" src="{{site.baseurl}}/images/agile_logo.png" style="height:47px"></a>
+				<a href="/about/affiliation"><img border="0" src="{{site.baseurl}}/images/IASA_logo.png"  style="height:47px"></a>
 			</div>
 
 						<div id="testimonial-2" class="testContent"> 
-								<a href="http://java.dzone.com/articles/how-architexa-makes-life-easy"><img  height="30" alt="Java Lobby" src="/architexa/images/quotes/mh_logo_java.gif" /></a><br>
+								<a href="http://java.dzone.com/articles/how-architexa-makes-life-easy"><img  height="30" alt="Java Lobby" src="{{site.baseurl}}/images/quotes/mh_logo_java.gif" /></a><br>
 								<span class="testQuote">"Sometimes it can be too much work to go back and update diagrams once the coding process is underway, especially when under a tight deadline"</span><br> 
 				<span class="author">- James Sugrue, <a href="http://java.dzone.com/articles/how-architexa-makes-life-easy">Java Lobby</a></span>
 			</div>
 						<div id="testimonial-3" class="testContent"> 
-								<a href="http://javahispano.org/contenidos/es/architexa__un_plugin_de_uml_para_eclipse/"><img  height="30" alt="JavaHispano" src="/architexa/images/quotes/JavaHispanoLogo.png" /></a><br>
+								<a href="http://javahispano.org/contenidos/es/architexa__un_plugin_de_uml_para_eclipse/"><img  height="30" alt="JavaHispano" src="{{site.baseurl}}/images/quotes/JavaHispanoLogo.png" /></a><br>
 								<span class="testQuote">"'surf' the source code through UML diagrams, so that one may be viewing more or less detail as you need. It is not all or nothing, which is usually the case with traditional UML tools."</span><br> 
 				<span class="author">- Abraham, <a href="http://javahispano.org/contenidos/es/architexa__un_plugin_de_uml_para_eclipse/">JavaHispano</a></span>
 			</div>
 						<div id="testimonial-4" class="testContent"> 
-								<a href="http://twitter.com/The0retico/status/13808214322"><img  height="30" alt="Twitter" src="/architexa/images/quotes/twitlogo.png" /></a><br>
+								<a href="http://twitter.com/The0retico/status/13808214322"><img  height="30" alt="Twitter" src="{{site.baseurl}}/images/quotes/twitlogo.png" /></a><br>
 								<span class="testQuote">"New generation UML tools finally coming?"</span><br> 
 				<span class="author">- Gabriel Scerbak, <a href="http://twitter.com/The0retico/status/13808214322">Twitter</a></span>
 			</div>
 						<div id="testimonial-5" class="testContent"> 
-								<a href="http://www.boston.com/business/technology/innoeco/2010/06/architexa_aims_to_make_it_easi.html"><img  height="30" alt="Boston Globe" src="/architexa/images/quotes/bcom_small.gif" /></a><br>
+								<a href="http://www.boston.com/business/technology/innoeco/2010/06/architexa_aims_to_make_it_easi.html"><img  height="30" alt="Boston Globe" src="{{site.baseurl}}/images/quotes/bcom_small.gif" /></a><br>
 								<span class="testQuote">"Focused on developing a wider range of features that will help programmers explore and understand knotty code bases."</span><br> 
 				<span class="author">- Scott Kirsner, <a href="http://www.boston.com/business/technology/innoeco/2010/06/architexa_aims_to_make_it_easi.html">Boston Globe</a></span>
 			</div>
@@ -304,11 +304,11 @@ function img(imgID, imgName) {
 
 		</div>
 		<span id="nav">
-		 <img id="0" onClick="slideTo('testimonial-0')" src="/architexa/images/bullet_active.gif"/>
-				 <img id="1" onClick="slideTo('testimonial-1')" src="/architexa/images/bullet.gif"/>
-				 <img id="2" onClick="slideTo('testimonial-2')" src="/architexa/images/bullet.gif"/>
-				 <img id="3" onClick="slideTo('testimonial-3')" src="/architexa/images/bullet.gif"/>
-				 <img id="4" onClick="slideTo('testimonial-4')" src="/architexa/images/bullet.gif"/>
+		 <img id="0" onClick="slideTo('testimonial-0')" src="{{site.baseurl}}/images/bullet_active.gif"/>
+				 <img id="1" onClick="slideTo('testimonial-1')" src="{{site.baseurl}}/images/bullet.gif"/>
+				 <img id="2" onClick="slideTo('testimonial-2')" src="{{site.baseurl}}/images/bullet.gif"/>
+				 <img id="3" onClick="slideTo('testimonial-3')" src="{{site.baseurl}}/images/bullet.gif"/>
+				 <img id="4" onClick="slideTo('testimonial-4')" src="{{site.baseurl}}/images/bullet.gif"/>
 		
 		</span>
 <script> 
@@ -336,8 +336,8 @@ function slide() {
 
   });
  
- $topNav.attr("src","/architexa/images/bullet.gif");
- $nextNav.attr("src","/architexa/images/bullet_active.gif");
+ $topNav.attr("src","{{site.baseurl}}/images/bullet.gif");
+ $nextNav.attr("src","{{site.baseurl}}/images/bullet_active.gif");
 }
 
 function slideTo(id) {
@@ -351,8 +351,8 @@ function slideTo(id) {
   $top.fadeOut("slow", function() {
 	 $next.fadeIn("slow");
   });
-  $topNav.attr("src","/architexa/images/bullet.gif");
-  $nextNav.attr("src","/architexa/images/bullet_active.gif"); 
+  $topNav.attr("src","{{site.baseurl}}/images/bullet.gif");
+  $nextNav.attr("src","{{site.baseurl}}/images/bullet_active.gif"); 
 
 }
 
