@@ -388,77 +388,21 @@ selected for the new color scheme -->
 	<div width="100%" id="nav" style="white-space:nowrap;float:right; padding-right:10px;font-family:Ubuntu,Tahoma">
 
 
-<?php 
-/*men support - both top and side*/
-function strBeg($haystack,$needle) {
-   return stripos($haystack, $needle, 0) === 0;
-}
-function strEnd($haystack,$needle) {
-  $expectedPosition = strlen($haystack) - strlen($needle);
-  return strripos($haystack, $needle, 0) === $expectedPosition;
-}
-function strEq($lhs,$rhs) {
-   return $lhs == $rhs;
-}
-/*
- * topMenu: based on uri to output one of two things:
- * if selected:     <li><span>Learn More</span></li>
- * if not selected: <li><a href="/learn-more/index">Learn More</a></li>
- */
-function topMenu($tgtUri, $tgtUriEx, $lbl) {
-	$uri = $_SERVER['REQUEST_URI'];
-	if (strBeg($uri,$tgtUri)) {
-		echo "<li><span>" . $lbl . "</span></li>";
-	} else {
-		echo "<li><a href='" . $tgtUri . $tgtUriEx . "'>" . $lbl . 
-				"</a><//li>";
-	}
-}
-/*
- * topMenuStrict: Same as top menu but much more strict - it doesn't support 
- * nesting and is only shown when the exact match happens, such as with the 
- * homepage
- */
-function topMenuStrict($tgtUri, $lbl) {
-	$uri = $_SERVER['REQUEST_URI'];
-	if (strEq($uri,$tgtUri)) {
-		echo "<li><span>" . $lbl . "</span></li>";
-	} else {
-		echo "<li><a href='" . $tgtUri . "'>" . $lbl . 
-				"</a><//li>";
-	}
-}
-/*
- * sideMenu: based on uri to output one of two things:
- * if selected:     <div id='selected'>Company Info</div>
- * if not selected: <a href='/about/index'>Company Info</a>
- */
-function sideMenu($baseUri, $tgtUri, $lbl) {
-	$uri = $_SERVER['REQUEST_URI'];
-	if (strEnd($uri,$tgtUri)) {
-		echo "<div id='selected'>" . $lbl . "</div>";
-	} else {
-		echo "<a href='" . $baseUri . $tgtUri . "'>" . $lbl . "</a>";
-	}
-}
-?>
-
-
 <ul>
 <!--
 <a href="/">Home</a>
 -->
 
 <!-- menu -->
-	<?php topMenuStrict("/", "Home") ?>
+	{% include top-menu-strict.fn tgtUri="/index" lbl="Home" %}
 <li> | </li>
-	<?php topMenu("/learn-more", "/index", "Learn More") ?>
+	{% include top-menu.fn tgtUri="/learn-more" tgtUriEx="/index" lbl="Learn More" %}
 <li> | </li>
-	<?php topMenu("/solutions", "/index", "Solutions") ?>
+	{% include top-menu.fn tgtUri="/solutions" tgtUriEx="/index" lbl="Solutions" %}
 <li> | </li>
-	<?php topMenu("/support", "/index", "Support") ?>
+	{% include top-menu.fn tgtUri="/support" tgtUriEx="/index" lbl="Support" %}
 <li> | </li>
-	<?php topMenu("/about", "/index", "About Us") ?>
+	{% include top-menu.fn tgtUri="/about" tgtUriEx="/index" lbl="About Us" %}
 </ul>
 
 
