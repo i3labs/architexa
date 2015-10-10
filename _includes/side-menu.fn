@@ -1,0 +1,11 @@
+{% comment %}
+ sideMenu: based on uri to output one of two things:
+ if selected:     <div id='selected'>Company Info</div>
+ if not selected: <a href='/about/index'>Company Info</a>
+{% endcomment %}
+
+{% if page.url contains include.tgtUri %}
+	<div id='selected'>{{include.lbl}}</div>
+{% else %} 
+	<a href='{{include.baseUri}}{{include.tgtUri}}'>{{include.lbl}}</a>
+{% endif %}
