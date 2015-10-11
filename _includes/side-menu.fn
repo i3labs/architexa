@@ -6,8 +6,8 @@
 
 {% capture fullTgtUri %}{{include.baseUri}}{{include.tgtUri}}{% endcapture %}
 {% capture fullTgtUriWithHtml %}{{fullTgtUri}}.html{% endcapture %}
-{{page.url}}:{{fullTgtUri}}---{{fullTgtUriWithHtml}}
-{% if page.url == fullTgtUri or page.url == fullTgtUriWithHtml %}
+{% capture fullTgtUriWithIndexHtml %}{{fullTgtUri}}index.html{% endcapture %}
+{% if page.url == fullTgtUri or page.url == fullTgtUriWithHtml or page.url == fullTgtUriWithIndexHtml %}
 	<div id='selected'>{{include.lbl}}</div>
 {% else %} 
 	<a href='{{site.baseurl}}{{include.baseUri}}{{include.tgtUri}}'>{{include.lbl}}</a>
