@@ -1,16 +1,16 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-beg.php') ?>
-<title>Sequence Diagrams | Architexa</title>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-end.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-learn-more-beg.php') ?>
+---
+title: Sequence Diagrams | Architexa
+---
+{% include side-menu-learn-more-beg.html %}
 
 
 
 
 
-<script src="/js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="{{site.baseurl}}/js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
 
-<link rel="stylesheet" href="/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
-<script src="/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="{{site.baseurl}}/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="{{site.baseurl}}/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
 
 
@@ -18,11 +18,11 @@
 <div style="float:right; padding-right:20px;">
 
 <div style= "padding:17px 2px 2px 2px;"> 
-		<a href="/start/index"><img src="/images/getStarted2.jpg" width="170" height="55"  border="0"/></a>
+		<a href="{{site.baseurl}}/start/index"><img src="{{site.baseurl}}/images/getStarted2.jpg" width="170" height="55"  border="0"/></a>
 </div>
 
 <div style= "padding:2px 2px;"> 
-		<a href="/learn-more/videos/intro/video"><img src="/images/thumbnails/watchIntro.png" width="170" height="60" border="0"  /></a>
+		<a href="{{site.baseurl}}/learn-more/videos/intro/video"><img src="{{site.baseurl}}/images/thumbnails/watchIntro.png" width="170" height="60" border="0"  /></a>
 </div>
 </div>
 
@@ -41,12 +41,12 @@ code. Architexa lets you create sequence diagrams that present a minimal, manage
 </p>
 
 <!--div style="margin-left:10px;float:center" >
-<a href="/learn-more/videos/sequence-diagrams" rel="prettyPhoto" title=" Sequence Diagram"><img src="/images/thumbnails/seq1.jpg" title="Click to view the Sequence diagram in action" width="350" height="250" border="3" alt="The tool extracting sequence diagram from the code"> <br> [Click here for sequence diagram to be in action ] </a>
+<a href="{{site.baseurl}}/learn-more/videos/sequence-diagrams" rel="prettyPhoto" title=" Sequence Diagram"><img src="{{site.baseurl}}/images/thumbnails/seq1.jpg" title="Click to view the Sequence diagram in action" width="350" height="250" border="3" alt="The tool extracting sequence diagram from the code"> <br> [Click here for sequence diagram to be in action ] </a>
 </div-->
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign" style = "margin-top:0px"> 
-		<a href="/images/fullscreen/chrono-conditional-hover.png" rel="prettyPhoto" title="Sequence diagram showing method calls"><img src="/images/thumbnails/chrono-conditional-hover.png" width="300" height="200" border="1" /></a>
+		<a href="{{site.baseurl}}/images/fullscreen/chrono-conditional-hover.png" rel="prettyPhoto" title="Sequence diagram showing method calls"><img src="{{site.baseurl}}/images/thumbnails/chrono-conditional-hover.png" width="300" height="200" border="1" /></a>
 
 	</div>
 	<div  id = "lmTextAlign" > 
@@ -59,9 +59,9 @@ code. Architexa lets you create sequence diagrams that present a minimal, manage
 	</p>	
 		
 <a 
-href="/learn-more/videos/sequence-diagrams/index.php"> Click here to see 
+href="{{site.baseurl}}/learn-more/videos/sequence-diagrams/index.php"> Click here to see 
 sequence diagrams in action.
-<img src="/images/PlayIcon1.png" border = "0" width="10" height="10"></img>
+<img src="{{site.baseurl}}/images/PlayIcon1.png" border = "0" width="10" height="10"></img>
 </a>
 	</div>
 
@@ -71,7 +71,7 @@ sequence diagrams in action.
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-		<a href="/images/fullscreen/chrono-exploration.png"  rel="prettyPhoto" title="Explore methods with ease"><img src="/images/thumbnails/chrono-exploration.png" width="300" height="200" border="1" /></a>
+		<a href="{{site.baseurl}}/images/fullscreen/chrono-exploration.png"  rel="prettyPhoto" title="Explore methods with ease"><img src="{{site.baseurl}}/images/thumbnails/chrono-exploration.png" width="300" height="200" border="1" /></a>
 	</div>
 		
 	<div  id = "lmTextAlign" > 
@@ -88,7 +88,7 @@ sequence diagrams in action.
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-		<a href="/images/fullscreen/chrono-chained-calls.png"  rel="prettyPhoto" title="Add chained call to diagram"><img src="/images/thumbnails/chrono-chained-calls.png" width="300" height="200" border="1"/></a>
+		<a href="{{site.baseurl}}/images/fullscreen/chrono-chained-calls.png"  rel="prettyPhoto" title="Add chained call to diagram"><img src="{{site.baseurl}}/images/thumbnails/chrono-chained-calls.png" width="300" height="200" border="1"/></a>
 
 	</div>
 		
@@ -107,7 +107,7 @@ For example, method calls are shown as inlined when a method is directly called 
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-		<a href="/images/fullscreen/chrono-conditional-collapse.png" rel="prettyPhoto" title="Conditional blocks shown on mouse-hover"><img src="/images/thumbnails/chrono-conditional-collapse.png" width="300" height="200" border="1"/></a>
+		<a href="{{site.baseurl}}/images/fullscreen/chrono-conditional-collapse.png" rel="prettyPhoto" title="Conditional blocks shown on mouse-hover"><img src="{{site.baseurl}}/images/thumbnails/chrono-conditional-collapse.png" width="300" height="200" border="1"/></a>
 
 	</div>
 		
@@ -130,7 +130,7 @@ Method calls in a conditional block are surrounded with a highlight that is only
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-		<a href="/images/fullscreen/chrono-backward-messages.png" rel="prettyPhoto" title="Hidden calls shown when moused-over"><img src="/images/thumbnails/chrono-backward-messages.png" width="300" height="200" border="1"/></a>
+		<a href="{{site.baseurl}}/images/fullscreen/chrono-backward-messages.png" rel="prettyPhoto" title="Hidden calls shown when moused-over"><img src="{{site.baseurl}}/images/thumbnails/chrono-backward-messages.png" width="300" height="200" border="1"/></a>
 
 	</div>
 		
@@ -152,7 +152,7 @@ Since time increases from top to bottom and left to right in a sequence diagram,
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-<a href="/images/fullscreen/chronoUncommitted.png" rel="prettyPhoto" title="Show uncommitted changes in a diagram"><img src="/images/thumbnails/chronoUncommitted.png" width="300" height="200" border="1"  /></a>
+<a href="{{site.baseurl}}/images/fullscreen/chronoUncommitted.png" rel="prettyPhoto" title="Show uncommitted changes in a diagram"><img src="{{site.baseurl}}/images/thumbnails/chronoUncommitted.png" width="300" height="200" border="1"  /></a>
 	</div>
 	
 	<div  id = "lmTextAlign" > 
@@ -167,7 +167,7 @@ Since time increases from top to bottom and left to right in a sequence diagram,
 
 <div id = "lmContDiv"> 
 	<div id = "lmImageAlign"> 
-		<a href="/images/fullscreen/integration-debugger-pre.png" rel="prettyPhoto" title="Create a sequence diagram from the stack trace"><img src="/images/thumbnails/integration-debugger-pre.png" width="300" height="200" border="1"  /></a>
+		<a href="{{site.baseurl}}/images/fullscreen/integration-debugger-pre.png" rel="prettyPhoto" title="Create a sequence diagram from the stack trace"><img src="{{site.baseurl}}/images/thumbnails/integration-debugger-pre.png" width="300" height="200" border="1"  /></a>
 	</div>
 		
 	<div  id = "lmTextAlign" > 
@@ -190,7 +190,7 @@ Since time increases from top to bottom and left to right in a sequence diagram,
 
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-footer.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
+{% include side-menu-footer.html %}
+{% include footer.html %}
 
 

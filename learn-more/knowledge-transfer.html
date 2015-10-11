@@ -1,24 +1,23 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-beg.php') ?>
-<title>Easily Document Code Architecture | Architexa</title>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-end.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-learn-more-beg.php') ?>
+---
+title: Easily Document Code Architecture | Architexa
+---
+{% include side-menu-learn-more-beg.html %}
 
 
+<script src="{{site.baseurl}}/js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
 
-<script src="/js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
-
-<link rel="stylesheet" href="/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
-<script src="/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="{{site.baseurl}}/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="{{site.baseurl}}/js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 
 
 <div style="float:right; padding-right:20px;">
 
 <div style= "padding:17px 2px 2px 2px;"> 
-		<a href="/start/index"><img src="/images/getStarted2.jpg" width="170" height="55"  border="0"/></a>
+		<a href="{{site.baseurl}}/start/index"><img src="{{site.baseurl}}/images/getStarted2.jpg" width="170" height="55"  border="0"/></a>
 </div>
 
 <div style= "padding:2px 2px;"> 
-		<a href="/learn-more/videos/intro/video"><img src="/images/thumbnails/watchIntro.png" width="170" height="60" border="0"  /></a>
+		<a href="{{site.baseurl}}/learn-more/videos/intro/video"><img src="{{site.baseurl}}/images/thumbnails/watchIntro.png" width="170" height="60" border="0"  /></a>
 </div>
 </div>
 
@@ -40,21 +39,21 @@
  
 	<tr> 
 		<td style="width: 300px;"> 
-<a href="/images/thumbnails/Shared1.jpg" style="margin-left:5px;" rel="prettyPhoto" title="Diagrams can be easily created from any source file"><img src="/images/thumbnails/Shared1.jpg" width="192" height="128"  border="1" /></a> 
+<a href="{{site.baseurl}}/images/thumbnails/Shared1.jpg" style="margin-left:5px;" rel="prettyPhoto" title="Diagrams can be easily created from any source file"><img src="{{site.baseurl}}/images/thumbnails/Shared1.jpg" width="192" height="128"  border="1" /></a> 
 		</td> 
 			
 		<td style="width: 300px;"> 
-		<a href="/images/thumbnails/CodeReview.png" style="margin-left:5px;" rel="prettyPhoto" title="Create diagrams showing the context of any uncommitted changes"><img src="/images/thumbnails/CodeReview.png" width="192" height="128"  border="1" /></a> 
+		<a href="{{site.baseurl}}/images/thumbnails/CodeReview.png" style="margin-left:5px;" rel="prettyPhoto" title="Create diagrams showing the context of any uncommitted changes"><img src="{{site.baseurl}}/images/thumbnails/CodeReview.png" width="192" height="128"  border="1" /></a> 
 		</td> 
 	</tr> 
  
 	<tr  VALIGN=TOP style = "font-size: 80%">
 		<td style="width: 300px;">
-	  	Diagrams can be easily created from any source file. Architexa allows diagrams to be created quickly and easily, freeing up the developers time for more important tasks. <a href="/learn-more/document"><b>Learn more</b></a>
+	  	Diagrams can be easily created from any source file. Architexa allows diagrams to be created quickly and easily, freeing up the developers time for more important tasks. <a href="{{site.baseurl}}/learn-more/document"><b>Learn more</b></a>
 		</td>
 			
 		<td style="width: 300px;">
-		Code Reviews can often take a lot of time. Create diagrams showing the context of any uncommitted changes. These diagrams can then help with updating documentation and provide code reviewers with a more complete view of the changes. <a href="/learn-more/ide-integration"><b>Learn more</b></a>
+		Code Reviews can often take a lot of time. Create diagrams showing the context of any uncommitted changes. These diagrams can then help with updating documentation and provide code reviewers with a more complete view of the changes. <a href="{{site.baseurl}}/learn-more/ide-integration"><b>Learn more</b></a>
 		</td>
 
 	</tr>
@@ -69,7 +68,7 @@
  
 	<tr> 	
 		<td colspan=2 style="width: 300px;"> 
-		<a href="/images/thumbnails/Shared2.jpg" style="margin-left:5px;" rel="prettyPhoto" title="Share, comment on, and interact with diagrams created by others."><img src="/images/thumbnails/Shared2.jpg" width="192" height="128"  border="1" /></a> 
+		<a href="{{site.baseurl}}/images/thumbnails/Shared2.jpg" style="margin-left:5px;" rel="prettyPhoto" title="Share, comment on, and interact with diagrams created by others."><img src="{{site.baseurl}}/images/thumbnails/Shared2.jpg" width="192" height="128"  border="1" /></a> 
 </td> 
 	</tr> 
  
@@ -81,7 +80,7 @@
 		<!--[if !IE]>-->
 		<div style="width:300px; padding-left:150px; text-align:center; ">
 		<!--<![endif]-->
-		Share, comment on, and interact with diagrams created by others. Without a common place for developers to interact with documentation and eachother projects can become delayed with communication ovehead. Architexa provides developers with easy access to diagrams so concepts can be communicated efficiently.<a href="/learn-more/share"><b>Learn more</b></a>
+		Share, comment on, and interact with diagrams created by others. Without a common place for developers to interact with documentation and eachother projects can become delayed with communication ovehead. Architexa provides developers with easy access to diagrams so concepts can be communicated efficiently.<a href="{{site.baseurl}}/learn-more/share"><b>Learn more</b></a>
 		</div>
 		</td>
 		
@@ -100,7 +99,7 @@
 
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-footer.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
+{% include side-menu-footer.html %}
+{% include footer.html %}
 
 

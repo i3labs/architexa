@@ -1,7 +1,7 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-beg.php') ?>
-<title>Pricing Plan | Architexa</title>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-end.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-learn-more-beg.php') ?>
+---
+title: Pricing Plan | Architexa
+---
+{% include side-menu-learn-more-beg.html %}
 
 
 
@@ -227,28 +227,28 @@
 
 <div class="finePrintDiv">
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/cost.png"/><p class="finePrint">&dagger; In exchange for getting you free licenses all we ask for is your feedback. We will be sending you surveys periodically, and we ask you to e-mail us with your thoughts.</p></div>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/cost.png"/><p class="finePrint">&dagger; In exchange for getting you free licenses all we ask for is your feedback. We will be sending you surveys periodically, and we ask you to e-mail us with your thoughts.</p></div>
 
 <!--
 <div style="float:left;"><p class="finePrint">&Dagger; We can provide first three licenses for free, but we will need to talk to all of your users for a couple of minutes every so often so that we can make sure we are meeting your teams goals.</p></div>
 
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/customers.png"/><p class="finePrint">Team Edition licenses include support for offline usage. Each paid license is renewable yearly, includes online support, and gives increased priority for bug fixes and feature requests. It can be cancelled at any time.</p></div>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/customers.png"/><p class="finePrint">Team Edition licenses include support for offline usage. Each paid license is renewable yearly, includes online support, and gives increased priority for bug fixes and feature requests. It can be cancelled at any time.</p></div>
 <div style="clear:both;"></div>
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/hire-me.png"/><p class="finePrint">Architexa licenses are assigned to a user. License usage is verified against the Architexa licensing server (at <a href="http://my.architexa.com">http://my.architexa.com</a>), and allows for offline/remote license access for Team Edition users. Concurrent licenses are available on request.</p></div>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/hire-me.png"/><p class="finePrint">Architexa licenses are assigned to a user. License usage is verified against the Architexa licensing server (at <a href="http://my.architexa.com">http://my.architexa.com</a>), and allows for offline/remote license access for Team Edition users. Concurrent licenses are available on request.</p></div>
 <div style="clear:both;"></div>
 
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/cost.png"/><p>We want to make sure that you like Architexa's suite, so we make sure to give all team edition users a <b>free 30 day trial account.</b></p></div>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/cost.png"/><p>We want to make sure that you like Architexa's suite, so we make sure to give all team edition users a <b>free 30 day trial account.</b></p></div>
 <div style="clear:both;"></div>
 -->
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/database.png"/>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/database.png"/>
 <p class="finePrint">Community Edition is optimized for work on Java projects of upto 150,000 lines of code. Have a larger team? Contact <a href="mailto:sales@architexa.com" target="_blank">us</a>.</p></div>
 <div style="clear:both;"></div>
 
-<div style="float:left;"><img class="fineIcon" src="/images/berlin/32x32/consulting.png"/><p class="finePrint">Need some features? Send us your <a href="mailto:feedback@architexa.com">feedback</a>. As we hear your needs, we will be adding capabilities to the suite - updates will be made 3-4 times per year.</p></div>
+<div style="float:left;"><img class="fineIcon" src="{{site.baseurl}}/images/berlin/32x32/consulting.png"/><p class="finePrint">Need some features? Send us your <a href="mailto:feedback@architexa.com">feedback</a>. As we hear your needs, we will be adding capabilities to the suite - updates will be made 3-4 times per year.</p></div>
 <div style="clear:both;"></div>
 
 </div><!--end fineprint-->
@@ -256,7 +256,6 @@
 
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-footer.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
-
+{% include side-menu-footer.html %}
+{% include footer.html %}
 
