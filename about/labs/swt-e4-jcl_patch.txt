@@ -1,0 +1,304 @@
+### Eclipse Workspace Patch 1.0
+#P org.eclipse.swt.e4.jcl
+Index: src/gwt/common/java/util/ArrayList.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/common/java/util/ArrayList.java,v
+retrieving revision 1.1
+diff -u -r1.1 ArrayList.java
+--- src/gwt/common/java/util/ArrayList.java	10 Oct 2008 16:26:54 -0000	1.1
++++ src/gwt/common/java/util/ArrayList.java	2 Apr 2009 15:32:44 -0000
+@@ -86,7 +86,7 @@
+   }
+ 
+   public ArrayList(Collection<? extends E> c) {
+-    addAll(c);
++	  addAll(c);
+   }
+ 
+   public ArrayList(int initialCapacity) {
+@@ -112,11 +112,17 @@
+ 
+   @Override
+   public boolean addAll(Collection<? extends E> c) {
++	  // vs: not working for some reason
++	/*
+     if (c.isEmpty()) {
+       return false;
+     }
+     spliceArray(array, size, 0, c.toArray());
+     size += c.size();
++    */
++	  Iterator<? extends E> cit = c.iterator();
++	  while (cit.hasNext())
++		  add(cit.next());
+     return true;
+   }
+ 
+Index: src/gwt/extended/actionscript/java/lang/Throwable.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/extended/actionscript/java/lang/Throwable.java,v
+retrieving revision 1.1
+diff -u -r1.1 Throwable.java
+--- src/gwt/extended/actionscript/java/lang/Throwable.java	10 Oct 2008 16:26:49 -0000	1.1
++++ src/gwt/extended/actionscript/java/lang/Throwable.java	2 Apr 2009 15:32:45 -0000
+@@ -89,12 +89,12 @@
+    * 
+    * @return the current stack trace
+    */
+-  public StackTraceElement[] getStackTrace() {
+-    if (stackTrace == null) {
+-      return new StackTraceElement[0];
+-    }
+-    return stackTrace;
+-  }
++//  public StackTraceElement[] getStackTrace() {
++//    if (stackTrace == null) {
++//      return new StackTraceElement[0];
++//    }
++//    return stackTrace;
++//  }
+ 
+   public Throwable initCause(Throwable cause) {
+     if (this.cause != null) {
+@@ -123,6 +123,9 @@
+       msg.append(": ");
+       msg.append(causeMessage == null ? "(No exception detail)" : causeMessage);
+       msg.append("\n");
++      msg.append("Stack Trace: \n");
++      msg.append(currentCause.getStackTrace());
++      msg.append("\n");
+       currentCause = currentCause.getCause();
+     }
+     out.println(msg);
+Index: src/gwt/extended/actionscript/java/lang/Class.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/extended/actionscript/java/lang/Class.java,v
+retrieving revision 1.1
+diff -u -r1.1 Class.java
+--- src/gwt/extended/actionscript/java/lang/Class.java	10 Oct 2008 16:26:49 -0000	1.1
++++ src/gwt/extended/actionscript/java/lang/Class.java	2 Apr 2009 15:32:45 -0000
+@@ -48,6 +48,8 @@
+ 		}
+ 		if (str ==  "java.lang.Object") {
+ 			cls = Object;
++		} else if (str ==  "java/lang/Object") {
++			cls = Object;
+ 		} else if (str ==  "java.lang.String") {
+ 			cls = String;
+ 		} else {
+Index: src/gwt/extended/actionscript/java/lang/StringBuilder.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/extended/actionscript/java/lang/StringBuilder.java,v
+retrieving revision 1.1
+diff -u -r1.1 StringBuilder.java
+--- src/gwt/extended/actionscript/java/lang/StringBuilder.java	10 Oct 2008 16:26:49 -0000	1.1
++++ src/gwt/extended/actionscript/java/lang/StringBuilder.java	2 Apr 2009 15:32:45 -0000
+@@ -163,8 +163,8 @@
+   }
+ 
+   public void getChars(int srcStart, int srcEnd, char[] dst, int dstStart) {
+-    String.__checkBounds(stringLength, srcStart, srcEnd);
+-    String.__checkBounds(dst.length, dstStart, dstStart + (srcEnd - srcStart));
++    //String.__checkBounds(stringLength, srcStart, srcEnd);
++    //String.__checkBounds(dst.length, dstStart, dstStart + (srcEnd - srcStart));
+     String s = toString();
+     while (srcStart < srcEnd) {
+       dst[dstStart++] = s.charAt(srcStart++);
+Index: src/gwt/extended/common/com/ibm/icu/text/BreakIterator.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/extended/common/com/ibm/icu/text/BreakIterator.java,v
+retrieving revision 1.1
+diff -u -r1.1 BreakIterator.java
+--- src/gwt/extended/common/com/ibm/icu/text/BreakIterator.java	10 Oct 2008 16:27:00 -0000	1.1
++++ src/gwt/extended/common/com/ibm/icu/text/BreakIterator.java	2 Apr 2009 15:32:45 -0000
+@@ -14,23 +14,134 @@
+ //TODO: e4 Needed to compile draw2d plugin
+ 
+ public abstract class BreakIterator {
++	private static final class LineBreakIterator extends BreakIterator {
++		private String txt;
++		private int itPos = 0;
++
++		public void setText(String txt) {
++			this.txt = txt;
++			this.itPos = 0;
++		}
++
++		public int following(int offset) {
++			if (offset >= txt.length()) return DONE;
++			itPos = offset;
++			return next();
++		}
++
++		public int next() {
++			do {
++				itPos++;
++				if (itPos == txt.length()) return itPos;
++				if (itPos > txt.length()) return DONE;
++			} while (txt.charAt(itPos) != '\n');
++			return itPos;
++		}
++
++		public int previous() {
++			do {
++				itPos--;
++				if (itPos == 0) return itPos;
++				if (itPos < 0) return DONE;
++			} while (txt.charAt(itPos) != '\n');
++			return itPos;
++		}
++
++		public int current() {
++			return itPos;
++		}
++	}
++
++	public static final int DONE = -1;
++
+ 	public static BreakIterator getLineInstance() {
+-		return null;
++		return new LineBreakIterator();
+ 	}
+ 	
+-	public void setText(String newText) {
+-		 
+-	}
++	public abstract void setText(String newText);
+ 	
+-	public boolean isBoundary(int offset) {
+-	   return false;
+-	}
+ 	
++    /**
++     * Advances the iterator forward one boundary.  The current iteration
++     * position is updated to point to the next boundary position after the
++     * current position, and this is also the value that is returned.  If
++     * the current position is equal to the value returned by last(), or to
++     * DONE, this function returns DONE and sets the current position to
++     * DONE.
++     * @return The position of the first boundary position following the
++     * iteration position.
++     * @stable ICU 2.0
++     */
+ 	public abstract int next();
++
++	/**
++     * Advances the iterator backward one boundary.  The current iteration
++     * position is updated to point to the last boundary position before
++     * the current position, and this is also the value that is returned.  If
++     * the current position is equal to the value returned by first(), or to
++     * DONE, this function returns DONE and sets the current position to
++     * DONE.
++     * @return The position of the last boundary position preceding the
++     * iteration position.
++     * @stable ICU 2.0
++     */
++    public abstract int previous();
+ 	
++    /**
++     * Sets the iterator's current iteration position to be the first
++     * boundary position following the specified position.  (Whether the
++     * specified position is itself a boundary position or not doesn't
++     * matter-- this function always moves the iteration position to the
++     * first boundary after the specified position.)  If the specified
++     * position is the past-the-end position, returns DONE.
++     * @param offset The character position to start searching from.
++     * @return The position of the first boundary position following
++     * "offset" (whether or not "offset" itself is a boundary position),
++     * or DONE if "offset" is the past-the-end offset.
++     * @stable ICU 2.0
++     */
++	public abstract int following(int offset);
++
++	/**
++     * Sets the iterator's current iteration position to be the last
++     * boundary position preceding the specified position.  (Whether the
++     * specified position is itself a boundary position or not doesn't
++     * matter-- this function always moves the iteration position to the
++     * last boundary before the specified position.)  If the specified
++     * position is the starting position, returns DONE.
++     * @param offset The character position to start searching from.
++     * @return The position of the last boundary position preceding
++     * "offset" (whether of not "offset" itself is a boundary position),
++     * or DONE if "offset" is the starting offset of the iterator.
++     * @stable ICU 2.0
++     */
+ 	public int preceding(int offset) {
+-		return 0;
++        // NOTE:  This implementation is here solely because we can't add new
++        // abstract methods to an existing class.  There is almost ALWAYS a
++        // better, faster way to do this.
++        int pos = following(offset);
++        while (pos >= offset && pos != DONE)
++            pos = previous();
++        return pos;
+ 	}
+ 	
+-	public abstract int following(int offset);
++    /**
++     * Return true if the specfied position is a boundary position.  If the
++     * function returns true, the current iteration position is set to the
++     * specified position; if the function returns false, the current
++     * iteration position is set as though following() had been called.
++     * @param offset the offset to check.
++     * @return True if "offset" is a boundary position.
++     * @stable ICU 2.0
++     */
++    public boolean isBoundary(int offset) {
++        // Again, this is the default implementation, which is provided solely because
++        // we couldn't add a new abstract method to an existing class.  The real
++        // implementations will usually need to do a little more work.
++        if (offset == 0) {
++            return true;
++        }
++        else
++            return following(offset - 1) == offset;
++    }
+ }
+\ No newline at end of file
+Index: src/gwt/extended/common/java/beans/PropertyChangeSupport.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/gwt/extended/common/java/beans/PropertyChangeSupport.java,v
+retrieving revision 1.1
+diff -u -r1.1 PropertyChangeSupport.java
+--- src/gwt/extended/common/java/beans/PropertyChangeSupport.java	10 Oct 2008 16:26:59 -0000	1.1
++++ src/gwt/extended/common/java/beans/PropertyChangeSupport.java	2 Apr 2009 15:32:45 -0000
+@@ -26,6 +26,12 @@
+ 	propertyListeners = new HashMap();
+ }
+ 
++public boolean hasListeners(String propertyName) {
++	// VS: below should be correct
++	//return propertyListeners.containsKey(propertyName);
++	return true;
++}
++
+ public void addPropertyChangeListener(PropertyChangeListener listener) {
+ 	allPropertyListeners.add(listener);
+ }
+@@ -48,7 +54,9 @@
+ 			Iterator iter = listeners.iterator();
+ 			while (iter.hasNext()) {
+ 				PropertyChangeListener listener = (PropertyChangeListener)iter.next();
+-				if (listener != null) listener.propertyChange(event);
++				if (listener != null) {
++					listener.propertyChange(event);
++				}
+ 			}
+ 		}
+ 	}
+Index: src/flex/intrinsic/Error.java
+===================================================================
+RCS file: /cvsroot/eclipse/e4/org.eclipse.e4.swt/bundles/org.eclipse.swt.e4.jcl/src/flex/intrinsic/Error.java,v
+retrieving revision 1.1
+diff -u -r1.1 Error.java
+--- src/flex/intrinsic/Error.java	10 Oct 2008 16:26:48 -0000	1.1
++++ src/flex/intrinsic/Error.java	2 Apr 2009 15:32:44 -0000
+@@ -32,6 +32,6 @@
+ public static native String getErrorMessage(int arg0);
+ 
+ /** Methods */
+-//public native String getStackTrace();
++public native String getStackTrace();
+ 
+ }
