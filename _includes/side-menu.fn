@@ -4,7 +4,9 @@
  if not selected: <a href='/about/index'>Company Info</a>
 {% endcomment %}
 
-{% if page.url contains include.tgtUri %}
+{% capture fullTgtUri %}{{include.baseUri}}{{include.tgtUri}}{% endcapture %}
+{% capture fullTgtUriWithHtml %}{{fullTgtUri}}.html{% endcapture %}
+{% if page.url == fullTgtUri or page.url == fullTgtUriWithHtml %}
 	<div id='selected'>{{include.lbl}}</div>
 {% else %} 
 	<a href='{{site.baseurl}}{{include.baseUri}}{{include.tgtUri}}'>{{include.lbl}}</a>
