@@ -7,5 +7,5 @@
 {% if page.url contains include.tgtUri %}
 	<div id='selected'>{{include.lbl}}</div>
 {% else %} 
-	<a href='{{include.baseUri}}{{include.tgtUri}}'>{{include.lbl}}</a>
+	<a href='{{site.baseurl}}{{include.baseUri}}{{include.tgtUri}}'>{{include.lbl}}</a>
 {% endif %}
