@@ -1,0 +1,87 @@
+<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-beg.php') ?>
+<title>Frequently Asked Questions | Architexa</title>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/header-end.php') ?>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-header-support.php') ?>
+
+<script src="/js/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script> 
+
+<div class="calloutPara" style="float:right">
+<b>Have More Questions?</b><br>
+E-mail us at <a href="mailto:support@architexa.com">support@architexa.com</a>. We'll get back to you within hours.<br><br>
+<!--
+<b>Chat?</b><br>
+Would you like to chat with someone online? Click the link below to say hello.<br><br>
+<iframe src="http://www.google.com/talk/service/badge/Show?tk=z01q6amlq5gosb1jt033thpaik3j3rj0d0dag3i9sfespm82fgm5bvtdamdfjcb5jj6uous8kbroliocgjh7g9kdbba8ft655o6cc7111n2l7cm25j6pcb28rclf1aaih6kuaj5e8tghcjul20ome65b4e4oru8giflo0h0hd&amp;w=200&amp;h=60" frameborder="0" allowtransparency="true" width="200" height="60"></iframe>
+-->
+</div>
+<h1>Frequently Asked Questions</h1>
+<h2>Architexa Suite</h2>
+<h3 class="question"><a href="#">Do you support C/C++?</a></h3>
+<div>We currently do have a prototype with C/C++ support. If you are interested in using it, please contact us at <a href="mailto:sales@architexa.com">sales@architexa.com</a>.</div>
+
+<h3 class="question"><a href="#">What versions of Eclipse do you support?</a></h3>
+<div>We support Eclipse 3.2 and later.</div>
+
+<h3 class="question"><a href="#">Do you support other IDEs (Netbeans, IntelliJ, etc)?</a></h3>
+<div>We currently only support Eclipse. We are adding support for other IDEs on user <a href="mailto:support@architexa.com">requests</a>.</div>
+
+<h3 class="question"><a href="#">What source repositories do you provide deep integrations with?</a></h3>
+<div>We currently only provide deep integration with CVS and SVN (subclipse). We are working on adding more support based on user <a href="mailto:support@architexa.com">requests</a>.</div>
+
+<h3 class="question"><a href="#">Do we support exporting to UML?</a></h3>
+<div>Our main objective is to allow users to integrate Architexa RSE seemlessly with their existing applications. Given that UML is a popular standard we intend to allow exporting to it; our current support is only for the RDF standard.</div>
+
+
+<h3 class="question"><a href="#">Why is the suite licensed as an annual service?</a></h3>
+
+<div>
+We are part of the growing number of companies that are simply fed up with 
+those selling developer tools that cost an arm and a leg, only to ask you to 
+pay again with every new release. Some of these companies do not provide 
+support unless you buy the new product and pay extra for support. We also want to make 
+sure that our team is constantly improving the product to keep our users happy. 
+With our licensing model we have to listen to our users and keep improving our 
+software to make sure that the software doesn't just become shelfware. An 
+annual subscription service allows us to have a simple licensing model that 
+allows us to have a lower upfront cost to our users and gets them all releases 
+and updates.  <!--
+We feel that a monthly subscription will allow you to pay a lower upfront cost 
+while you see the value of the software. The subscription fee also takes into 
+account support costs and allows us to provide a central server for you to 
+collaborate and share any diagrams. But most importantly, our goal is to build 
+a tool that is useful throughout the coding lifecycle and not just something 
+that you would want to use for the first few months on a project - a 
+subscription license makes sure we stay aligned to the vision.
+-->
+</div>
+
+<h2>Using the Diagrams</h2>
+<h3 class="question"><a href="#">What is the meaning of a "Dependency" in a Layered Diagram?</a></h3>
+<div>A dependency is equivelant to a call made during execution. If a method has a certain variable in it, then you also have a dependency *to the class of the variable. You can say if Method A will call Method B during its execution, then Method A is "dependent" on Method B. A "double arrow" connecting two blocks means the two will call each other during each execution.</div>
+ 
+<h3 class="question"><a href="#">Does "re-organizing" the blocks in the layered diagram change the dependencies?</a></h3>
+<div style="display: none;">"Re-organizing" is simply changing how the diagram looks. You are re-organizing the view to better understand it. You are not changing the underlying code or dependencies, just how they are displayed.</div>
+
+<h3 class="question"><a href="#">What is the purpose of the "add connection" function in the pallete?</a></h3>
+<div>Adding connections is used for documenting a diagram. For example, drawing attention to a specific class or package. It does not change the underlying code or actually "connect" elements.</div>
+ 
+<h3 class="question"><a href="#">Why can some code only be opened by certain kinds of diagram(s)?</a></h3>
+<div>Projects are too high level and would result in too many items shown in the other diagrams, so we only show them in layered diagrams. Elements such as methods and fields are too low level to be shown in a layered diagram so we omit them. </div>
+
+<p>Any other questions? Feel free to e-mail us at <a href="mailto:support@architexa.com">support@architexa.com</a></p>
+
+
+
+<script>
+jQuery(document).ready(function(){
+	$('.question').click(function() {
+		$(this).next().toggle('normal');
+		return false;
+	}).next().hide();
+});
+</script>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-footer.php') ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
+
