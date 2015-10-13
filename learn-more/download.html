@@ -39,7 +39,8 @@ $status = $_GET["status"];
 
 <!-- <div style="color:black;background-color:#ddd;padding:15px; margin-bottom:146px;width:435px;"> 
  -->
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/quotes-inc.php') ?>
+
+{% include quotes-inc.html %}
 <? if (!$status) {?>
 	<div style="border:1px;color:red;font-weight:bold" >
      	<?= $msg ?>
@@ -162,8 +163,7 @@ jQuery(document).ready(function(){
 });
 </script>
 
-		<p>To see the most recent changes and updates check out our <a href="http://www.architexa.com/forums/forum/announcements">Announcements</a> page.</p>
-		<p>Please take a look at our <a href="/support/faq">FAQ</a> page and our <a href="/forums">forum</a> if you have any questions or problems.</p>
+		<p>Please take a look at our <a href="{{site.baseurl}}/support/faq">FAQ</a> page if you have any questions or problems.</p>
 
 	<div style="margin-top:25px;float:right;">
 		<h4><a href="#" onclick="window.location = 'tour';">Take a Tour</a></h4>
@@ -182,7 +182,3 @@ gwoTracker._trackPageview("/1897503668/goal");
 }catch(err){}</script>
 <!-- End of Google Website Optimizer Conversion Script -->
 
-
-
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/side-menu-footer.php') ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/includes/footer.php') ?>
