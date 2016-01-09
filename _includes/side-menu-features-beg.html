@@ -6,7 +6,7 @@
 <div id="subMenuLeft2" style="margin-top:15px; padding-bottom:20px; border-bottom:1px dotted #ccc; margin-left: -40px;">
 <![endif]-->
 <!--[if !IE]>-->
-<div id="subMenuLeft2" style="margin-top:15px; border-bottom:1px dotted #ccc;">
+<div id="subMenuLeft2" style="margin-top:15px">
 <!--<![endif]-->
 <ul style="list-style-type:none;padding-left:35px"><li>
 	{% include side-menu.fn baseUri="/features/" tgtUri="" lbl="Overview" %}
@@ -26,8 +26,55 @@
 </div> <!-- end sub-menu -->
 
 
+<!-- Videos -->
+<div style="margin-top:15px;font-weight:bold">Videos</div>
 
-<!-- Tech Menu-->
+<!--[if IE ]>
+<div id="subMenuLeft2" style="margin-top:15px; margin-left: -40px">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="subMenuLeft2" style="margin-top:15px; border-bottom:1px dotted #ccc;">
+<!--<![endif]-->
+
+	<ul style="list-style-type:none;padding-left:35px">
+	
+		<li>
+			{% include side-menu.fn baseUri="/support/videos/" tgtUri="intro/video" lbl="Introduction" %}
+		</li>
+
+		<li style="margin-top:10px">
+			{% include side-menu.fn baseUri="/support/videos/" tgtUri="layered-diagrams/video" lbl="Layered Diagrams" %}
+		</li>
+
+		<li style="margin-top:10px">
+			{% include side-menu.fn baseUri="/support/videos/" tgtUri="class-diagrams/video" lbl="Class Diagrams" %}
+		</li>
+
+		<li style="margin-top:10px">
+			{% include side-menu.fn baseUri="/support/videos/" tgtUri="sequence-diagrams/video" lbl="Sequence Diagrams" %}
+		</li>
+
+		</ul>
+
+</div> <!-- end sub-menu -->
+
+<!-- FAQ Menu-->
+<!--[if IE ]>
+<div id="subMenuLeft2" style="margin-top:15px; padding-top:15px; margin-left: -40px;">
+<![endif]-->
+<!--[if !IE]>-->
+<div id="subMenuLeft2" style="margin-top:15px; border-bottom:1px dotted #ccc;">
+<!--<![endif]-->
+<ul style="list-style-type:none;padding-left:35px">
+<li>
+	{% include side-menu.fn baseUri="/features/" tgtUri="faq" lbl="FAQ" %}
+</li>
+</ul>
+</div> <!-- end FAQ menu -->
+
+
+
+<!-- Download Menu-->
 <!--[if IE ]>
 <div id="subMenuLeft2" style="margin-top:15px; padding-top:15px; margin-left: -40px;">
 <![endif]-->
@@ -39,7 +86,7 @@
 	{% include side-menu.fn baseUri="/learn-more/" tgtUri="download" lbl="Download" %}
 </li>
 </ul>
-</div> <!-- end Tech menu -->
+</div> <!-- end Download menu -->
 
 
 
