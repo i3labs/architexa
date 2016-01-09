@@ -6,6 +6,8 @@
 
 {% if page.url contains include.tgtUri %}
 	<li><span>{{include.lbl}}</span></li>
+{% elsif page.url contains include.tgtUri2 %}
+	<li><span>{{include.lbl}}</span></li>
 {% else %} 
 	<li><a href='{{site.baseurl}}{{ include.tgtUri }}{{ include.tgtUriEx }}'>{{include.lbl}}</a></li>
 {% endif %}
